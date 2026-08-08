@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asistente de Escolaridad Personalizado | Acompañamiento y Nivelación</title>
+    <title>Asistente de Escolaridad Personalizado | Servicio y Beca VIP</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -12,6 +12,7 @@
             --dark: #2C3E50;
             --light: #F8F9FA;
             --accent: #FF6B6B;
+            --success: #25D366;
         }
 
         * {
@@ -35,13 +36,13 @@
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             margin-bottom: 15px;
         }
 
         header p {
-            font-size: 1.2rem;
-            max-width: 700px;
+            font-size: 1.15rem;
+            max-width: 750px;
             margin: 0 auto 25px;
             opacity: 0.95;
         }
@@ -49,7 +50,7 @@
         .badge {
             background-color: var(--accent);
             color: white;
-            padding: 8px 16px;
+            padding: 8px 18px;
             border-radius: 20px;
             font-weight: 600;
             display: inline-block;
@@ -87,7 +88,51 @@
             border-left: 5px solid var(--primary);
             padding: 25px;
             border-radius: 8px;
-            margin: 40px 0;
+            margin: 30px 0;
+        }
+
+        /* Sección de Planes y Suscripciones */
+        .pricing-section {
+            margin-top: 50px;
+            background: #FFF;
+            padding: 40px 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .price-card {
+            border: 2px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            background: #FAFAFA;
+            position: relative;
+        }
+
+        .price-card.featured {
+            border-color: var(--primary);
+            background: #FFF;
+            box-shadow: 0 6px 20px rgba(74, 144, 226, 0.15);
+        }
+
+        .price-card h4 {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .price-tag {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
         }
 
         /* Formulario de Beca */
@@ -96,7 +141,7 @@
             padding: 40px;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            margin-top: 40px;
+            margin-top: 50px;
         }
 
         .form-section h2 {
@@ -126,7 +171,7 @@
         .btn {
             display: block;
             width: 100%;
-            background-color: #25D366;
+            background-color: var(--success);
             color: white;
             padding: 15px;
             text-align: center;
@@ -166,7 +211,6 @@
         .whatsapp-float:hover {
             transform: scale(1.12);
             box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
-            background-color: #1EBE5D;
         }
 
         footer {
@@ -181,42 +225,71 @@
 </head>
 <body>
 
-    <!-- PORTADA PRINCIPAL -->
+    <!-- PORTADA PUBLICITARIA PRINCIPAL -->
     <header>
-        <span class="badge">🎁 Beca VIP 7 Días Disponibles</span>
-        <h1>Tardes de Estudio en Paz y Sin Estrés</h1>
-        <p>Un Asistente de Escolaridad que apoya a tu hijo en sus tareas diarias y nivelación académica. Tú recuperas tu tranquilidad, él aprende a su ritmo.</p>
+        <span class="badge">✨ Tu Solución Escolar Diaria</span>
+        <h1>Asistente de Escolaridad Personalizado</h1>
+        <p>Acompañamiento paciente y constante para las tareas del colegio y la nivelación de tu hijo. Olvídate del estrés de las tardes y devuelve la paz a tu hogar.</p>
     </header>
 
     <div class="container">
 
-        <!-- MENSAJE EMPÁTICO -->
+        <!-- MENSAJE DE VALOR / SOLUCIÓN -->
         <div class="highlight-box">
-            <h2>¿Cansada de pelear a la hora de hacer los deberes?</h2>
-            <p>Enseñar a nuestros propios hijos puede ser agotador. Cuando aparece la frustración y el cansancio, los niños se bloquean. Nuestro sistema ofrece un acompañamiento paciente y personalizado, actuando como un asistente de escolaridad que resuelve sus dudas diarias sin generar presión.</p>
+            <h2>¿Cansada de discutir a la hora de hacer las tareas?</h2>
+            <p>Enseñar a nuestros propios hijos suele ser agotador y generar tensión. Nuestro <strong>Asistente de Escolaridad</strong> actúa como un guía paciente de compañía que le ayuda a comprender sus materias día a día, adaptándose a su propio ritmo sin gritos ni presiones.</p>
         </div>
 
-        <!-- BENEFICIOS CLAVE -->
-        <h2 style="text-align: center; margin-top: 40px;">¿Cómo apoya nuestro Asistente a tu hijo?</h2>
+        <!-- CARACTERÍSTICAS DEL SERVICIO -->
+        <h2 style="text-align: center; margin-top: 40px;">¿Qué resuelve nuestro Asistente?</h2>
         <div class="grid">
             <div class="card">
-                <h3>📚 Deberes Diarios</h3>
-                <p>Resuelve las dudas de las tareas del colegio día a día, guiándolo para que comprenda los contenidos por sí mismo.</p>
+                <h3>📚 Deberes y Tareas Diarias</h3>
+                <p>Resuelve dudas de tareas escolares, explicando el paso a paso para que el niño entienda por sí mismo.</p>
             </div>
             <div class="card">
                 <h3>🎯 Nivelación Académica</h3>
-                <p>Identifica los contenidos donde tiene vacíos (Matemáticas, Lenguaje, etc.) y los refuerza con paciencia.</p>
+                <p>Refuerza materias complejas (Matemáticas, Lenguaje, Ciencias) para ponerlo al día con su curso.</p>
             </div>
             <div class="card">
-                <h3>🌱 Aprendizaje con Empatía</h3>
-                <p>Enseña sin gritos ni presiones, adaptándose al ritmo único de aprendizaje de cada estudiante.</p>
+                <h3>🌱 Paz para la Familia</h3>
+                <p>Tú dejas de ser la profesora y vuelves a disfrutar de tu tiempo libre con tu hijo.</p>
+            </div>
+        </div>
+
+        <!-- SECCIÓN DE PLANES Y SUSCRIPCIONES -->
+        <div class="pricing-section">
+            <h2 style="text-align: center; color: var(--dark);">Planes de Suscripción a tu Medida</h2>
+            <p style="text-align: center; color: #666; max-width: 700px; margin: 10px auto 0;">
+                Comienza hoy con tu <strong>Beca VIP por 7 días totalmente gratis</strong>. Al finalizar tu prueba, puedes elegir el plan que mejor se adapte a las necesidades de estudio de tu hijo:
+            </p>
+
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h4>Plan Apoyo Ocasional</h4>
+                    <p class="price-tag">1 a 2 veces por semana</p>
+                    <p style="font-size: 0.9rem; color: #555;">Ideal para resolver dudas puntuales de tareas específicas o preparar pruebas sencillas.</p>
+                </div>
+
+                <div class="price-card featured">
+                    <span style="background: var(--primary); color: white; padding: 3px 10px; border-radius: 10px; font-size: 0.75rem; font-weight: bold; position: absolute; top: -12px; left: 50%; transform: translateX(-50%);">MÁS POPULAR</span>
+                    <h4>Plan Acompañamiento Regular</h4>
+                    <p class="price-tag">3 a 4 veces por semana</p>
+                    <p style="font-size: 0.9rem; color: #555;">Perfecto para seguimiento continuo de tareas y reforzamiento constante durante la semana.</p>
+                </div>
+
+                <div class="price-card">
+                    <h4>Plan Full Diario VIP</h4>
+                    <p class="price-tag">Acceso Ilimitado (Todos los días)</p>
+                    <p style="font-size: 0.9rem; color: #555;">Acompañamiento diario completo en todas las asignaturas y nivelación académica intensiva.</p>
+                </div>
             </div>
         </div>
 
         <!-- FORMULARIO SOLICITUD BECA VIP -->
         <div class="form-section" id="solicitud">
-            <h2>Solicita tu Beca VIP de 7 Días</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 25px;">Completa tus datos para activar la prueba gratuita de tu hijo inmediatamente.</p>
+            <h2>🎁 Prueba el Servicio Gratis por 7 Días</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 25px;">Pide tu Beca VIP de 7 días sin compromiso para que compruebes el cambio en tu hogar.</p>
 
             <form id="becaForm">
                 <div class="form-group">
@@ -252,27 +325,25 @@
 
         <!-- SECCIÓN DE ACTIVACIÓN EN TELEGRAM / QR -->
         <div style="text-align: center; margin-top: 40px; background: white; padding: 35px 20px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 2px solid #50E3C2;">
-            <h3 style="color: #2C3E50; font-size: 1.5rem; margin-bottom: 10px;">🎉 ¡Haz efectiva tu Beca VIP de 7 Días aquí!</h3>
-            <p style="color: #555; margin-bottom: 25px; font-size: 1.05rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                Haz clic en el botón de abajo para conectar directamente con nuestro <strong>Asistente de Escolaridad en Telegram</strong> y comenzar tu prueba gratuita.
+            <h3 style="color: #2C3E50; font-size: 1.4rem; margin-bottom: 10px;">🎉 ¡Ingresa al Asistente en Telegram!</h3>
+            <p style="color: #555; margin-bottom: 25px; font-size: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Haz clic abajo para abrir el canal del <strong>Asistente de Escolaridad</strong> en Telegram e iniciar tu prueba gratuita de 7 días.
             </p>
 
-            <!-- BOTÓN DIRECTO A TELEGRAM -->
-            <a href="https://t.me/Soberanasnaturebot" target="_blank" class="btn" style="background-color: #0088cc; display: inline-block; width: auto; padding: 16px 35px; font-size: 1.15rem; border-radius: 30px; color: white; text-decoration: none; font-weight: bold; box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);">
-                🎁 Inscríbete aquí y activa tus 7 Días Gratis
+            <a href="https://t.me/Soberanasnaturebot" target="_blank" class="btn" style="background-color: #0088cc; display: inline-block; width: auto; padding: 16px 35px; font-size: 1.1rem; border-radius: 30px; color: white; text-decoration: none; font-weight: bold;">
+                🚀 Conectar con el Asistente en Telegram
             </a>
 
-            <!-- OPCIÓN PARA ESCANEAR EL QR DESDE EL COMPUTADOR -->
-            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
-                <p style="font-size: 0.9rem; color: #777; margin-bottom: 10px;">¿Estás desde un computador? Escanea este código QR con la cámara de tu celular:</p>
-                <img src="qr-beca.jpg" alt="Código QR Beca 7 Días" style="max-width: 180px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid #eee;">
+                <p style="font-size: 0.85rem; color: #777; margin-bottom: 10px;">¿Estás desde un computador? Escanea este código QR con tu celular:</p>
+                <img src="qr-beca.jpg" alt="Código QR Beca 7 Días" style="max-width: 170px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
             </div>
         </div>
 
     </div>
 
     <!-- BOTÓN FLOTANTE DE WHATSAPP -->
-    <a href="https://wa.me/56927541231?text=Hola,%20quiero%20consultar%20por%20la%20Beca%20VIP%20de%207%20Días" 
+    <a href="https://wa.me/56927541231?text=Hola,%20quiero%20más%20información%20sobre%20el%20Asistente%20de%20Escolaridad%20y%20la%20Beca%20VIP" 
        class="whatsapp-float" 
        target="_blank" 
        aria-label="Contacto por WhatsApp">
@@ -282,15 +353,14 @@
     </a>
 
     <footer>
-        <p>&copy; 2026 Asistente de Escolaridad Personalizado | Educación con Empatía y Compromiso</p>
+        <p>&copy; 2026 Asistente de Escolaridad Personalizado | Servicio de Acompañamiento y Nivelación</p>
     </footer>
 
-    <!-- LÓGICA DE ENVÍO DEL FORMULARIO A WHATSAPP -->
+    <!-- JS WHATSAPP -->
     <script>
         document.getElementById('becaForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // ⚠️ CAMBIA ESTE NÚMERO POR TU NÚMERO DE WHATSAPP REAL (Ej: 56912345678)
             const numeroWhatsApp = "56927541231"; 
 
             const apoderado = document.getElementById('nombreApoderado').value;
@@ -298,15 +368,15 @@
             const curso = document.getElementById('curso').value;
             const materia = document.getElementById('materia').value;
 
-            const mensaje = `Hola, quiero activar la Beca VIP de 7 Días.%0A%0A` +
-                            `📌 *Datos de Solicitud:*%0A` +
-                            `👤 *Apoderado:* ${apoderado}%0A` +
+            const mensaje = `Hola, quiero solicitar la Beca VIP de 7 Días y conocer los Planes.%0A%0A` +
+                            `📌 *Datos del Apoderado:*%0A` +
+                            `👤 *Nombre:* ${apoderado}%0A` +
                             `👦 *Alumno:* ${alumno}%0A` +
                             `🏫 *Curso:* ${curso}%0A` +
-                            `📚 *Materia a reforzar:* ${materia}`;
+                            `📚 *Materia:* ${materia}`;
 
             window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, '_blank');
         });
     </script>
 </body>
-                  </html>
+</html>
