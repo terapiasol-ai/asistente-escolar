@@ -1,1 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente de Escolaridad Personalizado | Acompañamiento y Nivelación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4A90E2;
+            --secondary: #50E3C2;
+            --dark: #2C3E50;
+            --light: #F8F9FA;
+            --accent: #FF6B6B;
+        }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), #357ABD);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 25px;
+            opacity: 0.95;
+        }
+
+        .badge {
+            background-color: var(--accent);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .highlight-box {
+            background-color: #EBF5FF;
+            border-left: 5px solid var(--primary);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+
+        /* Formulario de Beca */
+        .form-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-top: 40px;
+        }
+
+        .form-section h2 {
+            text-align: center;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #E2E8F0;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            background-color: #25D366;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #1EBE5D;
+        }
+
+        /* Botón Flotante de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.12);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+            background-color: #1EBE5D;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--dark);
+            color: white;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PORTADA PRINCIPAL -->
+    <header>
+        <span class="badge">🎁 Beca VIP 7 Días Disponibles</span>
+        <h1>Tardes de Estudio en Paz y Sin Estrés</h1>
+        <p>Un Asistente de Escolaridad que apoya a tu hijo en sus tareas diarias y nivelación académica. Tú recuperas tu tranquilidad, él aprende a su ritmo.</p>
+    </header>
+
+    <div class="container">
+
+        <!-- MENSAJE EMPÁTICO -->
+        <div class="highlight-box">
+            <h2>¿Cansada de pelear a la hora de hacer los deberes?</h2>
+            <p>Enseñar a nuestros propios hijos puede ser agotador. Cuando aparece la frustración y el cansancio, los niños se bloquean. Nuestro sistema ofrece un acompañamiento paciente y personalizado, actuando como un asistente de escolaridad que resuelve sus dudas diarias sin generar presión.</p>
+        </div>
+
+        <!-- BENEFICIOS CLAVE -->
+        <h2 style="text-align: center; margin-top: 40px;">¿Cómo apoya nuestro Asistente a tu hijo?</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>📚 Deberes Diarios</h3>
+                <p>Resuelve las dudas de las tareas del colegio día a día, guiándolo para que comprenda los contenidos por sí mismo.</p>
+            </div>
+            <div class="card">
+                <h3>🎯 Nivelación Académica</h3>
+                <p>Identifica los contenidos donde tiene vacíos (Matemáticas, Lenguaje, etc.) y los refuerza con paciencia.</p>
+            </div>
+            <div class="card">
+                <h3>🌱 Aprendizaje con Empatía</h3>
+                <p>Enseña sin gritos ni presiones, adaptándose al ritmo único de aprendizaje de cada estudiante.</p>
+            </div>
+        </div>
+
+        <!-- FORMULARIO SOLICITUD BECA VIP -->
+        <div class="form-section" id="solicitud">
+            <h2>Solicita tu Beca VIP de 7 Días</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 25px;">Completa tus datos para activar la prueba gratuita de tu hijo inmediatamente.</p>
+
+            <form id="becaForm">
+                <div class="form-group">
+                    <label>Tu Nombre Completo (Apoderado):</label>
+                    <input type="text" id="nombreApoderado" placeholder="Ej: María González" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Nombre de tu hijo/a:</label>
+                    <input type="text" id="nombreAlumno" placeholder="Ej: Lucas" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Curso o Nivel Escolar:</label>
+                    <input type="text" id="curso" placeholder="Ej: 5° Básico" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Asignatura principal a reforzar:</label>
+                    <select id="materia" required>
+                        <option value="">Selecciona una materia...</option>
+                        <option value="Matemáticas">Matemáticas</option>
+                        <option value="Lenguaje y Comunicación">Lenguaje y Comunicación</option>
+                        <option value="Ciencias">Ciencias</option>
+                        <option value="Historia">Historia</option>
+                        <option value="Varias materias / Tareas generales">Varias materias / Tareas generales</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn">📲 Solicitar Beca VIP por WhatsApp</button>
+            </form>
+        </div>
+
+        <!-- SECCIÓN DE ACTIVACIÓN EN TELEGRAM / QR -->
+        <div style="text-align: center; margin-top: 40px; background: white; padding: 35px 20px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 2px solid #50E3C2;">
+            <h3 style="color: #2C3E50; font-size: 1.5rem; margin-bottom: 10px;">🎉 ¡Haz efectiva tu Beca VIP de 7 Días aquí!</h3>
+            <p style="color: #555; margin-bottom: 25px; font-size: 1.05rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Haz clic en el botón de abajo para conectar directamente con nuestro <strong>Asistente de Escolaridad en Telegram</strong> y comenzar tu prueba gratuita.
+            </p>
+
+            <!-- BOTÓN DIRECTO A TELEGRAM -->
+            <a href="https://t.me/Soberanasnaturebot" target="_blank" class="btn" style="background-color: #0088cc; display: inline-block; width: auto; padding: 16px 35px; font-size: 1.15rem; border-radius: 30px; color: white; text-decoration: none; font-weight: bold; box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);">
+                🎁 Inscríbete aquí y activa tus 7 Días Gratis
+            </a>
+
+            <!-- OPCIÓN PARA ESCANEAR EL QR DESDE EL COMPUTADOR -->
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
+                <p style="font-size: 0.9rem; color: #777; margin-bottom: 10px;">¿Estás desde un computador? Escanea este código QR con la cámara de tu celular:</p>
+                <img src="qr-beca.jpg" alt="Código QR Beca 7 Días" style="max-width: 180px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/569XXXXXXXX?text=Hola,%20quiero%20consultar%20por%20la%20Beca%20VIP%20de%207%20Días" 
+       class="whatsapp-float" 
+       target="_blank" 
+       aria-label="Contacto por WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="white">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.157 4.228 4.305-1.129z"/>
+        </svg>
+    </a>
+
+    <footer>
+        <p>&copy; 2026 Asistente de Escolaridad Personalizado | Educación con Empatía y Compromiso</p>
+    </footer>
+
+    <!-- LÓGICA DE ENVÍO DEL FORMULARIO A WHATSAPP -->
+    <script>
+        document.getElementById('becaForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // ⚠️ CAMBIA ESTE NÚMERO POR TU NÚMERO DE WHATSAPP REAL (Ej: 56912345678)
+            const numeroWhatsApp = "56927541231"; 
+
+            const apoderado = document.getElementById('nombreApoderado').value;
+            const alumno = document.getElementById('nombreAlumno').value;
+            const curso = document.getElementById('curso').value;
+            const materia = document.getElementById('materia').value;
+
+            const mensaje = `Hola, quiero activar la Beca VIP de 7 Días.%0A%0A` +
+                            `📌 *Datos de Solicitud:*%0A` +
+                            `👤 *Apoderado:* ${apoderado}%0A` +
+                            `👦 *Alumno:* ${alumno}%0A` +
+                            `🏫 *Curso:* ${curso}%0A` +
+                            `📚 *Materia a reforzar:* ${materia}`;
+
+            window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, '_blank');
+        });
+    </script>
+</body>
+                  </html>
