@@ -490,19 +490,67 @@
 
     </div>
 
-    <!-- BOTÓN FLOTANTE AURION (BECA DE 7 DÍAS) -->
-<a href="https://wa.me/56945719195?text=Hola%20Valentina,%20vengo%20por%20la%20Beca%20de%207%20días%20de%20Aurion" target="_blank" style="text-decoration: none;">
-  <div style="display: flex; align-items: center; background: #000; border: 2px solid #ffcc00; border-radius: 50px; padding: 8px 18px; box-shadow: 0 4px 15px rgba(255,204,0,0.3); max-width: 320px; margin: 15px auto;">
-    <div style="width: 48px; height: 48px; border-radius: 50%; overflow: hidden; border: 2px solid #ffcc00; margin-right: 12px; flex-shrink: 0;">
-      <img src="https://i.ibb.co/vzR0FmC/valentina.png" alt="Valentina" style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div style="text-align: left;">
-      <div style="color: #ffcc00; font-size: 14px; font-weight: bold; font-family: sans-serif;">Secretaria Aurion</div>
-      <div style="color: #ffffff; font-size: 12px; font-family: sans-serif;">🎓 Pedir Beca de 7 días aquí</div>
-    </div>
+<!-- BOTÓN DE PRUEBA OPTILENS (AGENDAMIENTO EN 1 MINUTO) -->
+<a href="https://wa.me/56945719195?text=Hola%20Valentina,%20quiero%20agendar%20una%20hora%20en%20OptiLens" class="boton-flotante-optilens" target="_blank">
+  <div class="icono-avatar">
+    <img src="https://cdn-icons-png.flaticon.com/512/4140/4140047.png" alt="Valentina">
+  </div>
+  <div class="texto-btn">
+    <div class="titulo-btn">Valentina - OptiLens</div>
+    <div class="sub-btn">🎙️ Agenda en 1 min (sin escribir)</div>
   </div>
 </a>
 
+<style>
+.boton-flotante-optilens {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  background: rgba(18, 18, 18, 0.95);
+  border: 1.5px solid #ffcc00;
+  border-radius: 40px;
+  padding: 6px 14px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(255, 204, 0, 0.25);
+  z-index: 9999;
+  backdrop-filter: blur(5px);
+  transition: transform 0.2s ease;
+}
+.boton-flotante-optilens:hover {
+  transform: scale(1.03);
+}
+.icono-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1.5px solid #ffcc00;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+.icono-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.texto-btn {
+  text-align: left;
+  line-height: 1.2;
+}
+.titulo-btn {
+  color: #ffcc00;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.sub-btn {
+  color: #ffffff;
+  font-size: 11px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+    </style>
     <footer>
         <p>&copy; 2026 Asistente de Escolaridad Personalizado | Servicio de Acompañamiento y Nivelación</p>
     </footer>
