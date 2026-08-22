@@ -15,6 +15,7 @@
             --text-muted: #A0AEC0;
             --accent-red: #E53E3E;
             --success-green: #25D366;
+            --telegram-blue: #0088cc;
         }
 
         * {
@@ -30,7 +31,7 @@
             line-height: 1.6;
         }
 
-        h1, h2, h3, .brand-title {
+        h1, h2, h3 {
             font-family: 'Cinzel', serif;
             letter-spacing: 1px;
         }
@@ -44,14 +45,14 @@
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             color: var(--gold-light);
             margin-bottom: 15px;
             text-shadow: 0 2px 10px rgba(212, 175, 55, 0.2);
         }
 
         header p {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             max-width: 750px;
             margin: 0 auto 25px;
             color: var(--text-muted);
@@ -89,12 +90,6 @@
             border: 1px solid rgba(212, 175, 55, 0.2);
             box-shadow: 0 8px 25px rgba(0,0,0,0.4);
             text-align: center;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--gold);
         }
 
         .card h3 {
@@ -116,7 +111,6 @@
             margin-bottom: 15px;
         }
 
-        /* Comparativa de Precio */
         .comparison-box {
             background: linear-gradient(135deg, #2A1A1A 0%, #1A222D 100%);
             border: 1px solid var(--accent-red);
@@ -126,11 +120,6 @@
             text-align: center;
         }
 
-        .comparison-box strong {
-            color: #FEB2B2;
-        }
-
-        /* Sección de Pasos */
         .steps-box {
             background: var(--card-bg);
             border: 1px dashed var(--gold);
@@ -174,7 +163,6 @@
             flex-shrink: 0;
         }
 
-        /* Sección de Planes y Precios */
         .pricing-section {
             margin-top: 50px;
             background: var(--card-bg);
@@ -225,45 +213,9 @@
             margin-right: 8px;
         }
 
-        /* Formulario */
-        .form-section {
-            background: var(--card-bg);
-            padding: 40px 25px;
-            border-radius: 15px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            margin-top: 50px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--gold-light);
-        }
-
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 12px;
-            background: #121820;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 8px;
-            font-size: 1rem;
-            color: white;
-        }
-
-        .form-group input:focus, .form-group select:focus {
-            outline: none;
-            border-color: var(--gold);
-        }
-
         .btn {
             display: block;
             width: 100%;
-            background: linear-gradient(135deg, #25D366, #1EBE5D);
             color: white;
             padding: 16px;
             text-align: center;
@@ -276,9 +228,13 @@
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366, #1EBE5D);
+        }
+
         .btn:hover {
             transform: scale(1.02);
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
 
         footer {
@@ -294,7 +250,6 @@
 </head>
 <body>
 
-    <!-- PORTADA PRINCIPAL -->
     <header>
         <span class="badge">✨ Tu Solución Escolar Diaria</span>
         <h1>Asistente de Escolaridad Personalizado</h1>
@@ -303,29 +258,26 @@
 
     <div class="container">
 
-        <!-- MENSAJE DE VALOR -->
         <div class="highlight-box">
             <h2>¿Cansada de discutir a la hora de hacer las tareas?</h2>
-            <p>Enseñar a nuestros propios hijos suele ser agotador. Nuestro <strong>Asistente de Escolaridad</strong> actúa como un guía paciente de compañía que le ayuda a comprender sus materias día a día, adaptándose a su propio ritmo sin gritos ni presiones.</p>
+            <p>Enseñar a nuestros propios hijos suele ser agotador. Nuestro <strong>Asistente de Escolaridad</strong> actúa como un guía paciente que le ayuda a comprender sus materias día a día, adaptándose a su propio ritmo sin gritos ni presiones.</p>
         </div>
 
-        <!-- COMPARATIVA CON PROFESOR PARTICULAR -->
         <div class="comparison-box">
             <h3 style="color: #FEB2B2; margin-bottom: 10px;">💡 ¿Sabías cuánto cuesta un profesor particular tradicional?</h3>
-            <p>En Chile, un profesor particular presencial cobra entre <strong>$25.000 y $30.000 CLP por solo 1 hora</strong> de clase.<br>
+            <p>En Chile, un profesor particular presencial cobra entre <strong>$25.000 y $30.000 CLP por solo 1 hora</strong>.<br>
             Con nuestro <strong>Asistente de Escolaridad</strong>, obtienes acompañamiento constante durante toda la semana por el mismo valor de 1 sola hora presencial.</p>
         </div>
 
-        <!-- CARACTERÍSTICAS DEL SERVICIO -->
         <h2 style="text-align: center; margin-top: 40px; color: var(--gold-light);">¿Qué resuelve nuestro Asistente?</h2>
         <div class="grid">
             <div class="card">
                 <h3>📚 Deberes y Tareas Diarias</h3>
-                <p>Resuelve dudas de tareas escolares, explicando el paso a paso para que el niño entienda por sí mismo.</p>
+                <p>Resuelve dudas de tareas escolares paso a paso para que el niño aprenda por sí mismo.</p>
             </div>
             <div class="card">
                 <h3>🎯 Nivelación Académica</h3>
-                <p>Refuerza materias complejas (Matemáticas, Lenguaje, Ciencias) para ponerlo al día con su curso.</p>
+                <p>Refuerza materias complejas (Matemáticas, Lenguaje, Ciencias) para ponerlo al día.</p>
             </div>
             <div class="card">
                 <h3>🌱 Paz para la Familia</h3>
@@ -333,10 +285,10 @@
             </div>
         </div>
 
-        <!-- REQUISITOS PARA ACTIVAR LA BECA -->
+        <!-- REQUISITOS BECA -->
         <div class="steps-box">
             <h2 style="text-align: center; color: var(--gold-light);">🎁 Requisitos para obtener tu Beca VIP (7 Días Gratis)</h2>
-            <p style="text-align: center; color: var(--text-muted); margin-top: 5px;">Para activar tu beneficio y formar parte de nuestra comunidad, completa estos 4 pasos sencillos:</p>
+            <p style="text-align: center; color: var(--text-muted); margin-top: 5px;">Completa estos 4 pasos sencillos para activar tu beneficio:</p>
 
             <ul class="steps-list">
                 <li>
@@ -345,29 +297,31 @@
                 </li>
                 <li>
                     <span class="step-number">2</span>
-                    <span>Dale <strong>'Me Gusta' (dedito arriba) 👍</strong>, déjanos un comentario y <strong>suscríbete al canal 🔔</strong>.</span>
+                    <span>Dale <strong>'Me Gusta' 👍</strong>, déjanos un comentario y <strong>suscríbete al canal 🔔</strong>.</span>
                 </li>
                 <li>
                     <span class="step-number">3</span>
-                    <span><strong>Comparte el video 📲</strong> en el grupo de WhatsApp de apoderados o colegio de tu hijo.</span>
+                    <span><strong>Comparte el video 📲</strong> en el grupo de WhatsApp del colegio de tu hijo.</span>
                 </li>
                 <li>
                     <span class="step-number">4</span>
-                    <span><strong>Envíanos la captura de pantalla (pantallazo) 📸</strong> demostrando que cumpliste los pasos al solicitar tu beca.</span>
+                    <span>Ingresa a Telegram con Lucero y envíale tu captura de pantalla para activar tus 7 días.</span>
                 </li>
             </ul>
 
-            <!-- BOTONES DE YOUTUBE -->
             <div style="text-align: center; margin-top: 30px; display: flex; flex-direction: column; gap: 15px; align-items: center;">
-                <a href="https://wa.me/56927541231?text=Hola%20Lucero,%20quiero%20el%20video%20del%20regalo%20y%20activar%20mi%20Beca%20de%207%20d%C3%ADas" target="_blank" class="btn" style="background: linear-gradient(135deg, #FF0000, #CC0000); display: inline-block; width: auto; padding: 14px 30px; border-radius: 25px;">
-                    🎁 Ver Video y Pedir Beca por WhatsApp
+                <a href="https://youtube.com/shorts/1p9vNyTixps?si=qTIU2FijAdr0YKa5" target="_blank" class="btn" style="background: linear-gradient(135deg, #FF0000, #CC0000); display: inline-block; width: auto; padding: 14px 30px; border-radius: 25px;">
+                    🎁 Ver Video del Regalo (YouTube Short)
+                </a>
+                <a href="https://youtu.be/pkYgFEQbkdU?si=hRbIpL5zkRdaqwvZ" target="_blank" style="color: var(--gold-light); text-decoration: underline; font-size: 0.95rem;">
+                    📺 Ver Video Explicativo Completo
                 </a>
             </div>
         </div>
 
         <!-- PLANES Y PRECIOS -->
         <div class="pricing-section">
-            <h2 style="text-align: center; color: var(--gold-light);">Planes de Suscripción (Pesos Chilenos - CLP)</h2>
+            <h2 style="text-align: center; color: var(--gold-light);">Planes de Suscripción (CLP)</h2>
             <p style="text-align: center; color: var(--text-muted); max-width: 700px; margin: 10px auto 0;">
                 Comienza con tus <strong>7 Días Gratis de Beca VIP</strong>. Al finalizar la prueba, elige el plan ideal para tu familia:
             </p>
@@ -376,121 +330,62 @@
                 <div class="price-card">
                     <h4>Plan Ocasional</h4>
                     <p class="price-tag">$10.000 CLP / día</p>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">Ideal para resolver dudas puntuales de tareas específicas o preparar pruebas sencillas.</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Ideal para resolver dudas puntuales o preparar pruebas específicas.</p>
                 </div>
 
                 <div class="price-card featured">
                     <span style="background: var(--gold); color: #121820; padding: 3px 12px; border-radius: 10px; font-size: 0.75rem; font-weight: bold; position: absolute; top: -12px; left: 50%; transform: translateX(-50%);">OFERTA RECOMENDADA</span>
                     <h4>Plan 3 Días a la Semana</h4>
-                    <p class="price-tag"><span class="old-price">$30.000 CLP</span> $25.000 CLP / semana</p>
-                    <p style="font-size: 0.9rem; color: #CBD5E0;">¡Ahorras $5.000 CLP a la semana! Acompañamiento ideal para reforzamiento constante.</p>
+                    <p class="price-tag"><span class="old-price">$30.000 CLP</span> $25.000 CLP / sem</p>
+                    <p style="font-size: 0.9rem; color: #CBD5E0;">¡Ahorras $5.000 CLP a la semana! Reforzamiento constante.</p>
                 </div>
 
                 <div class="price-card">
                     <h4>Plan Full Diario VIP</h4>
-                    <p class="price-tag">$40.000 CLP / semana</p>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">Acompañamiento completo 5 días a la semana en todas las asignaturas escolares.</p>
+                    <p class="price-tag">$40.000 CLP / sem</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Acompañamiento completo 5 días a la semana en todas las asignaturas.</p>
                 </div>
-            </div>
-
-            <!-- MÉTODOS DE PAGO -->
-            <div style="margin-top: 35px; text-align: center; padding: 20px; background: rgba(0,0,0,0.3); border-radius: 10px; border: 1px solid rgba(212, 175, 55, 0.2);">
-                <h4 style="color: var(--gold-light); margin-bottom: 8px;">💳 Métodos de Pago Seguros</h4>
-                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">Aceptamos Tarjeta de Débito, Crédito y Transferencia mediante <strong>Mercado Pago</strong> o datos bancarios protegidos.</p>
-                <a href="https://wa.me/56927541231?text=Hola%20Lucero,%20quisiera%20solicitar%20el%20link%20de%20pago%20de%20Mercado%20Pago%20o%20los%20datos%20bancarios" target="_blank" style="color: var(--gold); text-decoration: underline; font-weight: 600;">
-                    📲 Solicitar Link de Pago de Mercado Pago por WhatsApp
-                </a>
             </div>
         </div>
 
-        <!-- FORMULARIO WHATSAPP -->
-        <div class="form-section" id="solicitud">
-            <h2 style="text-align: center; color: var(--gold-light);">📲 Completa tus Datos y Envía tu Pantallazo</h2>
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 25px;">Escribe tus datos abajo y se abrirá WhatsApp para que nos adjuntes tu captura de pantalla y activemos tus 7 días.</p>
-
-            <form id="becaForm">
-                <div class="form-group">
-                    <label>Tu Nombre Completo (Apoderado):</label>
-                    <input type="text" id="nombreApoderado" placeholder="Ej: María González" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Nombre de tu hijo/a:</label>
-                    <input type="text" id="nombreAlumno" placeholder="Ej: Lucas" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Curso o Nivel Escolar:</label>
-                    <input type="text" id="curso" placeholder="Ej: 5° Básico" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Asignatura principal a reforzar:</label>
-                    <select id="materia" required>
-                        <option value="">Selecciona una materia...</option>
-                        <option value="Matemáticas">Matemáticas</option>
-                        <option value="Lenguaje y Comunicación">Lenguaje y Comunicación</option>
-                        <option value="Ciencias">Ciencias</option>
-                        <option value="Historia">Historia</option>
-                        <option value="Varias materias / Tareas generales">Varias materias / Tareas generales</option>
-                    </select>
-                </div>
-
-                <button type="submit" class="btn">📸 Solicitar Beca y Enviar Pantallazo por WhatsApp</button>
-            </form>
-        </div>
-
-        <!-- SECCIÓN DE ACTIVACIÓN EN WHATSAPP CON EL BOTÓN DORADO DE LUCERO -->
-        <div style="text-align: center; margin-top: 40px; background: #1A222D; padding: 35px 20px; border-radius: 15px; border: 1.5px solid #ffcc00; box-shadow: 0 0 20px rgba(255, 204, 0, 0.2);">
-            <h3 style="color: #F3E5AB; font-size: 1.4rem; margin-bottom: 10px;">🎉 ¡Habla con Lucero por WhatsApp!</h3>
-            <p style="color: #A0AEC0; margin-bottom: 25px; font-size: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                Toca el botón de abajo para ingresar de inmediato con <strong>Lucero</strong> en WhatsApp e iniciar tu prueba gratuita de 7 días 24/7.
+        <!-- SECCIÓN 1: ACTIVACIÓN EN TELEGRAM (DONDE VIVE LA IA) -->
+        <div style="text-align: center; margin-top: 40px; background: #1A222D; padding: 35px 20px; border-radius: 15px; border: 1.8px solid #ffcc00; box-shadow: 0 0 20px rgba(255, 204, 0, 0.25);">
+            <span class="badge" style="background: #0088cc; color: #fff;">📱 App Inteligente en Telegram</span>
+            <h3 style="color: #F3E5AB; font-size: 1.5rem; margin-bottom: 12px;">¡Interactúa con el Asistente y activa tu Beca!</h3>
+            <p style="color: #CBD5E0; margin-bottom: 25px; font-size: 1rem; max-width: 650px; margin-left: auto; margin-right: auto;">
+                Nuestros Asistentes de Inteligencia Artificial funcionan directamente dentro de <strong>Telegram</strong> para responderte con voz y chat 24/7. Si aún no tienes Telegram, descárgalo gratis en tu celular para acceder.
             </p>
 
-            <!-- BOTÓN DORADO ELEGANTE A WHATSAPP (HABLAR CON LUCERO) -->
-            <a href="https://wa.me/56927541231?text=Hola%20Lucero,%20quiero%20activar%20mi%20Beca%20VIP%20de%207%20d%C3%ADas%20para%20el%20Asistente%20Escolar" target="_blank" style="display: inline-flex; align-items: center; background: rgba(12, 12, 14, 0.96); border: 2px solid #ffcc00; border-radius: 50px; padding: 8px 22px 8px 8px; text-decoration: none; box-shadow: 0 4px 20px rgba(255, 204, 0, 0.45); transition: transform 0.2s ease;">
-              <div style="width: 44px; height: 44px; border-radius: 50%; overflow: hidden; border: 2px solid #ffcc00; margin-right: 12px; flex-shrink: 0; box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);">
-                <img src="https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg" onerror="this.onerror=null; this.src='image%20(4).jpg';" alt="Secretaria Lucero" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <a href="https://t.me/SoberanasNatureBot?start=beca_7dias" target="_blank" style="display: inline-flex; align-items: center; background: rgba(12, 12, 14, 0.96); border: 2px solid #ffcc00; border-radius: 50px; padding: 10px 24px 10px 10px; text-decoration: none; box-shadow: 0 4px 20px rgba(255, 204, 0, 0.45);">
+              <div style="width: 46px; height: 46px; border-radius: 50%; overflow: hidden; border: 2px solid #ffcc00; margin-right: 14px; flex-shrink: 0;">
+                <img src="https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg" onerror="this.onerror=null; this.src='image%20(4).jpg';" alt="Lucero" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
               <div style="text-align: left; line-height: 1.25;">
-                <div style="color: #ffd700; font-size: 14px; font-weight: 700; font-family: sans-serif;">Hablar con Lucero</div>
+                <div style="color: #ffd700; font-size: 14.5px; font-weight: 700; font-family: sans-serif;">Hablar con Lucero en Telegram</div>
                 <div style="color: #00ff88; font-size: 12px; font-weight: 600; font-family: sans-serif;">🚀 Activar Beca de 7 días aquí</div>
               </div>
+            </a>
+        </div>
+
+        <!-- SECCIÓN 2: VITRINA COMERCIAL EN WHATSAPP BUSINESS (CATÁLOGO) -->
+        <div style="text-align: center; margin-top: 35px; background: rgba(26, 34, 45, 0.7); padding: 30px 20px; border-radius: 15px; border: 1px solid rgba(37, 211, 102, 0.4);">
+            <h3 style="color: #25D366; font-size: 1.3rem; margin-bottom: 10px;">🏪 Visita nuestra Tienda y Catálogo en WhatsApp</h3>
+            <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem; max-width: 650px; margin-left: auto; margin-right: auto;">
+                ¿Quieres explorar todos nuestros asistentes, ver el artículo del regalo y conocer las opciones comerciales? Visita nuestro catálogo en WhatsApp Business.
+            </p>
+            <a href="https://wa.me/56927541231?text=Hola%20Sol,%20vengo%20a%20ver%20el%20Catálogo%20y%20conocer%20los%20Asistentes" target="_blank" class="btn btn-whatsapp" style="display: inline-block; width: auto; padding: 12px 30px; border-radius: 25px; font-size: 1rem;">
+                📲 Ver Catálogo de Productos en WhatsApp
             </a>
         </div>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 Asistente de Escolaridad Personalizado | Servicio de Acompañamiento y Nivelación</p>
+        <p>&copy; 2026 Asistente de Escolaridad Personalizado | Aurion - Creado por Sol Sánchez</p>
     </footer>
 
-    <!-- JS FORMULARIO WHATSAPP -->
-    <script>
-        document.getElementById('becaForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const numeroWhatsApp = "56927541231"; 
-
-            const apoderado = document.getElementById('nombreApoderado').value;
-            const alumno = document.getElementById('nombreAlumno').value;
-            const curso = document.getElementById('curso').value;
-            const materia = document.getElementById('materia').value;
-
-            const mensaje = `Hola Lucero! Ya cumpli los requisitos en YouTube.%0A` +
-                            `📌 *Adjunto mis datos para activar la Beca VIP de 7 Dias:*%0A` +
-                            `👤 *Apoderado:* ${apoderado}%0A` +
-                            `👦 *Alumno:* ${alumno}%0A` +
-                            `🏫 *Curso:* ${curso}%0A` +
-                            `📚 *Materia:* ${materia}%0A%0A` +
-                            `📸 (Aqui te adjunto el pantallazo)`;
-
-            window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, '_blank');
-        });
-    </script>
-
-    <!-- BOTÓN FLOTANTE EN ESQUINA INFERIOR (WHATSAPP LUCERO) -->
-    <a href="https://wa.me/56927541231?text=Hola%20Lucero,%20quiero%20pedir%20la%20Beca%20de%207%20d%C3%ADas%20del%20Asistente%20Escolar" 
+    <!-- BOTÓN FLOTANTE OFICIAL DIRECTO A TELEGRAM -->
+    <a href="https://t.me/SoberanasNatureBot?start=beca_7dias" 
        target="_blank" 
        style="position: fixed !important; bottom: 22px !important; right: 20px !important; z-index: 99999999 !important; display: flex !important; align-items: center !important; background: rgba(12, 12, 14, 0.96) !important; border: 2px solid #ffcc00 !important; border-radius: 50px !important; padding: 6px 16px 6px 6px !important; text-decoration: none !important; box-shadow: 0 4px 20px rgba(255, 204, 0, 0.45) !important; backdrop-filter: blur(10px) !important;">
       <div style="width: 44px !important; height: 44px !important; border-radius: 50% !important; overflow: hidden !important; border: 2px solid #ffcc00 !important; margin-right: 12px !important; flex-shrink: 0 !important; box-shadow: 0 0 10px rgba(255, 204, 0, 0.5) !important;">
@@ -504,6 +399,6 @@
         <div style="color: #00ff88 !important; font-size: 11.5px !important; font-weight: 600 !important; font-family: sans-serif !important;">🎓 Pedir Beca de 7 días aquí</div>
       </div>
     </a>
-   
+
 </body>
-</html>
+                                                   </html>
