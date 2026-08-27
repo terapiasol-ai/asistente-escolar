@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asistente de Escolaridad Personalizado | Servicio y Beca VIP</title>
+    <title>AURION Escolaridad | Tutoría con PNL & Escuela de Negocios</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -31,7 +31,7 @@
             line-height: 1.6;
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Cinzel', serif;
             letter-spacing: 1px;
         }
@@ -53,7 +53,7 @@
 
         header p {
             font-size: 1.1rem;
-            max-width: 750px;
+            max-width: 800px;
             margin: 0 auto 25px;
             color: var(--text-muted);
         }
@@ -71,7 +71,7 @@
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1050px;
             margin: 0 auto;
             padding: 40px 20px;
         }
@@ -87,28 +87,34 @@
             background: var(--card-bg);
             padding: 30px;
             border-radius: 12px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.25);
             box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-            text-align: center;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .card h3 {
             color: var(--gold);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            font-size: 1.25rem;
         }
 
         .highlight-box {
-            background: rgba(26, 34, 45, 0.9);
-            border: 1px solid var(--gold);
-            padding: 30px;
-            border-radius: 12px;
+            background: rgba(26, 34, 45, 0.95);
+            border: 1.5px solid var(--gold);
+            padding: 35px 25px;
+            border-radius: 15px;
             margin: 30px 0;
             text-align: center;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
         }
 
         .highlight-box h2 {
             color: var(--gold-light);
             margin-bottom: 15px;
+            font-size: 1.8rem;
         }
 
         .comparison-box {
@@ -120,10 +126,18 @@
             text-align: center;
         }
 
+        .triada-box {
+            background: linear-gradient(145deg, #182230, #0f151e);
+            border: 2px solid var(--gold);
+            border-radius: 15px;
+            padding: 35px 25px;
+            margin: 45px 0;
+        }
+
         .steps-box {
             background: var(--card-bg);
-            border: 1px dashed var(--gold);
-            padding: 35px 25px;
+            border: 2px dashed var(--gold);
+            padding: 40px 25px;
             border-radius: 15px;
             margin-top: 40px;
         }
@@ -132,13 +146,13 @@
             list-style: none;
             margin-top: 25px;
             text-align: left;
-            max-width: 750px;
+            max-width: 780px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .steps-list li {
-            padding: 15px 0;
+            padding: 16px 0;
             border-bottom: 1px solid rgba(255,255,255,0.08);
             font-size: 1.05rem;
             display: flex;
@@ -152,8 +166,8 @@
         .step-number {
             background: var(--gold);
             color: #121820;
-            width: 34px;
-            height: 34px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             display: inline-flex;
             align-items: center;
@@ -161,6 +175,7 @@
             font-weight: bold;
             margin-right: 15px;
             flex-shrink: 0;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
         }
 
         .pricing-section {
@@ -190,11 +205,11 @@
         .price-card.featured {
             border: 2px solid var(--gold);
             background: #1E2836;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
         }
 
         .price-card h4 {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             color: var(--gold-light);
             margin-bottom: 10px;
         }
@@ -217,15 +232,21 @@
             display: block;
             width: 100%;
             color: white;
-            padding: 16px;
+            padding: 15px;
             text-align: center;
             border: none;
             border-radius: 8px;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 700;
             cursor: pointer;
             text-decoration: none;
             transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #D4AF37, #AA7C11);
+            color: #121820 !important;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
         }
 
         .btn-whatsapp {
@@ -251,70 +272,93 @@
 <body>
 
     <header>
-        <span class="badge">✨ Tu Solución Escolar Diaria</span>
-        <h1>Asistente de Escolaridad Personalizado</h1>
-        <p>Acompañamiento paciente y constante para las tareas del colegio y la nivelación de tu hijo. Olvídate del estrés de las tardes y devuelve la paz a tu hogar.</p>
+        <span class="badge">✨ Plataforma de Despertar y Soberanía</span>
+        <h1>Tu Malla Curricular: Un Viaje de Aprendizaje</h1>
+        <p>Acompañamiento paciente con PNL para las tareas escolares, formación de creadores de tecnología y Escuela de Negocios para salir del modo supervivencia.</p>
+        
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+            <a href="https://t.me/Solsanchez_bot" class="btn btn-gold" style="width: auto; padding: 12px 28px; border-radius: 50px;">
+                ✈️ Abrir Asistente en Telegram
+            </a>
+            <a href="https://wa.me/56927541231?text=Hola%20Lucero,%20quiero%20conocer%20el%20Tutor%20Escolar%20y%20la%20Escuela%20de%20Negocios" class="btn btn-whatsapp" style="width: auto; padding: 12px 28px; border-radius: 50px;">
+                📲 Hablar por WhatsApp
+            </a>
+        </div>
     </header>
 
     <div class="container">
 
         <div class="highlight-box">
-            <h2>¿Cansada de discutir a la hora de hacer las tareas?</h2>
-            <p>Enseñar a nuestros propios hijos suele ser agotador. Nuestro <strong>Asistente de Escolaridad</strong> actúa como un guía paciente que le ayuda a comprender sus materias día a día, adaptándose a su propio ritmo sin gritos ni presiones.</p>
+            <h2>¿Tardes de estudio difíciles o estrés con las tareas?</h2>
+            <p style="font-size: 1.1rem; color: #CBD5E0; max-width: 850px; margin: 0 auto;">
+                Cuando la enseñanza se da con calma, <strong>el entendimiento florece de manera natural</strong>. Nuestra tutora pedagógica <strong>SOFÍA</strong> acompaña a tu hijo paso a paso con la paciencia de un profesor presente, adaptándose a su propio ritmo sin gritos ni frustración.
+            </p>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- LA TRÍADA EDUCATIVA AURION: ESCOLARIDAD + IA + NEGOCIOS -->
+        <!-- ============================================================== -->
+        <div class="triada-box">
+            <h2 style="text-align: center; color: var(--gold-light); margin-bottom: 10px;">🧩 La Tríada de Soberanía AURION</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">Todo está conectado para formar niños y jóvenes empoderados, no consumidores pasivos:</p>
+
+            <div class="grid" style="margin-top: 0;">
+                <div class="card">
+                    <div>
+                        <h3>📚 1. Tutoría Escolar con PNL (Sofía)</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Acompañamiento escolar integral, orden de mochila, hábitos de estudio y preparación de pruebas con simulacros lúdicos de 3 preguntas sin regalar respuestas.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>💻 2. Creadores de Tecnología e IA</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Enseña a los jóvenes a construir herramientas con IA y No-Code para crear activos digitales propios en lugar de consumir pantallas pasivamente.</p>
+                    </div>
+                </div>
+
+                <div class="card" style="border: 2px solid var(--gold);">
+                    <div>
+                        <h3>📈 3. Escuela de Negocios (LEO)</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">El juego interactivo <strong>Metrópoli del Siglo XXI</strong> con <strong>$20.000 USD de entrenamiento</strong> para aprender a invertir en S&P 500, QQQ, Apple y Bienes Raíces.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="comparison-box">
             <h3 style="color: #FEB2B2; margin-bottom: 10px;">💡 ¿Sabías cuánto cuesta un profesor particular tradicional?</h3>
-            <p>En Chile, un profesor particular presencial cobra entre <strong>$25.000 y $30.000 CLP por solo 1 hora</strong>.<br>
-            Con nuestro <strong>Asistente de Escolaridad</strong>, obtienes acompañamiento constante durante toda la semana por el mismo valor de 1 sola hora presencial.</p>
+            <p>En Chile, un profesor presencial cobra entre <strong>$25.000 y $30.000 CLP por solo 1 hora</strong>.<br>
+            Con el <strong>Tutor Escolar AURION</strong>, obtienes acompañamiento constante durante todo el mes por el valor de 1 sola hora presencial.</p>
         </div>
 
-        <h2 style="text-align: center; margin-top: 40px; color: var(--gold-light);">¿Qué resuelve nuestro Asistente?</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>📚 Deberes y Tareas Diarias</h3>
-                <p>Resuelve dudas de tareas escolares paso a paso para que el niño aprenda por sí mismo.</p>
-            </div>
-            <div class="card">
-                <h3>🎯 Nivelación Académica</h3>
-                <p>Refuerza materias complejas (Matemáticas, Lenguaje, Ciencias) para ponerlo al día.</p>
-            </div>
-            <div class="card">
-                <h3>🌱 Paz para la Familia</h3>
-                <p>Tú dejas de ser la profesora y vuelves a disfrutar de tu tiempo libre con tu hijo.</p>
-            </div>
-        </div>
-
-        <!-- REQUISITOS BECA -->
+        <!-- REQUISITOS BECA DE 7 DÍAS -->
         <div class="steps-box">
-            <h2 style="text-align: center; color: var(--gold-light);">🎁 Requisitos para obtener tu Beca VIP (7 Días Gratis)</h2>
-            <p style="text-align: center; color: var(--text-muted); margin-top: 5px;">Completa estos 4 pasos sencillos para activar tu beneficio:</p>
+            <h2 style="text-align: center; color: var(--gold-light);">🎁 Activa tu Beca VIP (7 Días Gratis)</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-top: 5px;">Completa estos 4 sencillos pasos de reciprocidad para activar tu beneficio:</p>
 
             <ul class="steps-list">
                 <li>
                     <span class="step-number">1</span>
-                    <span>Mira nuestro video en YouTube donde te explico el regalo de la Beca VIP.</span>
+                    <span>Mira nuestro video explicativo y dale <strong>'Me Gusta' 👍</strong>.</span>
                 </li>
                 <li>
                     <span class="step-number">2</span>
-                    <span>Dale <strong>'Me Gusta' 👍</strong>, déjanos un comentario y <strong>suscríbete al canal 🔔</strong>.</span>
+                    <span><strong>Suscríbete al canal 🔔</strong> para seguir recibiendo herramientas educativas.</span>
                 </li>
                 <li>
                     <span class="step-number">3</span>
-                    <span><strong>Comparte el video 📲</strong> en el grupo de WhatsApp del colegio de tu hijo.</span>
+                    <span><strong>Comparte el enlace 📲</strong> en el grupo de WhatsApp de apoderados de tu colegio.</span>
                 </li>
                 <li>
                     <span class="step-number">4</span>
-                    <span>Ingresa a Telegram con Lucero y envíale tu captura de pantalla para activar tus 7 días.</span>
+                    <span>Déjanos un comentario contándonos <strong>qué curso cursa tu hijo</strong> y envíanos tu captura a Telegram.</span>
                 </li>
             </ul>
 
-            <div style="text-align: center; margin-top: 30px; display: flex; flex-direction: column; gap: 15px; align-items: center;">
-                <a href="https://youtube.com/shorts/1p9vNyTixps?si=qTIU2FijAdr0YKa5" target="_blank" class="btn" style="background: linear-gradient(135deg, #FF0000, #CC0000); display: inline-block; width: auto; padding: 14px 30px; border-radius: 25px;">
-                    🎁 Ver Video del Regalo (YouTube Short)
-                </a>
-                <a href="https://youtu.be/pkYgFEQbkdU?si=hRbIpL5zkRdaqwvZ" target="_blank" style="color: var(--gold-light); text-decoration: underline; font-size: 0.95rem;">
-                    📺 Ver Video Explicativo Completo
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://t.me/Solsanchez_bot" class="btn btn-gold" style="display: inline-block; width: auto; padding: 14px 35px; border-radius: 50px;">
+                    🎓 Activar Beca de 7 Días en Telegram
                 </a>
             </div>
         </div>
@@ -328,52 +372,52 @@
 
             <div class="pricing-grid">
                 <div class="price-card">
-                    <h4>Plan Ocasional</h4>
-                    <p class="price-tag">$10.000 CLP / día</p>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">Ideal para resolver dudas puntuales o preparar pruebas específicas.</p>
+                    <h4>Membresía Escuela de Negocios</h4>
+                    <p class="price-tag">$20.000 CLP / mes</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Simulador bursátil con $20.000 USD de práctica, mentoría de LEO y dinero didáctico.</p>
                 </div>
 
                 <div class="price-card featured">
-                    <span style="background: var(--gold); color: #121820; padding: 3px 12px; border-radius: 10px; font-size: 0.75rem; font-weight: bold; position: absolute; top: -12px; left: 50%; transform: translateX(-50%);">OFERTA RECOMENDADA</span>
-                    <h4>Plan 3 Días a la Semana</h4>
-                    <p class="price-tag"><span class="old-price">$30.000 CLP</span> $25.000 CLP / sem</p>
-                    <p style="font-size: 0.9rem; color: #CBD5E0;">¡Ahorras $5.000 CLP a la semana! Reforzamiento constante.</p>
+                    <span style="background: var(--gold); color: #121820; padding: 3px 12px; border-radius: 10px; font-size: 0.75rem; font-weight: bold; position: absolute; top: -12px; left: 50%; transform: translateX(-50%);">PLAN RECOMENDADO</span>
+                    <h4>Tutor Escolar Integral (Sofía)</h4>
+                    <p class="price-tag">$80.000 CLP / mes</p>
+                    <p style="font-size: 0.9rem; color: #CBD5E0;">Acompañamiento escolar completo 24/7 con PNL, hábitos y nivelación en todas las materias.</p>
                 </div>
 
                 <div class="price-card">
-                    <h4>Plan Full Diario VIP</h4>
-                    <p class="price-tag">$40.000 CLP / sem</p>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">Acompañamiento completo 5 días a la semana en todas las asignaturas.</p>
+                    <h4>Profesor de Tecnología e IA</h4>
+                    <p class="price-tag">$100.000 CLP / mes</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Formación de creadores de software, proyectos No-Code y activos digitales monetizables.</p>
                 </div>
             </div>
         </div>
 
-        <!-- SECCIÓN 1: ACTIVACIÓN EN TELEGRAM (DONDE VIVE LA IA) -->
-        <div style="text-align: center; margin-top: 40px; background: #1A222D; padding: 35px 20px; border-radius: 15px; border: 1.8px solid #ffcc00; box-shadow: 0 0 20px rgba(255, 204, 0, 0.25);">
+        <!-- SECCIÓN DE ACCESO TELEGRAM -->
+        <div style="text-align: center; margin-top: 45px; background: #1A222D; padding: 35px 20px; border-radius: 15px; border: 1.8px solid var(--gold); box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);">
             <span class="badge" style="background: #0088cc; color: #fff;">📱 App Inteligente en Telegram</span>
-            <h3 style="color: #F3E5AB; font-size: 1.5rem; margin-bottom: 12px;">¡Interactúa con el Asistente y activa tu Beca!</h3>
+            <h3 style="color: var(--gold-light); font-size: 1.5rem; margin-bottom: 12px;">¡Interactúa con el Asistente y activa tu Beca!</h3>
             <p style="color: #CBD5E0; margin-bottom: 25px; font-size: 1rem; max-width: 650px; margin-left: auto; margin-right: auto;">
-                Nuestros Asistentes de Inteligencia Artificial funcionan directamente dentro de <strong>Telegram</strong> para responderte con voz y chat 24/7. Si aún no tienes Telegram, descárgalo gratis en tu celular para acceder.
+                Nuestros Asistentes de Inteligencia Artificial funcionan directamente dentro de <strong>Telegram</strong> para responderte con voz y chat 24/7.
             </p>
 
-            <a href="https://t.me/SoberanasNatureBot?start=beca_7dias" target="_blank" style="display: inline-flex; align-items: center; background: rgba(12, 12, 14, 0.96); border: 2px solid #ffcc00; border-radius: 50px; padding: 10px 24px 10px 10px; text-decoration: none; box-shadow: 0 4px 20px rgba(255, 204, 0, 0.45);">
+            <a href="https://t.me/Solsanchez_bot" target="_blank" style="display: inline-flex; align-items: center; background: rgba(12, 12, 14, 0.96); border: 2px solid #ffcc00; border-radius: 50px; padding: 10px 24px 10px 10px; text-decoration: none; box-shadow: 0 4px 20px rgba(255, 204, 0, 0.45);">
               <div style="width: 46px; height: 46px; border-radius: 50%; overflow: hidden; border: 2px solid #ffcc00; margin-right: 14px; flex-shrink: 0;">
-                <img src="https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg" onerror="this.onerror=null; this.src='image%20(4).jpg';" alt="Lucero" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg" onerror="this.onerror=null; this.src='https://files.manuscdn.com/user_upload_by_module/session_file/310519663295304532/SXAbPHcoYQWtVFRu.jpg';" alt="Lucero" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
               <div style="text-align: left; line-height: 1.25;">
-                <div style="color: #ffd700; font-size: 14.5px; font-weight: 700; font-family: sans-serif;">Hablar con Lucero en Telegram</div>
-                <div style="color: #00ff88; font-size: 12px; font-weight: 600; font-family: sans-serif;">🚀 Activar Beca de 7 días aquí</div>
+                <div style="color: #ffd700; font-size: 14.5px; font-weight: 700;">Hablar con Lucero en Telegram</div>
+                <div style="color: #00ff88; font-size: 12px; font-weight: 600;">🚀 Activar Beca de 7 días aquí</div>
               </div>
             </a>
         </div>
 
-        <!-- SECCIÓN 2: VITRINA COMERCIAL EN WHATSAPP BUSINESS (CATÁLOGO) -->
+        <!-- SECCIÓN CATÁLOGO EN WHATSAPP BUSINESS -->
         <div style="text-align: center; margin-top: 35px; background: rgba(26, 34, 45, 0.7); padding: 30px 20px; border-radius: 15px; border: 1px solid rgba(37, 211, 102, 0.4);">
             <h3 style="color: #25D366; font-size: 1.3rem; margin-bottom: 10px;">🏪 Visita nuestra Tienda y Catálogo en WhatsApp</h3>
             <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem; max-width: 650px; margin-left: auto; margin-right: auto;">
-                ¿Quieres explorar todos nuestros asistentes, ver el artículo del regalo y conocer las opciones comerciales? Visita nuestro catálogo en WhatsApp Business.
+                ¿Quieres explorar todos nuestros asistentes y conocer las opciones comerciales? Visita nuestro catálogo oficial.
             </p>
-            <a href="https://wa.me/56927541231?text=Hola%20Sol,%20vengo%20a%20ver%20el%20Catálogo%20y%20conocer%20los%20Asistentes" target="_blank" class="btn btn-whatsapp" style="display: inline-block; width: auto; padding: 12px 30px; border-radius: 25px; font-size: 1rem;">
+            <a href="https://wa.me/56927541231?text=Hola%20Lucero,%20vengo%20a%20conocer%20el%20Cat%C3%A1logo%20de%20AURION" target="_blank" class="btn btn-whatsapp" style="display: inline-block; width: auto; padding: 12px 30px; border-radius: 25px; font-size: 1rem;">
                 📲 Ver Catálogo de Productos en WhatsApp
             </a>
         </div>
@@ -381,24 +425,5 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Asistente de Escolaridad Personalizado | Aurion - Creado por Sol Sánchez</p>
+        <p>&copy; 2026 AURION &bull; Plataforma de Despertar y Soberanía | Fundadora: Sol Sánchez Contreras</p>
     </footer>
-
-    <!-- BOTÓN FLOTANTE OFICIAL DIRECTO A TELEGRAM -->
-    <a href="https://t.me/SoberanasNatureBot?start=beca_7dias" 
-       target="_blank" 
-       style="position: fixed !important; bottom: 22px !important; right: 20px !important; z-index: 99999999 !important; display: flex !important; align-items: center !important; background: rgba(12, 12, 14, 0.96) !important; border: 2px solid #ffcc00 !important; border-radius: 50px !important; padding: 6px 16px 6px 6px !important; text-decoration: none !important; box-shadow: 0 4px 20px rgba(255, 204, 0, 0.45) !important; backdrop-filter: blur(10px) !important;">
-      <div style="width: 44px !important; height: 44px !important; border-radius: 50% !important; overflow: hidden !important; border: 2px solid #ffcc00 !important; margin-right: 12px !important; flex-shrink: 0 !important; box-shadow: 0 0 10px rgba(255, 204, 0, 0.5) !important;">
-        <img src="https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg" 
-             onerror="this.onerror=null; this.src='image%20(4).jpg';" 
-             alt="Secretaria Lucero" 
-             style="width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important;">
-      </div>
-      <div style="text-align: left !important; line-height: 1.25 !important;">
-        <div style="color: #ffd700 !important; font-size: 13.5px !important; font-weight: 700 !important; font-family: sans-serif !important;">Secretaria Lucero</div>
-        <div style="color: #00ff88 !important; font-size: 11.5px !important; font-weight: 600 !important; font-family: sans-serif !important;">🎓 Pedir Beca de 7 días aquí</div>
-      </div>
-    </a>
-
-</body>
-                                                   </html>
