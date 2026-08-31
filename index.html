@@ -188,7 +188,7 @@
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 20px;
             margin-top: 30px;
         }
@@ -196,10 +196,13 @@
         .price-card {
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 12px;
-            padding: 25px;
+            padding: 25px 20px;
             text-align: center;
             background: #121820;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .price-card.featured {
@@ -209,13 +212,13 @@
         }
 
         .price-card h4 {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             color: var(--gold-light);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .price-tag {
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             font-weight: 700;
             color: var(--gold);
             margin-bottom: 10px;
@@ -310,7 +313,7 @@
                 <div class="card">
                     <div>
                         <h3>💻 2. Alfabetización Cibernética (Profesor IA)</h3>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">Enseña a crear su propio <strong>copiloto o asistente de IA</strong> para potenciar cualquier profesión que elijan (medicina, arquitectura, leyes, arte o negocios) siendo 10 veces más rápidos y productivos.</p>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Enseña a crear su propio <strong>copiloto o asistente de IA</strong> para potenciar cualquier profesión futura (medicina, arquitectura, leyes, arte o negocios) siendo 10 veces más rápidos y productivos.</p>
                     </div>
                 </div>
 
@@ -360,32 +363,79 @@
             </div>
         </div>
 
-        <!-- PLANES Y PRECIOS -->
+        <!-- ============================================================== -->
+        <!-- PLANES Y PRECIOS ACCESIBLES Y EQUITATIVOS -->
+        <!-- ============================================================== -->
         <div class="pricing-section">
-            <h2 style="text-align: center; color: var(--gold-light);">Planes de Suscripción (CLP)</h2>
-            <p style="text-align: center; color: var(--text-muted); max-width: 700px; margin: 10px auto 0;">
-                Comienza con tus <strong>7 Días Gratis de Beca VIP</strong>. Al finalizar la prueba, elige el plan ideal para tu familia:
+            <h2 style="text-align: center; color: var(--gold-light);">Planes de Suscripción Oficiales (CLP)</h2>
+            <p style="text-align: center; color: var(--text-muted); max-width: 750px; margin: 10px auto 0;">
+                Comienza con tus <strong>7 Días Gratis de Beca VIP</strong>. Al finalizar la prueba, elige el plan ideal y equitativo para tu hogar:
             </p>
 
             <div class="pricing-grid">
+                
+                <!-- 1. ESCUELA DE NEGOCIOS -->
                 <div class="price-card">
-                    <h4>Membresía Escuela de Negocios</h4>
-                    <p class="price-tag">$20.000 CLP / mes</p>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">Simulador bursátil con $20.000 USD de práctica, mentoría de LEO y dinero didáctico.</p>
+                    <div>
+                        <h4>Escuela de Negocios LEO</h4>
+                        <p class="price-tag">$20.000 CLP / mes</p>
+                        <p style="font-size: 0.88rem; color: var(--text-muted);">Simulador bursátil con $20.000 USD de práctica, mentoría de Wall Street y 3 Mapas de Inversión.</p>
+                    </div>
                 </div>
 
+                <!-- 2. REFUERZO 2 DÍAS -->
+                <div class="price-card">
+                    <div>
+                        <h4>Plan Refuerzo (2 Días/Sem)</h4>
+                        <p class="price-tag">$15.000 CLP / mes</p>
+                        <p style="font-size: 0.88rem; color: var(--text-muted);">2 sesiones semanales para resolver dudas puntuales de tareas y materias específicas.</p>
+                    </div>
+                </div>
+
+                <!-- 3. NIVELACIÓN 3 DÍAS (DESTACADO) -->
                 <div class="price-card featured">
-                    <span style="background: var(--gold); color: #121820; padding: 3px 12px; border-radius: 10px; font-size: 0.75rem; font-weight: bold; position: absolute; top: -12px; left: 50%; transform: translateX(-50%);">PLAN RECOMENDADO</span>
-                    <h4>Tutor Escolar Integral (Sofía)</h4>
-                    <p class="price-tag">$80.000 CLP / mes</p>
-                    <p style="font-size: 0.9rem; color: #CBD5E0;">Acompañamiento escolar completo 24/7 con PNL, hábitos y nivelación en todas las materias.</p>
+                    <span style="background: var(--gold); color: #121820; padding: 3px 12px; border-radius: 10px; font-size: 0.72rem; font-weight: bold; position: absolute; top: -12px; left: 50%; transform: translateX(-50%);">PLAN MÁS ELEGIDO</span>
+                    <div>
+                        <h4>Nivelación Estándar (3 Días)</h4>
+                        <p class="price-tag">$25.000 CLP / mes</p>
+                        <p style="font-size: 0.88rem; color: #CBD5E0;">3 sesiones semanales para nivelar materias atrasadas y transformar notas rojas en azules.</p>
+                    </div>
                 </div>
 
+                <!-- 4. DÚO HERMANOS -->
                 <div class="price-card">
-                    <h4>Profesor de Tecnología e IA</h4>
-                    <p class="price-tag">$100.000 CLP / mes</p>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">Formación de creadores de software, proyectos No-Code y copilotos de IA personalizados.</p>
+                    <div>
+                        <h4>Plan Dúo Hermanos (2 Hijos)</h4>
+                        <p class="price-tag">$35.000 CLP / mes</p>
+                        <p style="font-size: 0.88rem; color: #00ff88; font-weight: 600;">¡Ahorras $15.000 CLP!</p>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Acompañamiento completo de Lunes a Viernes para 2 hijos en el mismo hogar.</p>
+                    </div>
                 </div>
+
+                <!-- 5. FULL 5 DÍAS -->
+                <div class="price-card">
+                    <div>
+                        <h4>Plan Full Escolar (5 Días)</h4>
+                        <p class="price-tag">$40.000 CLP / mes</p>
+                        <p style="font-size: 0.88rem; color: var(--text-muted);">Acompañamiento diario de Lunes a Viernes: tareas, mochila lista y pruebas coef. 2.</p>
+                    </div>
+                </div>
+
+                <!-- 6. TECNOLOGÍA E IA -->
+                <div class="price-card">
+                    <div>
+                        <h4>Profesor de Tecnología e IA</h4>
+                        <p class="price-tag">$100.000 CLP / mes</p>
+                        <p style="font-size: 0.88rem; color: var(--text-muted);">Formación de creadores de software, No-Code y asistentes de IA personalizados.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 25px; padding: 15px; background: rgba(0,0,0,0.4); border-radius: 10px; border: 1px dashed rgba(212, 175, 55, 0.4);">
+                <p style="font-size: 0.92rem; color: var(--gold-light);">
+                    🤝 <strong>Fondo de Becas Sociales y Solidarias:</strong> ¿Tu familia enfrenta una situación económica vulnerable demostrable? Consulta en el chat por la asignación de Media Beca ($12.500) o Beca Social ($6.000).
+                </p>
             </div>
         </div>
 
@@ -435,39 +485,4 @@
        style="position: fixed !important; bottom: 85px !important; right: 20px !important; z-index: 99999998 !important; display: flex !important; align-items: center !important; background: rgba(12, 12, 14, 0.96) !important; border: 2px solid #0088cc !important; border-radius: 50px !important; padding: 5px 14px 5px 5px !important; text-decoration: none !important; box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4) !important;">
       <div style="width: 36px !important; height: 36px !important; border-radius: 50% !important; overflow: hidden !important; border: 1.5px solid #0088cc !important; margin-right: 10px !important; flex-shrink: 0 !important;">
         <img src="https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg" 
-             onerror="this.onerror=null; this.src='https://files.manuscdn.com/user_upload_by_module/session_file/310519663295304532/SXAbPHcoYQWtVFRu.jpg';" 
-             alt="Telegram" 
-             style="width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important;">
-      </div>
-      <div style="text-align: left !important; line-height: 1.2 !important;">
-        <div style="color: #ffffff !important; font-size: 12px !important; font-weight: 700;">
-          AURION en Telegram
-        </div>
-        <div style="color: #00bfff !important; font-size: 10.5px !important; font-weight: 600;">
-          ✈️ Abrir Asistente 24/7
-        </div>
-      </div>
-    </a>
-
-    <!-- 2. BOTÓN WHATSAPP FLOTANTE (ABAJO) -->
-    <a href="https://wa.me/56927541231?text=Hola%20Sol,%20quiero%20conocer%20el%20Tutor%20Escolar%20y%20la%20Escuela%20de%20Negocios" 
-       target="_blank" 
-       style="position: fixed !important; bottom: 20px !important; right: 20px !important; z-index: 99999999 !important; display: flex !important; align-items: center !important; background: rgba(12, 12, 14, 0.96) !important; border: 2px solid #ffcc00 !important; border-radius: 50px !important; padding: 6px 16px 6px 6px !important; text-decoration: none !important; box-shadow: 0 4px 20px rgba(255, 204, 0, 0.45) !important;">
-      <div style="width: 44px !important; height: 44px !important; border-radius: 50% !important; overflow: hidden !important; border: 2px solid #ffcc00 !important; margin-right: 12px !important; flex-shrink: 0 !important; box-shadow: 0 0 10px rgba(255, 204, 0, 0.5) !important;">
-        <img src="https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg" 
-             onerror="this.onerror=null; this.src='https://files.manuscdn.com/user_upload_by_module/session_file/310519663295304532/SXAbPHcoYQWtVFRu.jpg';" 
-             alt="Lucero WhatsApp" 
-             style="width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important;">
-      </div>
-      <div style="text-align: left !important; line-height: 1.25 !important;">
-        <div style="color: #ffd700 !important; font-size: 13.5px !important; font-weight: 700;">
-          Secretario Lucero - AURION
-        </div>
-        <div style="color: #00ff88 !important; font-size: 11.5px !important; font-weight: 600;">
-          🎓 Hablar por WhatsApp 24/7
-        </div>
-      </div>
-    </a>
-
-</body>
-</html>
+             onerror
