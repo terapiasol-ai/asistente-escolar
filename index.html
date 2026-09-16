@@ -604,3 +604,17 @@
                 const res = await fetch(SOL_ENDPOINT, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ mensaje: mensaje, origen: "Recepción Escolar" })
+                });
+                const d = await res.json();
+                const solMsg = document.createElement("div");
+                solMsg.style.cssText = "background:#1B2636; border:1px solid rgba(212,175,55,0.3); color:#E2E8F0; padding:10px; border-radius:10px; font-size:0.88rem; line-height:1.4;";
+                solMsg.innerHTML = d.respuesta.replace(/\n/g, "<br>");
+                chat.appendChild(solMsg);
+                chat.scrollTop = chat.scrollHeight;
+            } catch(e) {}
+        }
+    </script>
+
+</body>
+</html>
