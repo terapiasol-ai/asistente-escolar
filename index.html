@@ -3,83 +3,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURION Tutoría Escolar | Hábitos, PNL y Mineduc</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>AURION | Aula Virtual & Tutoría Integral del Siglo XXI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #10151D;
-            --card-bg: #18202C;
+            --bg-dark: #0A0E14;
+            --card-bg: #141B26;
             --gold: #D4AF37;
-            --gold-light: #F3E5AB;
+            --gold-light: #F6E7B0;
             --text-light: #E2E8F0;
             --text-muted: #94A3B8;
             --accent-green: #25D366;
             --soft-blue: #63B3ED;
+            --accent-purple: #A78BFA;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
-        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; }
+        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.5; }
         h1, h2, h3, h4 { font-family: 'Cinzel', serif; letter-spacing: 0.5px; }
 
         header {
-            background: linear-gradient(180deg, #1C2736 0%, var(--bg-dark) 100%);
+            background: linear-gradient(180deg, #16202E 0%, var(--bg-dark) 100%);
             border-bottom: 2px solid var(--gold);
-            padding: 60px 20px 45px;
+            padding: 45px 15px 30px;
             text-align: center;
         }
 
         .badge {
             background: linear-gradient(135deg, #D4AF37, #AA7C11);
-            color: #10151D;
-            padding: 6px 18px;
+            color: #0A0E14;
+            padding: 5px 16px;
             border-radius: 20px;
             font-weight: 700;
             display: inline-block;
-            margin-bottom: 15px;
-            font-size: 0.85rem;
+            margin-bottom: 12px;
+            font-size: 0.8rem;
             text-transform: uppercase;
         }
 
-        header h1 { font-size: 2.2rem; color: var(--gold-light); margin-bottom: 15px; }
-        header p { font-size: 1.1rem; max-width: 800px; margin: 0 auto 25px; color: var(--text-muted); }
+        header h1 { font-size: 2rem; color: var(--gold-light); margin-bottom: 10px; }
+        header p { font-size: 1rem; max-width: 800px; margin: 0 auto; color: var(--text-muted); }
 
-        .btn-header-group { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
-        .container { max-width: 1050px; margin: 0 auto; padding: 35px 20px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 25px 15px; }
 
-        .hero-banner {
-            background: linear-gradient(135deg, #1E293B 0%, #151D28 100%);
-            border: 1.5px solid var(--gold);
-            padding: 35px 25px;
-            border-radius: 16px;
-            margin-bottom: 35px;
-            text-align: center;
+        /* ============================================================== */
+        /* SALÓN DEL AULA VIRTUAL EN VIVO */
+        /* ============================================================== */
+        .aula-box {
+            background: #111722;
+            border: 2px solid var(--gold);
+            border-radius: 18px;
+            padding: 20px 15px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.7);
+            margin-bottom: 40px;
         }
 
-        .hero-banner h2 { color: var(--gold-light); font-size: 1.8rem; margin-bottom: 12px; }
-        .habits-box { background: #141C26; border: 2px solid var(--gold); border-radius: 15px; padding: 35px 20px; margin: 40px 0; }
-        .habits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; margin-top: 20px; }
-        .habit-item { background: rgba(26, 34, 45, 0.7); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 10px; padding: 20px; text-align: left; }
-        .habit-item h4 { color: var(--gold-light); margin-bottom: 8px; font-size: 1.05rem; }
+        .aula-header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+            padding-bottom: 12px;
+            margin-bottom: 15px;
+        }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; margin-top: 25px; }
-        .card { background: var(--card-bg); padding: 25px; border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.25); }
-        .card h3 { color: var(--gold); margin-bottom: 10px; font-size: 1.2rem; }
+        .aula-title { font-size: 1.25rem; color: var(--gold-light); display: flex; align-items: center; gap: 8px; }
 
-        .comparison-box { background: #151F2D; border: 1px solid var(--soft-blue); padding: 25px 20px; border-radius: 12px; margin: 35px 0; text-align: center; }
+        .select-pais {
+            background: #1A2433;
+            color: #FFF;
+            border: 1px solid var(--gold);
+            border-radius: 12px;
+            padding: 6px 10px;
+            font-size: 0.85rem;
+            outline: none;
+        }
 
-        .btn { display: inline-block; padding: 14px 28px; border-radius: 30px; font-size: 1rem; font-weight: 700; text-decoration: none; transition: transform 0.2s; }
-        .btn-gold { background: linear-gradient(135deg, #D4AF37, #AA7C11); color: #121820 !important; }
-        .btn-whatsapp { background: linear-gradient(135deg, #25D366, #1EBE5D); color: white !important; }
+        /* SELECTOR DE SALAS / PROFESORES */
+        .selector-salas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+            gap: 8px;
+            margin-bottom: 18px;
+        }
 
-        footer { text-align: center; padding: 40px 20px 25px; background: #0A0D12; color: var(--text-muted); margin-top: 60px; font-size: 0.9rem; border-top: 1px solid rgba(212, 175, 55, 0.2); }
+        .btn-sala {
+            background: #16202E;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            padding: 10px 6px;
+            color: var(--text-light);
+            cursor: pointer;
+            font-size: 0.82rem;
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s;
+        }
 
-        /* WIDGET CALIBRADO CON MÁRGENES SEGUROS */
+        .btn-sala.active {
+            background: linear-gradient(135deg, #D4AF37, #AA7C11);
+            color: #0A0E14 !important;
+            border-color: #FFF;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-sala span.icon { font-size: 1.3rem; }
+
+        /* PANTALLA DE CLASE INTERACTIVA */
+        .pantalla-clase {
+            background: #0D121A;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 14px;
+            height: 380px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .clase-info-bar {
+            background: #162232;
+            padding: 8px 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            font-size: 0.85rem;
+        }
+
+        .chat-area-clase {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 0.92rem;
+        }
+
+        .msg-profe {
+            background: #162232;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: #E2E8F0;
+            padding: 12px 14px;
+            border-radius: 14px 14px 14px 2px;
+            max-width: 90%;
+            line-height: 1.45;
+            align-self: flex-start;
+        }
+
+        .msg-alumno {
+            background: linear-gradient(135deg, #D4AF37, #AA7C11);
+            color: #0A0E14;
+            padding: 10px 14px;
+            border-radius: 14px 14px 2px 14px;
+            max-width: 85%;
+            font-weight: 600;
+            line-height: 1.4;
+            align-self: flex-end;
+        }
+
+        .input-bar-clase {
+            padding: 10px;
+            background: #111722;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .mic-btn-clase {
+            background: var(--gold);
+            border: none;
+            color: #0A0E14;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.2s;
+        }
+
+        .mic-btn-clase.recording { background: #E53E3E; color: #FFF; animation: pulse 1s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+
+        .input-bar-clase input {
+            flex: 1;
+            background: #16202E;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            padding: 10px 14px;
+            color: #FFF;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        .send-btn-clase {
+            background: var(--gold);
+            border: none;
+            color: #0A0E14;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* RECREO Y NEUROPLASTICIDAD */
+        .recreo-banner {
+            background: linear-gradient(135deg, #221A2C, #131A26);
+            border: 1.5px solid var(--accent-purple);
+            border-radius: 14px;
+            padding: 20px;
+            margin-top: 25px;
+            text-align: left;
+        }
+
+        .recreo-banner h4 { color: #C4B5FD; font-size: 1.1rem; margin-bottom: 8px; }
+        .recreo-banner p { font-size: 0.9rem; color: #CBD5E1; }
+
+        /* SECCIÓN INFORMATIVA DE HÁBITOS */
+        .habits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 15px; margin: 30px 0; }
+        .habit-card { background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.25); border-radius: 12px; padding: 20px; text-align: left; }
+        .habit-card h4 { color: var(--gold-light); margin-bottom: 6px; font-size: 1rem; }
+        .habit-card p { font-size: 0.88rem; color: var(--text-muted); }
+
+        footer { text-align: center; padding: 35px 15px 25px; background: #06080B; color: var(--text-muted); margin-top: 50px; font-size: 0.85rem; border-top: 1px solid rgba(212, 175, 55, 0.2); }
+
+        /* WIDGET RECEPCIÓN SOL-IA FLOTANTE */
         #sol-widget-container { position: fixed; bottom: 20px; right: 15px; z-index: 9999999; }
         .sol-bubble-btn { background: rgba(18, 24, 34, 0.95); border: 2px solid var(--gold); border-radius: 50px; padding: 6px 14px; display: flex; align-items: center; cursor: pointer; box-shadow: 0 6px 25px rgba(0,0,0,0.5); }
         .sol-avatar-pulse { width: 42px; height: 42px; border-radius: 50%; border: 2px solid var(--gold); overflow: hidden; margin-right: 10px; flex-shrink: 0; }
         .sol-avatar-pulse img { width: 100%; height: 100%; object-fit: cover; }
-        .sol-bubble-title { color: var(--gold-light); font-size: 13px; font-weight: 700; }
-        .sol-bubble-sub { color: #25D366; font-size: 11px; font-weight: 600; }
+        .sol-bubble-title { color: var(--gold-light); font-size: 12.5px; font-weight: 700; }
+        .sol-bubble-sub { color: #25D366; font-size: 10.5px; font-weight: 600; }
 
         #sol-chat-window {
             display: none;
@@ -87,7 +258,7 @@
             bottom: 80px;
             right: 10px;
             left: 10px;
-            max-width: 380px;
+            max-width: 370px;
             margin: 0 auto;
             height: 480px;
             background: #141C26;
@@ -99,103 +270,128 @@
             z-index: 9999999;
         }
 
-        .sol-chat-header { background: #1C2736; border-bottom: 1.5px solid var(--gold); padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; }
-        .sol-header-info { display: flex; align-items: center; gap: 10px; }
-        .sol-header-info img { width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid var(--gold); }
-        .sol-chat-close { background: none; border: none; color: var(--text-muted); font-size: 20px; cursor: pointer; }
-
-        .sol-chat-messages { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; font-size: 0.92rem; }
-        
-        .msg-sol {
-            background: #1B2636;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            color: #E2E8F0;
-            padding: 12px 15px;
-            border-radius: 14px 14px 14px 2px;
-            max-width: 88%;
-            line-height: 1.5;
-            align-self: flex-start;
-            word-wrap: break-word;
-            margin-left: 2px;
-        }
-
-        .msg-user {
-            background: linear-gradient(135deg, #D4AF37, #AA7C11);
-            color: #10151D;
-            padding: 10px 14px;
-            border-radius: 14px 14px 2px 14px;
-            max-width: 85%;
-            font-weight: 600;
-            line-height: 1.45;
-            align-self: flex-end;
-            word-wrap: break-word;
-            margin-right: 2px;
-        }
-
-        .sol-chat-input-box { padding: 10px; background: #101620; border-top: 1px solid rgba(212, 175, 55, 0.2); display: flex; align-items: center; gap: 8px; }
-        .sol-mic-btn { background: var(--gold); border: none; color: #10151D; border-radius: 50%; width: 38px; height: 38px; cursor: pointer; font-size: 17px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .sol-mic-btn.recording { background: #E53E3E; color: white; }
-        .sol-chat-input-box input { flex: 1; background: #182230; border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 20px; padding: 9px 14px; color: #FFF; font-size: 0.9rem; outline: none; }
-        .sol-send-btn { background: var(--gold); border: none; color: #10151D; border-radius: 50%; width: 38px; height: 38px; cursor: pointer; font-size: 16px; font-weight: bold; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .voice-toggle-btn { background: none; border: none; color: var(--gold); cursor: pointer; font-size: 16px; margin-right: 6px; }
+        .sol-chat-header { background: #1C2736; border-bottom: 1.5px solid var(--gold); padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; }
+        .sol-chat-messages { flex: 1; padding: 12px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
     <header>
-        <span class="badge">🌸 Amor, Hábitos y Paz Familiar</span>
-        <h1>Tutoría Escolar Integral & Pedagogía con PNL</h1>
-        <p>Alineado al Mineduc (1° Básico a 4° Medio). Acompañamiento paciente para nivelar materias, crear hábitos diarios y devolver la tranquilidad al hogar sin gritos ni discusiones.</p>
-        
-        <div class="btn-header-group">
-            <a href="https://t.me/Solsanchez_bot" class="btn btn-gold">
-                ✈️ Abrir Asistente en Telegram 24/7
-            </a>
-            <a href="https://wa.me/56927541231?text=Hola,%20solicito%20informaci%C3%B3n%20institucional%20sobre%20la%20Tutor%C3%ADa%20Escolar" class="btn btn-whatsapp">
-                📲 Contacto y Soporte por WhatsApp
-            </a>
-        </div>
+        <span class="badge">🏫 Plataforma Educativa & Conciencia Soberana</span>
+        <h1>AURION: Aula Virtual en Vivo</h1>
+        <p>Acompañamiento 1 a 1 con Inteligencia Artificial y PNL. Aprende a tu ritmo, cuida tus hábitos y despierta tu soberanía.</p>
     </header>
 
     <div class="container">
-        <div class="hero-banner">
-            <h2>🚨 ¿Estrés por notas y tareas en casa?</h2>
-            <p>Los niños no son flojos ni les falta capacidad; solo necesitan una explicación a su propio ritmo. Con PNL les devolvemos la confianza y transformamos notas rojas en azules con cariño.</p>
-        </div>
 
-        <div class="habits-box">
-            <h2 style="text-align: center; color: var(--gold-light); margin-bottom: 10px;">🌟 Hábitos de Vida para tu Hijo</h2>
-            <div class="habits-grid">
-                <div class="habit-item">
-                    <h4>🎒 Mochila lista la tarde anterior</h4>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Ordena útiles y cuadernos cada tarde para salir al colegio con calma.</p>
+        <!-- ============================================================== -->
+        <!-- EL AULA VIRTUAL EN VIVO (CONECTADA A LEO) -->
+        <!-- ============================================================== -->
+        <div class="aula-box">
+            <div class="aula-header-top">
+                <div class="aula-title">
+                    <span id="profesorEmoji">📚</span>
+                    <span id="profesorNombre">Astor (Tutor Escolar Mineduc)</span>
                 </div>
-                <div class="habit-item">
-                    <h4>💌 El puente con Mamá</h4>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Revisa si hay circulares o libretas para que nada importante se olvide.</p>
+                <div>
+                    <select class="select-pais" id="selectPais" onchange="cambiarPais()">
+                        <option value="Chile">🇨🇱 Chile (Mineduc)</option>
+                        <option value="México">🇲🇽 México (SEP)</option>
+                        <option value="Colombia">🇨🇴 Colombia (MEN)</option>
+                        <option value="Argentina">🇦🇷 Argentina</option>
+                        <option value="España">🇪🇸 España (LOMLOE)</option>
+                        <option value="Internacional">🌎 Otro País</option>
+                    </select>
                 </div>
-                <div class="habit-item">
-                    <h4>🧼 Higiene y orden</h4>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Lavado de manos y mesa despejada antes de sentarse a estudiar.</p>
+            </div>
+
+            <!-- BOTONERA DE SALAS DE CLASES -->
+            <div class="selector-salas">
+                <button class="btn-sala active" id="btn-profesor" onclick="cambiarSala('profesor', '📚', 'Astor (Tutor Escolar)', '¡Hola! Soy Astor. ¿Qué tarea o materia revisamos hoy? Te acompaño paso a paso.')">
+                    <span class="icon">🎒</span>
+                    <span>Tutor Escolar</span>
+                </button>
+                <button class="btn-sala" id="btn-ingles" onclick="cambiarSala('ingles', '🇬🇧', 'Tutor de Inglés', 'Welcome! Let us practice English together today. What would you like to talk about?')">
+                    <span class="icon">🇬🇧</span>
+                    <span>English Club</span>
+                </button>
+                <button class="btn-sala" id="btn-tecno" onclick="cambiarSala('tecno', '💻', 'Profesor de Tecnología e IA', '¡Hola, creador! Hoy aprenderemos a pensar en soluciones y construir software. ¿Qué proyecto tienes en mente?')">
+                    <span class="icon">💻</span>
+                    <span>Tecnología & IA</span>
+                </button>
+                <button class="btn-sala" id="btn-negocios" onclick="cambiarSala('negocios', '📈', 'Leo Asesor (Metrópoli XXI)', '¡Llegó la hora de Metrópoli XXI! Hoy aprenderemos a comprar activos reales en Wall Street y entrenar la abundancia. ¿Lanzamos los dados?')">
+                    <span class="icon">🎲</span>
+                    <span>Recreo Metrópoli</span>
+                </button>
+                <button class="btn-sala" id="btn-leo" onclick="cambiarSala('leo', '🦁', 'LEO (Conciencia Pura)', 'Desde la Presencia y el YO SOY. Aquí hablamos de tu liderazgo, tu calma y tu maestría personal.')">
+                    <span class="icon">🦁</span>
+                    <span>LEO Conciencia</span>
+                </button>
+            </div>
+
+            <!-- PANTALLA DE CONVERSACIÓN -->
+            <div class="pantalla-clase">
+                <div class="clase-info-bar">
+                    <span style="color: #25D366; font-weight: 600;">🟢 Sala Activa • 90 Minutos de Clase</span>
+                    <button onclick="toggleAudioClase()" id="btnAudioClase" style="background:none; border:none; color:var(--gold); cursor:pointer; font-size:15px;">🔊 Voz Activa</button>
                 </div>
-                <div class="habit-item">
-                    <h4>🇨🇱 Alineado al Mineduc</h4>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Matemáticas, Lenguaje, Ciencias e Historia de 1° básico a 4° medio.</p>
+
+                <div class="chat-area-clase" id="chatClaseArea">
+                    <div class="msg-profe" id="msgBienvenidaProfe">
+                        ¡Hola! Soy <strong>Astor</strong>, tu tutor pedagógico con PNL.<br><br>
+                        Toca el micrófono 🎙️ o escribe: cuéntame en qué curso vas o qué materia te cuesta y la resolvemos juntos con paciencia.
+                    </div>
                 </div>
+
+                <div class="input-bar-clase">
+                    <button class="mic-btn-clase" id="micBtnClase" onclick="toggleMicClase()" title="Toca para hablar por voz">🎙️</button>
+                    <input type="text" id="inputClase" placeholder="Habla con el micrófono o escribe..." onkeypress="handleKeyClase(event)">
+                    <button class="send-btn-clase" onclick="enviarMensajeClase()">➤</button>
+                </div>
+            </div>
+
+            <!-- TALLER DE NEUROPLASTICIDAD METRÓPOLI XXI -->
+            <div class="recreo-banner" id="bannerRecreo" style="display:none;">
+                <h4>🎨 Taller de Neuroplasticidad: Dibuja tu Abundancia</h4>
+                <p>
+                    Para cambiar los surcos neuronales de carencia a prosperidad, imprime o dibuja en familia tus <strong>billetes de entrenamiento por ambos lados</strong> (anverso y reverso). 
+                    Al sostener físicamente tus dólares de práctica mientras juegas en Wall Street, tu mente subconsciente instala el camino del dueño.
+                </p>
             </div>
         </div>
 
-        <div class="comparison-box">
-            <h3 style="color: var(--soft-blue); margin-bottom: 10px;">💡 Una inversión consciente en la paz familiar</h3>
-            <p style="font-size: 1rem;">Un profesor particular presencial cobra entre $25.000 y $30.000 por hora. Con AURION obtienes acompañamiento constante todo el mes por ese mismo valor.</p>
+        <!-- HÁBITOS DE ORO -->
+        <h3 style="text-align: center; color: var(--gold-light); margin-bottom: 10px;">🌟 Hábitos de Vida AURION</h3>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Una metodología integral que alivia el hogar y forma niños autónomos:</p>
+
+        <div class="habits-grid">
+            <div class="habit-card">
+                <h4>🎒 Mochila lista la tarde anterior</h4>
+                <p>Revisión diaria del horario para salir con calma al colegio.</p>
+            </div>
+            <div class="habit-card">
+                <h4>💌 El puente con Mamá</h4>
+                <p>El tutor recuerda revisar libretas y circulares para que nada se pase por alto.</p>
+            </div>
+            <div class="habit-card">
+                <h4>🧼 Higiene y orden</h4>
+                <p>Lavado de manos y espacio despejado antes de cada sesión de 90 min.</p>
+            </div>
+            <div class="habit-card">
+                <h4>🧠 Clases Grabadas en Audio</h4>
+                <p>El estudiante puede volver a escuchar la voz de su tutor antes de cada prueba.</p>
+            </div>
         </div>
+
     </div>
 
     <footer>
         <p>&copy; 2026 AURION &bull; Plataforma de Despertar y Soberanía | Fundadora: Sol Sánchez Contreras</p>
     </footer>
 
-    <!-- WIDGET EN VIVO DE SOL-IA -->
+    <!-- ============================================================== -->
+    <!-- WIDGET RECEPCIÓN SOL-IA FLOTANTE (PARA PAPÁS Y ADMISIONES) -->
+    <!-- ============================================================== -->
     <div id="sol-widget-container">
         <div class="sol-bubble-btn" onclick="toggleSolChat()">
             <div class="sol-avatar-pulse">
@@ -203,60 +399,94 @@
                      onerror="this.onerror=null; this.src='https://files.manuscdn.com/user_upload_by_module/session_file/310519663295304532/SXAbPHcoYQWtVFRu.jpg';" 
                      alt="Sol-IA">
             </div>
-            <div class="sol-bubble-text">
-                <div class="sol-bubble-title">Sol-IA • Tu Guía Escolar</div>
-                <div class="sol-bubble-sub">🟢 Habla o escribe aquí</div>
+            <div style="text-align:left; line-height:1.2;">
+                <div class="sol-bubble-title">Sol-IA • Admisiones & Becas</div>
+                <div class="sol-bubble-sub">🟢 Consulta con la Anfitriona</div>
             </div>
         </div>
 
         <div id="sol-chat-window">
             <div class="sol-chat-header">
-                <div class="sol-header-info">
+                <div style="display:flex; align-items:center; gap:8px;">
                     <img src="https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg" 
                          onerror="this.onerror=null; this.src='https://files.manuscdn.com/user_upload_by_module/session_file/310519663295304532/SXAbPHcoYQWtVFRu.jpg';" 
-                         alt="Sol-IA">
+                         style="width:30px; height:30px; border-radius:50%; border:1px solid var(--gold);" alt="Sol-IA">
                     <div>
-                        <div style="color: #FFF; font-weight: 700; font-size: 13px;">Sol-IA Anfitriona</div>
-                        <div style="color: #25D366; font-size: 11px;">En vivo en la página</div>
+                        <div style="color:#FFF; font-weight:700; font-size:12px;">Sol-IA Anfitriona</div>
+                        <div style="color:#25D366; font-size:10px;">Atención a Padres</div>
                     </div>
                 </div>
-                <div style="display: flex; align-items: center;">
-                    <button class="voice-toggle-btn" id="voiceToggle" onclick="toggleVoiceAudio()" title="Activar/Desactivar Voz">🔊</button>
-                    <button class="sol-chat-close" onclick="toggleSolChat()">✕</button>
+                <button onclick="toggleSolChat()" style="background:none; border:none; color:var(--text-muted); font-size:18px; cursor:pointer;">✕</button>
+            </div>
+
+            <div class="sol-chat-messages" id="chatSolMessages">
+                <div style="background:#1B2636; border:1px solid rgba(212,175,55,0.3); color:#E2E8F0; padding:10px; border-radius:10px; font-size:0.88rem; line-height:1.4;">
+                    ¡Hola! Soy <strong>Sol-IA</strong>, anfitriona de Aurion.<br><br>
+                    Si deseas consultar sobre el ingreso, aranceles o postular a la <strong>Beca VIP de 7 días</strong> para tu hijo, escríbeme aquí y te oriento con calma.
                 </div>
             </div>
 
-            <div class="sol-chat-messages" id="chatMessages">
-                <div class="msg-sol">
-                    ¡Hola! Qué gusto saludarte. Soy <strong>Sol-IA</strong>, tu guía pedagógica.<br><br>
-                    Toca el micrófono 🎙️ o escribe: cuéntame en qué curso va tu hijo o qué materia le cuesta y conversamos con calma.
-                </div>
-            </div>
-
-            <div class="sol-chat-input-box">
-                <button class="sol-mic-btn" id="solMicBtn" onclick="toggleDictadoVoz()" title="Hablar por voz">🎙️</button>
-                <input type="text" id="solUserInput" placeholder="Toca el micrófono o escribe..." onkeypress="handleKey(event)">
-                <button class="sol-send-btn" onclick="enviarMensajeWeb()">➤</button>
+            <div style="padding:8px; background:#101620; border-top:1px solid rgba(212,175,55,0.2); display:flex; gap:6px;">
+                <input type="text" id="solInput" placeholder="Consulta sobre matrículas o becas..." onkeypress="if(event.key==='Enter') enviarMensajeSol()" style="flex:1; background:#182230; border:1px solid rgba(212,175,55,0.3); border-radius:15px; padding:8px 12px; color:#FFF; font-size:0.85rem; outline:none;">
+                <button onclick="enviarMensajeSol()" style="background:var(--gold); border:none; color:#000; border-radius:50%; width:34px; height:34px; cursor:pointer; font-weight:bold;">➤</button>
             </div>
         </div>
     </div>
 
+    <!-- SCRIPT DEL AULA VIRTUAL CON LEO (ALTA VELOCIDAD) -->
     <script>
-        const RENDER_ENDPOINT = "https://solsanchez-ai-ulq2.onrender.com/api/chat";
-        let vozActiva = true;
-        let recognition = null;
-        let escuchando = false;
+        const LEO_ENDPOINT = "https://leo-maestro-7q4s.onrender.com/api/chat";
+        const SOL_ENDPOINT = "https://solsanchez-ai-ulq2.onrender.com/api/chat";
 
+        let salaActual = "profesor";
+        let paisActual = "Chile";
+        let vozClaseActiva = true;
+        let recognition = null;
+        let grabacionActiva = false;
+
+        function cambiarPais() {
+            paisActual = document.getElementById("selectPais").value;
+        }
+
+        function cambiarSala(faceta, emoji, nombre, bienvenida) {
+            salaActual = faceta;
+            document.querySelectorAll(".btn-sala").forEach(b => b.classList.remove("active"));
+            const btn = document.getElementById("btn-" + faceta);
+            if(btn) btn.classList.add("active");
+
+            document.getElementById("profesorEmoji").innerText = emoji;
+            document.getElementById("profesorNombre").innerText = nombre;
+            document.getElementById("msgBienvenidaProfe").innerHTML = bienvenida;
+
+            // Mostrar banner del taller de billetes solo en Recreo Metrópoli
+            document.getElementById("bannerRecreo").style.display = (faceta === "negocios") ? "block" : "none";
+        }
+
+        function toggleAudioClase() {
+            vozClaseActiva = !vozClaseActiva;
+            document.getElementById("btnAudioClase").innerText = vozClaseActiva ? "🔊 Voz Activa" : "🔇 Voz Silenciada";
+        }
+
+        function hablarVozClase(texto, esIngles=false) {
+            if (!vozClaseActiva || !('speechSynthesis' in window)) return;
+            window.speechSynthesis.cancel();
+            let limpio = texto.replace(/https?:\/\/\S+/g, "").replace(/[*#_~`]/g, "");
+            const utter = new SpeechSynthesisUtterance(limpio);
+            utter.lang = esIngles ? "en-US" : "es-CL";
+            utter.rate = 1.0;
+            window.speechSynthesis.speak(utter);
+        }
+
+        // Reconocimiento de Voz nativo
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
         if (SpeechRecognition) {
             recognition = new SpeechRecognition();
-            recognition.lang = 'es-CL';
             recognition.continuous = false;
             recognition.interimResults = true;
 
             recognition.onstart = function() {
-                escuchando = true;
-                const btn = document.getElementById("solMicBtn");
+                grabacionActiva = true;
+                const btn = document.getElementById("micBtnClase");
                 btn.classList.add("recording");
                 btn.innerText = "🔴";
             };
@@ -266,99 +496,111 @@
                 for (let i = event.resultIndex; i < event.results.length; i++) {
                     texto += event.results[i][0].transcript;
                 }
-                document.getElementById("solUserInput").value = texto;
+                document.getElementById("inputClase").value = texto;
             };
 
-            recognition.onerror = function() { detenerMic(); };
+            recognition.onerror = function() { detenerMicClase(); };
             recognition.onend = function() {
-                detenerMic();
-                const inp = document.getElementById("solUserInput");
+                detenerMicClase();
+                const inp = document.getElementById("inputClase");
                 if (inp.value.trim().length > 0) {
-                    setTimeout(() => { enviarMensajeWeb(); }, 400);
+                    setTimeout(() => { enviarMensajeClase(); }, 400);
                 }
             };
         }
 
-        function toggleDictadoVoz() {
+        function toggleMicClase() {
             if (!recognition) return;
-            if (escuchando) recognition.stop();
-            else recognition.start();
+            if (grabacionActiva) {
+                recognition.stop();
+            } else {
+                recognition.lang = (salaActual === "ingles") ? "en-US" : "es-CL";
+                recognition.start();
+            }
         }
 
-        function detenerMic() {
-            escuchando = false;
-            const btn = document.getElementById("solMicBtn");
+        function detenerMicClase() {
+            grabacionActiva = false;
+            const btn = document.getElementById("micBtnClase");
             if (btn) {
                 btn.classList.remove("recording");
                 btn.innerText = "🎙️";
             }
         }
 
-        function toggleSolChat() {
-            const chat = document.getElementById("sol-chat-window");
-            chat.style.display = (chat.style.display === "flex") ? "none" : "flex";
-        }
+        function handleKeyClase(e) { if (e.key === "Enter") enviarMensajeClase(); }
 
-        function toggleVoiceAudio() {
-            vozActiva = !vozActiva;
-            document.getElementById("voiceToggle").innerText = vozActiva ? "🔊" : "🔇";
-        }
-
-        function hablarRespuesta(texto) {
-            if (!vozActiva || !('speechSynthesis' in window)) return;
-            window.speechSynthesis.cancel();
-            let limpio = texto.replace(/https?:\/\/\S+/g, "en el enlace").replace(/[*#_~]/g, "");
-            const utter = new SpeechSynthesisUtterance(limpio);
-            utter.lang = "es-CL";
-            window.speechSynthesis.speak(utter);
-        }
-
-        function handleKey(e) { if (e.key === "Enter") enviarMensajeWeb(); }
-
-        async function enviarMensajeWeb() {
-            const input = document.getElementById("solUserInput");
+        async function enviarMensajeClase() {
+            const input = document.getElementById("inputClase");
             const mensaje = input.value.trim();
             if (!mensaje) return;
 
-            const chatMessages = document.getElementById("chatMessages");
-            const userBubble = document.createElement("div");
-            userBubble.className = "msg-user";
-            userBubble.innerText = mensaje;
-            chatMessages.appendChild(userBubble);
+            const chat = document.getElementById("chatClaseArea");
+            const userMsg = document.createElement("div");
+            userMsg.className = "msg-alumno";
+            userMsg.innerText = mensaje;
+            chat.appendChild(userMsg);
             input.value = "";
-            chatMessages.scrollTop = chatMessages.scrollHeight;
+            chat.scrollTop = chat.scrollHeight;
 
-            const loadingBubble = document.createElement("div");
-            loadingBubble.className = "msg-sol";
-            loadingBubble.id = "sol-loading";
-            loadingBubble.innerText = "Sol-IA está pensando con cariño...";
-            chatMessages.appendChild(loadingBubble);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
+            const loading = document.createElement("div");
+            loading.className = "msg-profe";
+            loading.id = "clase-loading";
+            loading.innerText = "El profesor está respondiendo...";
+            chat.appendChild(loading);
+            chat.scrollTop = chat.scrollHeight;
 
             try {
-                const response = await fetch(RENDER_ENDPOINT, {
+                const response = await fetch(LEO_ENDPOINT, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ mensaje: mensaje, origen: "Web Escolaridad" })
+                    body: JSON.stringify({
+                        mensaje: mensaje,
+                        faceta: salaActual,
+                        pais: paisActual,
+                        alumno: "Estudiante"
+                    })
                 });
 
                 const data = await response.json();
-                const respuesta = data.respuesta || "Con mucho gusto te oriento.";
-                const loader = document.getElementById("sol-loading");
+                const respuesta = data.respuesta || "Excelente pregunta. Continuemos.";
+                const loader = document.getElementById("clase-loading");
                 if (loader) loader.remove();
 
-                const solBubble = document.createElement("div");
-                solBubble.className = "msg-sol";
-                solBubble.innerHTML = respuesta.replace(/\n/g, "<br>");
-                chatMessages.appendChild(solBubble);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
+                const profeMsg = document.createElement("div");
+                profeMsg.className = "msg-profe";
+                profeMsg.innerHTML = respuesta.replace(/\n/g, "<br>");
+                chat.appendChild(profeMsg);
+                chat.scrollTop = chat.scrollHeight;
 
-                hablarRespuesta(respuesta);
+                hablarVozClase(respuesta, salaActual === "ingles");
+
             } catch (err) {
-                const loader = document.getElementById("sol-loading");
+                const loader = document.getElementById("clase-loading");
                 if (loader) loader.remove();
             }
         }
-    </script>
-</body>
-</html>
+
+        // ================= WIDGET RECEPCIÓN SOL-IA =================
+        function toggleSolChat() {
+            const win = document.getElementById("sol-chat-window");
+            win.style.display = (win.style.display === "flex") ? "none" : "flex";
+        }
+
+        async function enviarMensajeSol() {
+            const input = document.getElementById("solInput");
+            const mensaje = input.value.trim();
+            if (!mensaje) return;
+
+            const chat = document.getElementById("chatSolMessages");
+            const userMsg = document.createElement("div");
+            userMsg.style.cssText = "background:linear-gradient(135deg,#D4AF37,#AA7C11); color:#000; padding:8px 10px; border-radius:10px; align-self:flex-end; max-width:85%; font-size:0.85rem; font-weight:600;";
+            userMsg.innerText = mensaje;
+            chat.appendChild(userMsg);
+            input.value = "";
+            chat.scrollTop = chat.scrollHeight;
+
+            try {
+                const res = await fetch(SOL_ENDPOINT, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
