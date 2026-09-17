@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURION | Aula Escolar con PNL & Tutoría Pedagógica</title>
+    <title>AURION | Aula Escolar con PNL & Tutoría Mineduc</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -19,13 +19,13 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
-        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; min-height: 100vh; }
+        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; }
         h1, h2, h3, h4 { font-family: 'Cinzel', serif; letter-spacing: 0.5px; }
 
         header {
             background: linear-gradient(180deg, #16202E 0%, var(--bg-dark) 100%);
             border-bottom: 2px solid var(--gold);
-            padding: 35px 15px 25px;
+            padding: 40px 15px 30px;
             text-align: center;
         }
 
@@ -51,22 +51,22 @@
             border-radius: 20px;
             font-weight: 700;
             display: inline-block;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-size: 0.85rem;
             text-transform: uppercase;
         }
 
-        header h1 { font-size: 2.1rem; color: var(--gold-light); margin-bottom: 8px; }
-        header p { font-size: 1rem; max-width: 800px; margin: 0 auto 15px; color: var(--text-muted); }
+        header h1 { font-size: 2.1rem; color: var(--gold-light); margin-bottom: 10px; }
+        header p { font-size: 1.05rem; max-width: 800px; margin: 0 auto 20px; color: var(--text-muted); }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px 15px 40px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 25px 15px; }
 
-        /* NAVEGACIÓN ENTRE SECCIONES */
+        /* BOTONES DE NAVEGACIÓN PRINCIPAL */
         .nav-switch-box {
             display: flex;
             justify-content: center;
             gap: 12px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             flex-wrap: wrap;
         }
 
@@ -92,10 +92,11 @@
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
         }
 
-        #seccion-aula { display: block; }
-        #seccion-inicio { display: none; }
+        /* SECCIONES VISIBLES/OCULTAS (INICIO ACTIVO POR DEFECTO) */
+        #seccion-inicio { display: block; }
+        #seccion-aula { display: none; }
 
-        /* ESPACIO AMPLIO DEL AULA VIRTUAL */
+        /* ESTILOS DEL AULA VIRTUAL */
         .aula-box {
             background: #111722;
             border: 2px solid var(--gold);
@@ -161,12 +162,11 @@
 
         .btn-sala span.icon { font-size: 1.3rem; }
 
-        /* PANTALLA DE CLASE AMPLIA Y CÓMODA */
         .pantalla-clase {
             background: #0D121A;
             border: 1px solid rgba(255,255,255,0.08);
             border-radius: 14px;
-            min-height: 440px;
+            min-height: 420px;
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -174,63 +174,62 @@
 
         .clase-info-bar {
             background: #162232;
-            padding: 10px 16px;
+            padding: 8px 14px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .chat-area-clase {
             flex: 1;
-            padding: 18px 15px;
+            padding: 15px;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-            gap: 14px;
-            font-size: 0.95rem;
-            min-height: 320px;
+            gap: 12px;
+            font-size: 0.92rem;
+            min-height: 300px;
         }
 
         .msg-profe {
             background: #162232;
             border: 1px solid rgba(212, 175, 55, 0.25);
             color: #E2E8F0;
-            padding: 14px 16px;
+            padding: 12px 14px;
             border-radius: 14px 14px 14px 2px;
             max-width: 90%;
-            line-height: 1.5;
+            line-height: 1.45;
             align-self: flex-start;
         }
 
         .msg-alumno {
             background: linear-gradient(135deg, #D4AF37, #AA7C11);
             color: #0A0E14;
-            padding: 12px 16px;
+            padding: 10px 14px;
             border-radius: 14px 14px 2px 14px;
             max-width: 85%;
             font-weight: 600;
-            line-height: 1.45;
+            line-height: 1.4;
             align-self: flex-end;
         }
 
-        /* BARRA DE ENTRADA CON AMPLIO ESPACIO */
         .input-bar-clase {
-            padding: 12px 14px;
+            padding: 10px 12px;
             background: #111722;
             border-top: 1px solid rgba(212, 175, 55, 0.2);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .mic-btn-clase {
             background: var(--gold);
             border: none;
             color: #0A0E14;
-            border-radius: 25px;
-            padding: 10px 16px;
+            border-radius: 20px;
+            padding: 8px 14px;
             cursor: pointer;
             font-size: 14px;
             font-weight: 700;
@@ -248,10 +247,10 @@
             flex: 1;
             background: #16202E;
             border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 22px;
-            padding: 12px 16px;
+            border-radius: 20px;
+            padding: 10px 14px;
             color: #FFF;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             outline: none;
         }
 
@@ -260,10 +259,10 @@
             border: none;
             color: #0A0E14;
             border-radius: 50%;
-            width: 44px;
-            height: 44px;
+            width: 38px;
+            height: 38px;
             cursor: pointer;
-            font-size: 17px;
+            font-size: 16px;
             font-weight: bold;
             display: flex;
             align-items: center;
@@ -271,6 +270,7 @@
             flex-shrink: 0;
         }
 
+        /* ESTILOS DE LA PÁGINA DE INICIO / INFORMACIÓN */
         .hero-banner {
             background: linear-gradient(135deg, #1E293B 0%, #151D28 100%);
             border: 1.5px solid var(--gold);
@@ -279,6 +279,7 @@
             margin-bottom: 30px;
             text-align: center;
         }
+
         .hero-banner h2 { color: var(--gold-light); font-size: 1.7rem; margin-bottom: 10px; }
         .hero-banner p { font-size: 1rem; color: #CBD5E1; max-width: 820px; margin: 0 auto; }
 
@@ -288,9 +289,25 @@
         .habit-item h4 { color: var(--gold-light); margin-bottom: 6px; font-size: 1rem; }
         .habit-item p { color: var(--text-muted); font-size: 0.88rem; }
 
+        .btn-accion-aula {
+            background: linear-gradient(135deg, #D4AF37, #AA7C11);
+            color: #0A0E14 !important;
+            padding: 16px 36px;
+            border-radius: 40px;
+            font-size: 1.15rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
+            cursor: pointer;
+            border: none;
+            transition: transform 0.2s;
+        }
+        .btn-accion-aula:hover { transform: scale(1.03); }
+
         footer { text-align: center; padding: 35px 15px 25px; background: #06080B; color: var(--text-muted); margin-top: 50px; font-size: 0.85rem; border-top: 1px solid rgba(212, 175, 55, 0.2); }
 
-        /* WIDGET FLOTANTE */
+        /* WIDGET FLOTANTE SOL-IA */
         #sol-widget-container { position: fixed; bottom: 20px; right: 15px; z-index: 9999999; }
         .sol-bubble-btn { background: rgba(18, 24, 34, 0.95); border: 2px solid var(--gold); border-radius: 50px; padding: 6px 14px; display: flex; align-items: center; cursor: pointer; box-shadow: 0 6px 25px rgba(0,0,0,0.5); }
         .sol-avatar-pulse { width: 42px; height: 42px; border-radius: 50%; border: 2px solid var(--gold); overflow: hidden; margin-right: 10px; flex-shrink: 0; }
@@ -317,7 +334,7 @@
         }
 
         .sol-chat-header { background: #1C2736; border-bottom: 1.5px solid var(--gold); padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; }
-        .sol-chat-messages { flex: 1; padding: 14px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; }
+        .sol-chat-messages { flex: 1; padding: 12px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -330,30 +347,90 @@
                  class="header-logo">
         </div>
 
-        <span class="badge">🎒 Tutoría Integral del Siglo XXI & Pedagogía</span>
+        <span class="badge">🎒 Tutoría Integral del Siglo XXI & PNL</span>
         <h1>AURION Escolaridad</h1>
         <p>Acompañamiento paciente alineado al Mineduc (1° Básico a 4° Medio) y Exámenes Libres. Formamos niños autónomos con hábitos para toda la vida.</p>
     </header>
 
     <div class="container">
 
-        <!-- BOTONES PARA CAMBIAR DE VISTA -->
+        <!-- BOTONERA DE NAVEGACIÓN PRINCIPAL -->
         <div class="nav-switch-box">
-            <button class="btn-nav-main active" id="btnTabAula" onclick="mostrarSeccion('aula')">
-                🏫 Aula de Clases Interactiva
-            </button>
-            <button class="btn-nav-main" id="btnTabInicio" onclick="mostrarSeccion('inicio')">
+            <button class="btn-nav-main active" id="btnTabInicio" onclick="mostrarSeccion('inicio')">
                 📖 Información & Hábitos
+            </button>
+            <button class="btn-nav-main" id="btnTabAula" onclick="mostrarSeccion('aula')">
+                🏫 Entrar al Aula de Clases en Vivo
             </button>
         </div>
 
-        <!-- AULA VIRTUAL ABIERTA DE INMEDIATO -->
+        <!-- ============================================================== -->
+        <!-- SECCIÓN 1: INFORMACIÓN, HÁBITOS Y ACCESO (INICIO) -->
+        <!-- ============================================================== -->
+        <div id="seccion-inicio">
+            <div class="hero-banner">
+                <h2>🚨 ¿Estrés por notas rojas y tareas en casa?</h2>
+                <p>
+                    Los niños no son flojos ni les falta capacidad; solo necesitan una explicación a su propio ritmo sin perder la paciencia. Nuestro tutor escolar utiliza <strong>Programación Neurolingüística (PNL)</strong> para devolverles la confianza, preparar pruebas y transformar notas rojas en azules con amor.
+                </p>
+                <div style="margin-top: 22px;">
+                    <button class="btn-accion-aula" onclick="mostrarSeccion('aula')">
+                        🚀 ¡Entrar al Aula de Clases Ahora!
+                    </button>
+                </div>
+            </div>
+
+            <!-- LOS 4 HÁBITOS DE ORO -->
+            <div class="habits-box">
+                <h2 style="text-align: center; color: var(--gold-light); margin-bottom: 10px;">🌟 Hábitos de Vida para tu Hijo</h2>
+                <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">No solo resolvemos materias: cuidamos la rutina y la paz del hogar:</p>
+
+                <div class="habits-grid">
+                    <div class="habit-item">
+                        <h4>🎒 Mochila lista la tarde anterior</h4>
+                        <p>El tutor le recuerda revisar su horario y dejar cuadernos listos para salir con calma en la mañana.</p>
+                    </div>
+                    <div class="habit-item">
+                        <h4>💌 El puente de amor con Mamá</h4>
+                        <p>En cada sesión revisa si hay circulares o libretas para que nada importante se olvide.</p>
+                    </div>
+                    <div class="habit-item">
+                        <h4>🧼 Higiene y entorno ordenado</h4>
+                        <p>Lavado de manos y mesa despejada antes de iniciar los 90 minutos de clase.</p>
+                    </div>
+                    <div class="habit-item">
+                        <h4>🎙️ Clases Grabadas en Audio</h4>
+                        <p>El niño puede volver a escuchar la explicación cuantas veces quiera antes de su prueba.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMPARATIVA -->
+            <div style="background:#151F2D; border:1px solid var(--soft-blue); padding:25px; border-radius:14px; text-align:center; margin:30px 0;">
+                <h3 style="color:var(--soft-blue); margin-bottom:8px;">💡 Una Inversión Consciente en la Paz Familiar</h3>
+                <p style="font-size:0.95rem; color:#CBD5E1;">
+                    Un profesor particular presencial cobra entre $25.000 y $30.000 por una sola hora. Con AURION obtienes acompañamiento constante de 90 minutos, PNL y hábitos durante todo el mes por una fracción de ese valor.
+                </p>
+            </div>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- SECCIÓN 2: EL AULA VIRTUAL EN VIVO -->
+        <!-- ============================================================== -->
         <div id="seccion-aula">
+            
+            <!-- BOTÓN DESTACADO PARA VOLVER -->
+            <div style="text-align:left; margin-bottom:15px;">
+                <button onclick="mostrarSeccion('inicio')" class="btn-nav-main" style="background:#1C2736; font-size:0.88rem; padding:8px 18px;">
+                    ⬅️ Volver a la Información / Inicio
+                </button>
+            </div>
+
             <div class="aula-box">
                 <div class="aula-header-top">
                     <div class="aula-title">
                         <span id="profesorEmoji">📚</span>
-                        <span id="profesorNombre">Astor (Tutor Pedagógico)</span>
+                        <span id="profesorNombre">Astor (Tutor Escolar Mineduc)</span>
                     </div>
                     <div>
                         <select class="select-pais" id="selectPais" onchange="cambiarPais()">
@@ -369,29 +446,29 @@
 
                 <!-- SELECTOR DE SALAS -->
                 <div class="selector-salas">
-                    <button class="btn-sala active" id="btn-profesor" onclick="cambiarSala('profesor', '📚', 'Astor (Tutor Pedagógico)', '¡Hola! Soy Astor, tu tutor escolar. Cuéntame qué tarea o materia estamos viendo hoy y la resolvemos juntos paso a paso.')">
+                    <button class="btn-sala active" id="btn-profesor" onclick="cambiarSala('profesor', '📚', 'Astor (Tutor Escolar)', '¡Hola! Soy Astor, tu tutor pedagógico con PNL. ¿Qué tarea o materia revisamos hoy? Te acompaño con paciencia.')">
                         <span class="icon">🎒</span>
                         <span>Tutor Escolar</span>
                     </button>
-                    <button class="btn-sala" id="btn-ingles" onclick="cambiarSala('ingles', '🇬🇧', 'Profesor de Inglés', 'Welcome! Hello, I am your English tutor. What topic or vocabulary would you like to practice today?')">
+                    <button class="btn-sala" id="btn-ingles" onclick="cambiarSala('ingles', '🇬🇧', 'Tutor de Inglés', 'Welcome! Let us practice speaking English together today. What would you like to practice?')">
                         <span class="icon">🇬🇧</span>
                         <span>English Club</span>
                     </button>
-                    <button class="btn-sala" id="btn-tecno" onclick="cambiarSala('tecno', '💻', 'Profesor de Tecnología e IA', '¡Hola! En esta sala aprenderemos lógica, tecnología y habilidades prácticas para que tengas un respaldo real al salir del colegio. ¿Qué proyecto o duda tienes?')">
+                    <button class="btn-sala" id="btn-tecno" onclick="cambiarSala('tecno', '💻', 'Profesor de Tecnología e IA', '¡Hola! En esta sala aprenderemos lógica, tecnología y habilidades prácticas para que tengas un respaldo real al salir del colegio. ¿Qué proyecto tienes en mente?')">
                         <span class="icon">💻</span>
                         <span>Tecnología & IA</span>
                     </button>
-                    <button class="btn-sala" id="btn-negocios" onclick="cambiarSala('negocios', '📈', 'Educación Financiera Escolar', '¡Bienvenidos! Hoy aprenderemos a calcular presupuestos, ahorro y toma de decisiones inteligentes para la vida real.')">
+                    <button class="btn-sala" id="btn-negocios" onclick="cambiarSala('negocios', '📈', 'Leo Asesor (Metrópoli XXI)', '¡Llegó la hora de Metrópoli XXI! Hoy aprenderemos a comprar activos reales en Wall Street y entrenar la abundancia. ¿Lanzamos los dados?')">
                         <span class="icon">🎲</span>
-                        <span>Finanzas</span>
+                        <span>Recreo Metrópoli</span>
                     </button>
-                    <button class="btn-sala" id="btn-leo" onclick="cambiarSala('leo', '🦁', 'Orientador de Hábitos y Estudio', '¡Hola! Aquí organizamos tus métodos de estudio, concentración y liderazgo personal. ¿En qué te gustaría enfocarte hoy?')">
+                    <button class="btn-sala" id="btn-leo" onclick="cambiarSala('leo', '🦁', 'Orientador de Hábitos y Estudio', '¡Hola! Aquí organizamos tus métodos de estudio, concentración y liderazgo personal. ¿Qué meta tenemos para hoy?')">
                         <span class="icon">🦁</span>
                         <span>Hábitos & Foco</span>
                     </button>
                 </div>
 
-                <!-- PANTALLA DE CLASE AMPLIA -->
+                <!-- PANTALLA DE CLASE -->
                 <div class="pantalla-clase">
                     <div class="clase-info-bar">
                         <span style="color: #25D366; font-weight: 600;">🟢 Sala Activa • 90 Minutos de Clase</span>
@@ -400,59 +477,34 @@
 
                     <div class="chat-area-clase" id="chatClaseArea">
                         <div class="msg-profe" id="msgBienvenidaProfe">
-                            ¡Hola! Soy <strong>Astor</strong>, tu tutor escolar.<br><br>
-                            Toca el botón amarillo <strong>🎙️ Hablar</strong> o escribe en la barra inferior: cuéntame qué materia o ejercicio estás revisando y lo trabajamos juntos con calma.
+                            ¡Hola! Soy <strong>Astor</strong>, tu tutor pedagógico con PNL.<br><br>
+                            Toca el botón <strong>🎙️ Hablar</strong>, di tu consulta con calma y presiona enviar: cuéntame en qué curso vas o qué materia te cuesta y la resolvemos juntos con paciencia.
                         </div>
                     </div>
 
                     <div class="input-bar-clase">
-                        <button class="mic-btn-clase" id="micBtnClase" onclick="toggleMicClase()" title="Toca para hablar por voz con el profesor">
+                        <button class="mic-btn-clase" id="micBtnClase" onclick="toggleMicClase()" title="Toca para empezar a hablar">
                             <span>🎙️ Hablar</span>
                         </button>
-                        <input type="text" id="inputClase" placeholder="Escribe tu pregunta escolar aquí con comodidad..." onkeypress="handleKeyClase(event)">
+                        <input type="text" id="inputClase" placeholder="Habla con el micrófono o escribe..." onkeypress="handleKeyClase(event)">
                         <button class="send-btn-clase" onclick="enviarMensajeClase()">➤</button>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- SECCIÓN DE INFORMACIÓN Y HÁBITOS -->
-        <div id="seccion-inicio">
-            <div class="hero-banner">
-                <h2>🚨 ¿Estrés por notas rojas y tareas en casa?</h2>
-                <p>
-                    Los niños no son flojos ni les falta capacidad; solo necesitan una explicación a su propio ritmo sin perder la paciencia. Nuestro tutor escolar utiliza <strong>didáctica personalizada y PNL</strong> para devolverles la confianza y transformar notas con dedicación.
-                </p>
-            </div>
-
-            <div class="habits-box">
-                <h2 style="text-align: center; color: var(--gold-light); margin-bottom: 10px;">🌟 Hábitos de Estudio para tu Hijo</h2>
-                <div class="habits-grid">
-                    <div class="habit-item">
-                        <h4>🎒 Mochila lista la tarde anterior</h4>
-                        <p>El tutor le recuerda revisar su horario y dejar cuadernos listos para salir con calma en la mañana.</p>
-                    </div>
-                    <div class="habit-item">
-                        <h4>💌 Comunicación con la Familia</h4>
-                        <p>En cada sesión revisa si hay circulares o libretas para que nada importante se olvide.</p>
-                    </div>
-                    <div class="habit-item">
-                        <h4>🧼 Higiene y entorno ordenado</h4>
-                        <p>Lavado de manos y mesa despejada antes de iniciar los 90 minutos de clase.</p>
-                    </div>
-                    <div class="habit-item">
-                        <h4>🎙️ Clases con Audio</h4>
-                        <p>El estudiante puede volver a escuchar la explicación cuantas veces quiera antes de su prueba.</p>
-                    </div>
-                </div>
+            <!-- BOTÓN INFERIOR PARA VOLVER -->
+            <div style="text-align:center; margin-top:20px;">
+                <button onclick="mostrarSeccion('inicio')" class="btn-nav-main">
+                    ⬅️ Volver a la Información Principal
+                </button>
             </div>
         </div>
 
     </div>
 
-    <!-- FOOTER CON CONTADOR REAL -->
+    <!-- FOOTER CON CONTADOR REAL (BASE 25+) -->
     <footer>
-        <p>&copy; 2026 AURION &bull; Aula Virtual Escolar &bull; Dirección Pedagógica: Sol Sánchez Contreras | Chile</p>
+        <p>&copy; 2026 AURION &bull; Plataforma Escolar y Soberanía | Fundadora: Sol Sánchez Contreras</p>
         
         <div style="margin-top: 15px; display: flex; justify-content: center; align-items: center;">
             <div style="display:inline-flex; align-items:center; gap:8px; background:#141B26; padding:6px 16px; border-radius:20px; border:1.5px solid var(--gold); color:var(--gold-light); font-size:0.85rem; font-weight:700;">
@@ -471,8 +523,8 @@
                      alt="Sol-IA">
             </div>
             <div style="text-align:left; line-height:1.2;">
-                <div class="sol-bubble-title">Sol-IA • Admisiones</div>
-                <div class="sol-bubble-sub">🟢 Atención a Familias</div>
+                <div class="sol-bubble-title">Sol-IA • Admisiones & Becas</div>
+                <div class="sol-bubble-sub">🟢 Atención a Padres</div>
             </div>
         </div>
 
@@ -484,7 +536,7 @@
                          style="width:30px; height:30px; border-radius:50%; border:1px solid var(--gold);" alt="Sol-IA">
                     <div>
                         <div style="color:#FFF; font-weight:700; font-size:12px;">Sol-IA Anfitriona</div>
-                        <div style="color:#25D366; font-size:10px;">Atención a Familias</div>
+                        <div style="color:#25D366; font-size:10px;">Atención a Padres</div>
                     </div>
                 </div>
                 <div style="display:flex; align-items:center; gap:6px;">
@@ -494,21 +546,21 @@
             </div>
 
             <div class="sol-chat-messages" id="chatSolMessages">
-                <div style="background:#1B2636; border:1px solid rgba(212,175,55,0.3); color:#E2E8F0; padding:12px; border-radius:10px; font-size:0.9rem; line-height:1.45;">
+                <div style="background:#1B2636; border:1px solid rgba(212,175,55,0.3); color:#E2E8F0; padding:10px; border-radius:10px; font-size:0.88rem; line-height:1.4;">
                     ¡Hola! Soy <strong>Sol-IA</strong>, anfitriona de Aurion.<br><br>
-                    Si deseas consultar sobre el ingreso, tutorías personalizadas o postular a la <strong>Beca VIP de 7 días</strong> para tu hijo, dime qué necesitas y te oriento con calma.
+                    Si deseas consultar sobre el ingreso, aranceles o postular a la <strong>Beca VIP de 7 días</strong> para tu hijo, escríbeme o háblame aquí y te oriento con calma.
                 </div>
             </div>
 
-            <div style="padding:10px; background:#101620; border-top:1px solid rgba(212,175,55,0.2); display:flex; gap:8px; align-items:center;">
-                <button id="solMicBtn" onclick="toggleDictadoSol()" style="background:var(--gold); border:none; color:#0A0E14; border-radius:50%; width:38px; height:38px; cursor:pointer; font-size:16px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">🎙️</button>
-                <input type="text" id="solInput" placeholder="Toca el micrófono o escribe..." onkeypress="if(event.key==='Enter') enviarMensajeSol()" style="flex:1; background:#182230; border:1px solid rgba(212,175,55,0.3); border-radius:20px; padding:10px 14px; color:#FFF; font-size:0.9rem; outline:none;">
-                <button onclick="enviarMensajeSol()" style="background:var(--gold); border:none; color:#000; border-radius:50%; width:38px; height:38px; cursor:pointer; font-weight:bold; flex-shrink:0;">➤</button>
+            <div style="padding:8px; background:#101620; border-top:1px solid rgba(212,175,55,0.2); display:flex; gap:6px; align-items:center;">
+                <button id="solMicBtn" onclick="toggleDictadoSol()" style="background:var(--gold); border:none; color:#0A0E14; border-radius:50%; width:34px; height:34px; cursor:pointer; font-size:15px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">🎙️</button>
+                <input type="text" id="solInput" placeholder="Consulta sobre matrículas o becas..." onkeypress="if(event.key==='Enter') enviarMensajeSol()" style="flex:1; background:#182230; border:1px solid rgba(212,175,55,0.3); border-radius:15px; padding:8px 12px; color:#FFF; font-size:0.85rem; outline:none;">
+                <button onclick="enviarMensajeSol()" style="background:var(--gold); border:none; color:#000; border-radius:50%; width:34px; height:34px; cursor:pointer; font-weight:bold; flex-shrink:0;">➤</button>
             </div>
         </div>
     </div>
 
-    <!-- SCRIPT CORREGIDO: PRONUNCIACIÓN DE AURION Y CONVERSACIÓN HUMANA -->
+    <!-- SCRIPT DE NAVEGACIÓN Y CONTROL -->
     <script>
         const LEO_ENDPOINT = "https://leo-maestro-7q4s.onrender.com/api/chat";
         const SOL_ENDPOINT = "https://solsanchez-ai-ulq2.onrender.com/api/chat";
@@ -522,6 +574,7 @@
         let grabacionClase = false;
         let grabacionSol = false;
 
+        // CONTADOR REAL (BASE 25+)
         function inicializarContador() {
             const base = 25;
             let visitasLocales = parseInt(localStorage.getItem("aurion_visitas_escolar") || "0") + 1;
@@ -532,6 +585,7 @@
         }
         inicializarContador();
 
+        // NAVEGACIÓN INTACTA ENTRE INICIO Y AULA
         function mostrarSeccion(seccion) {
             const secInicio = document.getElementById("seccion-inicio");
             const secAula = document.getElementById("seccion-aula");
@@ -577,7 +631,7 @@
             document.getElementById("solVoiceToggle").innerText = vozSolActiva ? "🔊" : "🔇";
         }
 
-        // LIMPIADOR DE PRONUNCIACIÓN: EVITA QUE DELETREE AURION O MINEDUC
+        // LIMPIADOR DE PRONUNCIACIÓN (EVITA QUE DELETREE AURION)
         function prepararTextoVoz(texto) {
             return texto
                 .replace(/https?:\/\/\S+/g, "")
@@ -618,7 +672,7 @@
             window.speechSynthesis.speak(utter);
         }
 
-        // MICRÓFONOS EN MODO DIRECTO (SIN TARTAMUDEO)
+        // MICRÓFONO CON RECONOCIMIENTO DIRECTO Y LIMPIO
         const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
         if (SpeechRec) {
             recognitionClase = new SpeechRec();
@@ -630,14 +684,13 @@
                 const btn = document.getElementById("micBtnClase");
                 if (btn) {
                     btn.classList.add("recording");
-                    btn.innerHTML = "<span>🔴 Escuchando...</span>";
+                    btn.innerHTML = "<span>🔴 Grabando...</span>";
                 }
             };
 
             recognitionClase.onresult = function(event) {
                 if (event.results && event.results[0]) {
                     document.getElementById("inputClase").value = event.results[0][0].transcript;
-                    setTimeout(() => { enviarMensajeClase(); }, 350);
                 }
             };
 
@@ -659,7 +712,6 @@
             recognitionSol.onresult = function(e) {
                 if (e.results && e.results[0]) {
                     document.getElementById("solInput").value = e.results[0][0].transcript;
-                    setTimeout(() => { enviarMensajeSol(); }, 350);
                 }
             };
 
@@ -738,7 +790,7 @@
                 });
 
                 const data = await response.json();
-                const respuesta = data.respuesta || "Excelente consulta. Vamos a revisarlo.";
+                const respuesta = data.respuesta || "Excelente consulta. Vamos a revisarlo juntos con calma.";
                 const loader = document.getElementById("clase-loading");
                 if (loader) loader.remove();
 
