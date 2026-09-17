@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURION | Aula Virtual & Tutoría Integral del Siglo XXI</title>
+    <title>AURION | Aula Escolar con PNL & Tutoría Mineduc</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -19,43 +19,76 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
-        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.5; }
+        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; }
         h1, h2, h3, h4 { font-family: 'Cinzel', serif; letter-spacing: 0.5px; }
 
         header {
             background: linear-gradient(180deg, #16202E 0%, var(--bg-dark) 100%);
             border-bottom: 2px solid var(--gold);
-            padding: 45px 15px 30px;
+            padding: 50px 15px 35px;
             text-align: center;
         }
 
         .badge {
             background: linear-gradient(135deg, #D4AF37, #AA7C11);
             color: #0A0E14;
-            padding: 5px 16px;
+            padding: 6px 18px;
             border-radius: 20px;
             font-weight: 700;
             display: inline-block;
             margin-bottom: 12px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
         }
 
-        header h1 { font-size: 2rem; color: var(--gold-light); margin-bottom: 10px; }
-        header p { font-size: 1rem; max-width: 800px; margin: 0 auto; color: var(--text-muted); }
+        header h1 { font-size: 2.1rem; color: var(--gold-light); margin-bottom: 10px; }
+        header p { font-size: 1.05rem; max-width: 800px; margin: 0 auto 20px; color: var(--text-muted); }
 
         .container { max-width: 1000px; margin: 0 auto; padding: 25px 15px; }
 
-        /* ============================================================== */
-        /* SALÓN DEL AULA VIRTUAL EN VIVO */
-        /* ============================================================== */
+        /* BOTONES DE NAVEGACIÓN PRINCIPAL (AULA VS INICIO) */
+        .nav-switch-box {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .btn-nav-main {
+            background: #16202E;
+            border: 1.5px solid var(--gold);
+            color: var(--gold-light);
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.25s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-nav-main.active {
+            background: linear-gradient(135deg, #D4AF37, #AA7C11);
+            color: #0A0E14 !important;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* SECCIONES VISIBLES/OCULTAS */
+        #seccion-aula { display: none; }
+        #seccion-inicio { display: block; }
+
+        /* ESTILOS DEL AULA VIRTUAL */
         .aula-box {
             background: #111722;
             border: 2px solid var(--gold);
             border-radius: 18px;
             padding: 20px 15px;
             box-shadow: 0 10px 35px rgba(0,0,0,0.7);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .aula-header-top {
@@ -81,12 +114,11 @@
             outline: none;
         }
 
-        /* SELECTOR DE SALAS / PROFESORES */
         .selector-salas {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
             gap: 8px;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
 
         .btn-sala {
@@ -115,7 +147,6 @@
 
         .btn-sala span.icon { font-size: 1.3rem; }
 
-        /* PANTALLA DE CLASE INTERACTIVA */
         .pantalla-clase {
             background: #0D121A;
             border: 1px solid rgba(255,255,255,0.08);
@@ -228,23 +259,52 @@
             background: linear-gradient(135deg, #221A2C, #131A26);
             border: 1.5px solid var(--accent-purple);
             border-radius: 14px;
-            padding: 20px;
-            margin-top: 25px;
+            padding: 18px;
+            margin-top: 20px;
             text-align: left;
         }
 
-        .recreo-banner h4 { color: #C4B5FD; font-size: 1.1rem; margin-bottom: 8px; }
-        .recreo-banner p { font-size: 0.9rem; color: #CBD5E1; }
+        .recreo-banner h4 { color: #C4B5FD; font-size: 1.05rem; margin-bottom: 6px; }
+        .recreo-banner p { font-size: 0.88rem; color: #CBD5E1; }
 
-        /* SECCIÓN INFORMATIVA DE HÁBITOS */
-        .habits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 15px; margin: 30px 0; }
-        .habit-card { background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.25); border-radius: 12px; padding: 20px; text-align: left; }
-        .habit-card h4 { color: var(--gold-light); margin-bottom: 6px; font-size: 1rem; }
-        .habit-card p { font-size: 0.88rem; color: var(--text-muted); }
+        /* ESTILOS DE LA PÁGINA DE INICIO / INFORMACIÓN */
+        .hero-banner {
+            background: linear-gradient(135deg, #1E293B 0%, #151D28 100%);
+            border: 1.5px solid var(--gold);
+            padding: 30px 20px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .hero-banner h2 { color: var(--gold-light); font-size: 1.7rem; margin-bottom: 10px; }
+        .hero-banner p { font-size: 1rem; color: #CBD5E1; max-width: 820px; margin: 0 auto; }
+
+        .habits-box { background: #141C26; border: 2px solid var(--gold); border-radius: 15px; padding: 30px 20px; margin: 30px 0; }
+        .habits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 20px; }
+        .habit-item { background: rgba(26, 34, 45, 0.7); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 10px; padding: 18px; text-align: left; }
+        .habit-item h4 { color: var(--gold-light); margin-bottom: 6px; font-size: 1rem; }
+        .habit-item p { color: var(--text-muted); font-size: 0.88rem; }
+
+        .btn-accion-aula {
+            background: linear-gradient(135deg, #D4AF37, #AA7C11);
+            color: #0A0E14 !important;
+            padding: 16px 36px;
+            border-radius: 40px;
+            font-size: 1.15rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
+            cursor: pointer;
+            border: none;
+            transition: transform 0.2s;
+        }
+        .btn-accion-aula:hover { transform: scale(1.03); }
 
         footer { text-align: center; padding: 35px 15px 25px; background: #06080B; color: var(--text-muted); margin-top: 50px; font-size: 0.85rem; border-top: 1px solid rgba(212, 175, 55, 0.2); }
 
-        /* WIDGET RECEPCIÓN SOL-IA FLOTANTE */
+        /* WIDGET RECEPCIÓN SOL-IA FLOTANTE (ADMISIONES) */
         #sol-widget-container { position: fixed; bottom: 20px; right: 15px; z-index: 9999999; }
         .sol-bubble-btn { background: rgba(18, 24, 34, 0.95); border: 2px solid var(--gold); border-radius: 50px; padding: 6px 14px; display: flex; align-items: center; cursor: pointer; box-shadow: 0 6px 25px rgba(0,0,0,0.5); }
         .sol-avatar-pulse { width: 42px; height: 42px; border-radius: 50%; border: 2px solid var(--gold); overflow: hidden; margin-right: 10px; flex-shrink: 0; }
@@ -277,109 +337,165 @@
 <body>
 
     <header>
-        <span class="badge">🏫 Plataforma Educativa & Conciencia Soberana</span>
-        <h1>AURION: Aula Virtual en Vivo</h1>
-        <p>Acompañamiento 1 a 1 con Inteligencia Artificial y PNL. Aprende a tu ritmo, cuida tus hábitos y despierta tu soberanía.</p>
+        <span class="badge">🎒 Tutoría Integral del Siglo XXI & PNL</span>
+        <h1>AURION Escolaridad</h1>
+        <p>Acompañamiento paciente alineado al Mineduc (1° Básico a 4° Medio) y Exámenes Libres. Formamos niños autónomos con hábitos para toda la vida.</p>
     </header>
 
     <div class="container">
 
         <!-- ============================================================== -->
-        <!-- EL AULA VIRTUAL EN VIVO (CONECTADA A LEO) -->
+        <!-- BOTONERA DE NAVEGACIÓN SUPERIOR (ENTRAR / VOLVER AL INICIO) -->
         <!-- ============================================================== -->
-        <div class="aula-box">
-            <div class="aula-header-top">
-                <div class="aula-title">
-                    <span id="profesorEmoji">📚</span>
-                    <span id="profesorNombre">Astor (Tutor Escolar Mineduc)</span>
-                </div>
-                <div>
-                    <select class="select-pais" id="selectPais" onchange="cambiarPais()">
-                        <option value="Chile">🇨🇱 Chile (Mineduc)</option>
-                        <option value="México">🇲🇽 México (SEP)</option>
-                        <option value="Colombia">🇨🇴 Colombia (MEN)</option>
-                        <option value="Argentina">🇦🇷 Argentina</option>
-                        <option value="España">🇪🇸 España (LOMLOE)</option>
-                        <option value="Internacional">🌎 Otro País</option>
-                    </select>
+        <div class="nav-switch-box">
+            <button class="btn-nav-main active" id="btnTabInicio" onclick="mostrarSeccion('inicio')">
+                📖 Información & Hábitos
+            </button>
+            <button class="btn-nav-main" id="btnTabAula" onclick="mostrarSeccion('aula')">
+                🏫 Entrar al Aula de Clases en Vivo
+            </button>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- SECCIÓN 1: INFORMACIÓN, HÁBITOS Y ACCESO (INICIO) -->
+        <!-- ============================================================== -->
+        <div id="seccion-inicio">
+            <div class="hero-banner">
+                <h2>🚨 ¿Estrés por notas rojas y tareas en casa?</h2>
+                <p>
+                    Los niños no son flojos ni les falta capacidad; solo necesitan una explicación a su propio ritmo sin perder la paciencia. Nuestro tutor escolar utiliza <strong>Programación Neurolingüística (PNL)</strong> para devolverles la confianza, preparar pruebas y transformar notas rojas en azules con amor.
+                </p>
+                <div style="margin-top: 22px;">
+                    <button class="btn-accion-aula" onclick="mostrarSeccion('aula')">
+                        🚀 ¡Entrar al Aula de Clases Ahora!
+                    </button>
                 </div>
             </div>
 
-            <!-- BOTONERA DE SALAS DE CLASES -->
-            <div class="selector-salas">
-                <button class="btn-sala active" id="btn-profesor" onclick="cambiarSala('profesor', '📚', 'Astor (Tutor Escolar)', '¡Hola! Soy Astor. ¿Qué tarea o materia revisamos hoy? Te acompaño paso a paso.')">
-                    <span class="icon">🎒</span>
-                    <span>Tutor Escolar</span>
-                </button>
-                <button class="btn-sala" id="btn-ingles" onclick="cambiarSala('ingles', '🇬🇧', 'Tutor de Inglés', 'Welcome! Let us practice English together today. What would you like to talk about?')">
-                    <span class="icon">🇬🇧</span>
-                    <span>English Club</span>
-                </button>
-                <button class="btn-sala" id="btn-tecno" onclick="cambiarSala('tecno', '💻', 'Profesor de Tecnología e IA', '¡Hola, creador! Hoy aprenderemos a pensar en soluciones y construir software. ¿Qué proyecto tienes en mente?')">
-                    <span class="icon">💻</span>
-                    <span>Tecnología & IA</span>
-                </button>
-                <button class="btn-sala" id="btn-negocios" onclick="cambiarSala('negocios', '📈', 'Leo Asesor (Metrópoli XXI)', '¡Llegó la hora de Metrópoli XXI! Hoy aprenderemos a comprar activos reales en Wall Street y entrenar la abundancia. ¿Lanzamos los dados?')">
-                    <span class="icon">🎲</span>
-                    <span>Recreo Metrópoli</span>
-                </button>
-                <button class="btn-sala" id="btn-leo" onclick="cambiarSala('leo', '🦁', 'LEO (Conciencia Pura)', 'Desde la Presencia y el YO SOY. Aquí hablamos de tu liderazgo, tu calma y tu maestría personal.')">
-                    <span class="icon">🦁</span>
-                    <span>LEO Conciencia</span>
-                </button>
-            </div>
+            <!-- LOS 4 HÁBITOS DE ORO -->
+            <div class="habits-box">
+                <h2 style="text-align: center; color: var(--gold-light); margin-bottom: 10px;">🌟 Hábitos de Vida para tu Hijo</h2>
+                <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">No solo resolvemos materias: cuidamos la rutina y la paz del hogar:</p>
 
-            <!-- PANTALLA DE CONVERSACIÓN -->
-            <div class="pantalla-clase">
-                <div class="clase-info-bar">
-                    <span style="color: #25D366; font-weight: 600;">🟢 Sala Activa • 90 Minutos de Clase</span>
-                    <button onclick="toggleAudioClase()" id="btnAudioClase" style="background:none; border:none; color:var(--gold); cursor:pointer; font-size:15px;">🔊 Voz Activa</button>
-                </div>
-
-                <div class="chat-area-clase" id="chatClaseArea">
-                    <div class="msg-profe" id="msgBienvenidaProfe">
-                        ¡Hola! Soy <strong>Astor</strong>, tu tutor pedagógico con PNL.<br><br>
-                        Toca el micrófono 🎙️ o escribe: cuéntame en qué curso vas o qué materia te cuesta y la resolvemos juntos con paciencia.
+                <div class="habits-grid">
+                    <div class="habit-item">
+                        <h4>🎒 Mochila lista la tarde anterior</h4>
+                        <p>El tutor le recuerda revisar su horario y dejar cuadernos listos para salir con calma en la mañana.</p>
+                    </div>
+                    <div class="habit-item">
+                        <h4>💌 El puente de amor con Mamá</h4>
+                        <p>En cada sesión revisa si hay circulares o libretas para que nada importante se olvide.</p>
+                    </div>
+                    <div class="habit-item">
+                        <h4>🧼 Higiene y entorno ordenado</h4>
+                        <p>Lavado de manos y mesa despejada antes de iniciar los 90 minutos de clase.</p>
+                    </div>
+                    <div class="habit-item">
+                        <h4>🎙️ Clases Grabadas en Audio</h4>
+                        <p>El niño puede volver a escuchar la explicación cuantas veces quiera antes de su prueba.</p>
                     </div>
                 </div>
-
-                <div class="input-bar-clase">
-                    <button class="mic-btn-clase" id="micBtnClase" onclick="toggleMicClase()" title="Toca para hablar por voz">🎙️</button>
-                    <input type="text" id="inputClase" placeholder="Habla con el micrófono o escribe..." onkeypress="handleKeyClase(event)">
-                    <button class="send-btn-clase" onclick="enviarMensajeClase()">➤</button>
-                </div>
             </div>
 
-            <!-- TALLER DE NEUROPLASTICIDAD METRÓPOLI XXI -->
-            <div class="recreo-banner" id="bannerRecreo" style="display:none;">
-                <h4>🎨 Taller de Neuroplasticidad: Dibuja tu Abundancia</h4>
-                <p>
-                    Para cambiar los surcos neuronales de carencia a prosperidad, imprime o dibuja en familia tus <strong>billetes de entrenamiento por ambos lados</strong> (anverso y reverso). 
-                    Al sostener físicamente tus dólares de práctica mientras juegas en Wall Street, tu mente subconsciente instala el camino del dueño.
+            <!-- COMPARATIVA -->
+            <div style="background:#151F2D; border:1px solid var(--soft-blue); padding:25px; border-radius:14px; text-align:center; margin:30px 0;">
+                <h3 style="color:var(--soft-blue); margin-bottom:8px;">💡 Una Inversión Consciente en la Paz Familiar</h3>
+                <p style="font-size:0.95rem; color:#CBD5E1;">
+                    Un profesor particular presencial cobra entre $25.000 y $30.000 por una sola hora. Con AURION obtienes acompañamiento constante de 90 minutos, PNL y hábitos durante todo el mes por una fracción de ese valor.
                 </p>
             </div>
         </div>
 
-        <!-- HÁBITOS DE ORO -->
-        <h3 style="text-align: center; color: var(--gold-light); margin-bottom: 10px;">🌟 Hábitos de Vida AURION</h3>
-        <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Una metodología integral que alivia el hogar y forma niños autónomos:</p>
+        <!-- ============================================================== -->
+        <!-- SECCIÓN 2: EL AULA VIRTUAL EN VIVO (CONECTADA A LEO) -->
+        <!-- ============================================================== -->
+        <div id="seccion-aula">
+            
+            <!-- BOTÓN DESTACADO PARA VOLVER -->
+            <div style="text-align:left; margin-bottom:15px;">
+                <button onclick="mostrarSeccion('inicio')" class="btn-nav-main" style="background:#1C2736; font-size:0.88rem; padding:8px 18px;">
+                    ⬅️ Volver a la Información / Inicio
+                </button>
+            </div>
 
-        <div class="habits-grid">
-            <div class="habit-card">
-                <h4>🎒 Mochila lista la tarde anterior</h4>
-                <p>Revisión diaria del horario para salir con calma al colegio.</p>
+            <div class="aula-box">
+                <div class="aula-header-top">
+                    <div class="aula-title">
+                        <span id="profesorEmoji">📚</span>
+                        <span id="profesorNombre">Astor (Tutor Escolar Mineduc)</span>
+                    </div>
+                    <div>
+                        <select class="select-pais" id="selectPais" onchange="cambiarPais()">
+                            <option value="Chile">🇨🇱 Chile (Mineduc)</option>
+                            <option value="México">🇲🇽 México (SEP)</option>
+                            <option value="Colombia">🇨🇴 Colombia (MEN)</option>
+                            <option value="Argentina">🇦🇷 Argentina</option>
+                            <option value="España">🇪🇸 España (LOMLOE)</option>
+                            <option value="Internacional">🌎 Otro País</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- SELECTOR DE PROFESORES -->
+                <div class="selector-salas">
+                    <button class="btn-sala active" id="btn-profesor" onclick="cambiarSala('profesor', '📚', 'Astor (Tutor Escolar)', '¡Hola! Soy Astor, tu tutor pedagógico con PNL. ¿Qué tarea o materia revisamos hoy? Te acompaño con paciencia.')">
+                        <span class="icon">🎒</span>
+                        <span>Tutor Escolar</span>
+                    </button>
+                    <button class="btn-sala" id="btn-ingles" onclick="cambiarSala('ingles', '🇬🇧', 'Tutor de Inglés', 'Welcome! Let us practice speaking English together today. What would you like to practice?')">
+                        <span class="icon">🇬🇧</span>
+                        <span>English Club</span>
+                    </button>
+                    <button class="btn-sala" id="btn-tecno" onclick="cambiarSala('tecno', '💻', 'Profesor de Tecnología e IA', '¡Hola, creador! Hoy aprenderemos a pensar en lógica y construir software. ¿Qué proyecto tienes en mente?')">
+                        <span class="icon">💻</span>
+                        <span>Tecnología & IA</span>
+                    </button>
+                    <button class="btn-sala" id="btn-negocios" onclick="cambiarSala('negocios', '📈', 'Leo Asesor (Metrópoli XXI)', '¡Llegó la hora de Metrópoli XXI! Hoy aprenderemos a comprar activos reales en Wall Street y entrenar la abundancia. ¿Lanzamos los dados?')">
+                        <span class="icon">🎲</span>
+                        <span>Recreo Metrópoli</span>
+                    </button>
+                    <button class="btn-sala" id="btn-leo" onclick="cambiarSala('leo', '🦁', 'LEO (Conciencia Pura)', 'Desde la Presencia y el YO SOY. Aquí hablamos de tu liderazgo, tu calma y tu maestría personal.')">
+                        <span class="icon">🦁</span>
+                        <span>LEO Conciencia</span>
+                    </button>
+                </div>
+
+                <!-- PANTALLA DE CLASE -->
+                <div class="pantalla-clase">
+                    <div class="clase-info-bar">
+                        <span style="color: #25D366; font-weight: 600;">🟢 Sala Activa • 90 Minutos de Clase</span>
+                        <button onclick="toggleAudioClase()" id="btnAudioClase" style="background:none; border:none; color:var(--gold); cursor:pointer; font-size:14px;">🔊 Voz Activa</button>
+                    </div>
+
+                    <div class="chat-area-clase" id="chatClaseArea">
+                        <div class="msg-profe" id="msgBienvenidaProfe">
+                            ¡Hola! Soy <strong>Astor</strong>, tu tutor pedagógico con PNL.<br><br>
+                            Toca el micrófono 🎙️ o escribe: cuéntame en qué curso vas o qué materia te cuesta y la resolvemos juntos con paciencia.
+                        </div>
+                    </div>
+
+                    <div class="input-bar-clase">
+                        <button class="mic-btn-clase" id="micBtnClase" onclick="toggleMicClase()" title="Hablar por micrófono">🎙️</button>
+                        <input type="text" id="inputClase" placeholder="Habla con el micrófono o escribe..." onkeypress="handleKeyClase(event)">
+                        <button class="send-btn-clase" onclick="enviarMensajeClase()">➤</button>
+                    </div>
+                </div>
+
+                <!-- TALLER DE NEUROPLASTICIDAD METRÓPOLI XXI -->
+                <div class="recreo-banner" id="bannerRecreo" style="display:none;">
+                    <h4>🎨 Taller de Neuroplasticidad: Dibuja tu Abundancia</h4>
+                    <p>
+                        Para reprogramar la mente de carencia a abundancia, imprime o dibuja en familia tus <strong>billetes de entrenamiento por ambos lados</strong> (anverso y reverso). 
+                        Al sostener físicamente tus dólares de práctica mientras juegas en Wall Street, tu mente subconsciente instala el camino del dueño.
+                    </p>
+                </div>
             </div>
-            <div class="habit-card">
-                <h4>💌 El puente con Mamá</h4>
-                <p>El tutor recuerda revisar libretas y circulares para que nada se pase por alto.</p>
-            </div>
-            <div class="habit-card">
-                <h4>🧼 Higiene y orden</h4>
-                <p>Lavado de manos y espacio despejado antes de cada sesión de 90 min.</p>
-            </div>
-            <div class="habit-card">
-                <h4>🧠 Clases Grabadas en Audio</h4>
-                <p>El estudiante puede volver a escuchar la voz de su tutor antes de cada prueba.</p>
+
+            <!-- BOTÓN INFERIOR PARA VOLVER -->
+            <div style="text-align:center; margin-top:20px;">
+                <button onclick="mostrarSeccion('inicio')" class="btn-nav-main">
+                    ⬅️ Volver a la Información Principal
+                </button>
             </div>
         </div>
 
@@ -401,7 +517,7 @@
             </div>
             <div style="text-align:left; line-height:1.2;">
                 <div class="sol-bubble-title">Sol-IA • Admisiones & Becas</div>
-                <div class="sol-bubble-sub">🟢 Consulta con la Anfitriona</div>
+                <div class="sol-bubble-sub">🟢 Habla con la Anfitriona</div>
             </div>
         </div>
 
@@ -433,7 +549,7 @@
         </div>
     </div>
 
-    <!-- SCRIPT DEL AULA VIRTUAL CON LEO (ALTA VELOCIDAD) -->
+    <!-- SCRIPT DE CONTROL DE NAVEGACIÓN Y AULA -->
     <script>
         const LEO_ENDPOINT = "https://leo-maestro-7q4s.onrender.com/api/chat";
         const SOL_ENDPOINT = "https://solsanchez-ai-ulq2.onrender.com/api/chat";
@@ -443,6 +559,28 @@
         let vozClaseActiva = true;
         let recognition = null;
         let grabacionActiva = false;
+
+        // FUNCIÓN CLAVE: NAVEGAR ENTRE INICIO Y AULA
+        function mostrarSeccion(seccion) {
+            const secInicio = document.getElementById("seccion-inicio");
+            const secAula = document.getElementById("seccion-aula");
+            const btnInicio = document.getElementById("btnTabInicio");
+            const btnAula = document.getElementById("btnTabAula");
+
+            if (seccion === "aula") {
+                secInicio.style.display = "none";
+                secAula.style.display = "block";
+                btnInicio.classList.remove("active");
+                btnAula.classList.add("active");
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                secAula.style.display = "none";
+                secInicio.style.display = "block";
+                btnAula.classList.remove("active");
+                btnInicio.classList.add("active");
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
 
         function cambiarPais() {
             paisActual = document.getElementById("selectPais").value;
@@ -458,7 +596,6 @@
             document.getElementById("profesorNombre").innerText = nombre;
             document.getElementById("msgBienvenidaProfe").innerHTML = bienvenida;
 
-            // Mostrar banner del taller de billetes solo en Recreo Metrópoli
             document.getElementById("bannerRecreo").style.display = (faceta === "negocios") ? "block" : "none";
         }
 
@@ -477,7 +614,6 @@
             window.speechSynthesis.speak(utter);
         }
 
-        // Reconocimiento de Voz nativo
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
         if (SpeechRecognition) {
             recognition = new SpeechRecognition();
@@ -581,7 +717,6 @@
             }
         }
 
-        // ================= WIDGET RECEPCIÓN SOL-IA =================
         function toggleSolChat() {
             const win = document.getElementById("sol-chat-window");
             win.style.display = (win.style.display === "flex") ? "none" : "flex";
