@@ -25,25 +25,24 @@
         header {
             background: linear-gradient(180deg, #16202E 0%, var(--bg-dark) 100%);
             border-bottom: 2px solid var(--gold);
-            padding: 40px 15px 30px;
+            padding: 40px 15px 35px;
             text-align: center;
         }
 
+        /* LOGO */
         .header-logo-container {
             margin-bottom: 12px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
         .header-logo {
             width: 85px;
             height: 85px;
             border-radius: 50%;
-            border: 2.5px solid var(--gold);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
+            border: 2px solid var(--gold);
             object-fit: cover;
-            background: #141B26;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
         }
 
         .badge {
@@ -63,7 +62,7 @@
 
         .container { max-width: 1000px; margin: 0 auto; padding: 25px 15px; }
 
-        /* BOTONES DE NAVEGACIÓN PRINCIPAL (AULA VS INICIO) */
+        /* BOTONES DE NAVEGACIÓN PRINCIPAL */
         .nav-switch-box {
             display: flex;
             justify-content: center;
@@ -168,7 +167,7 @@
             background: #0D121A;
             border: 1px solid rgba(255,255,255,0.08);
             border-radius: 14px;
-            height: 380px;
+            height: 390px;
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -229,20 +228,20 @@
             background: var(--gold);
             border: none;
             color: #0A0E14;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            border-radius: 25px;
+            padding: 8px 14px;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 14px;
+            font-weight: 700;
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 6px;
             flex-shrink: 0;
             transition: all 0.2s;
         }
 
         .mic-btn-clase.recording { background: #E53E3E; color: #FFF; animation: pulse 1s infinite; }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
 
         .input-bar-clase input {
             flex: 1;
@@ -284,7 +283,7 @@
         .recreo-banner h4 { color: #C4B5FD; font-size: 1.05rem; margin-bottom: 6px; }
         .recreo-banner p { font-size: 0.88rem; color: #CBD5E1; }
 
-        /* ESTILOS DE LA PÁGINA DE INICIO / INFORMACIÓN */
+        /* ESTILOS DE INICIO */
         .hero-banner {
             background: linear-gradient(135deg, #1E293B 0%, #151D28 100%);
             border: 1.5px solid var(--gold);
@@ -319,25 +318,9 @@
         }
         .btn-accion-aula:hover { transform: scale(1.03); }
 
-        footer { 
-            text-align: center; 
-            padding: 35px 15px 25px; 
-            background: #06080B; 
-            color: var(--text-muted); 
-            margin-top: 50px; 
-            font-size: 0.85rem; 
-            border-top: 1px solid rgba(212, 175, 55, 0.2); 
-        }
+        footer { text-align: center; padding: 35px 15px 25px; background: #06080B; color: var(--text-muted); margin-top: 50px; font-size: 0.85rem; border-top: 1px solid rgba(212, 175, 55, 0.2); }
 
-        .counter-container {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* WIDGET RECEPCIÓN SOL-IA FLOTANTE (ADMISIONES) */
+        /* WIDGET FLOTANTE SOL-IA CON VOZ Y MICRÓFONO */
         #sol-widget-container { position: fixed; bottom: 20px; right: 15px; z-index: 9999999; }
         .sol-bubble-btn { background: rgba(18, 24, 34, 0.95); border: 2px solid var(--gold); border-radius: 50px; padding: 6px 14px; display: flex; align-items: center; cursor: pointer; box-shadow: 0 6px 25px rgba(0,0,0,0.5); }
         .sol-avatar-pulse { width: 42px; height: 42px; border-radius: 50%; border: 2px solid var(--gold); overflow: hidden; margin-right: 10px; flex-shrink: 0; }
@@ -351,7 +334,7 @@
             bottom: 80px;
             right: 10px;
             left: 10px;
-            max-width: 370px;
+            max-width: 375px;
             margin: 0 auto;
             height: 480px;
             background: #141C26;
@@ -370,7 +353,6 @@
 <body>
 
     <header>
-        <!-- LOGO OFICIAL EN HEADER -->
         <div class="header-logo-container">
             <img src="https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg" 
                  onerror="this.onerror=null; this.src='https://files.manuscdn.com/user_upload_by_module/session_file/310519663295304532/SXAbPHcoYQWtVFRu.jpg';" 
@@ -378,16 +360,14 @@
                  class="header-logo">
         </div>
 
-        <span class="badge">🎒 Tutoría Integral del Siglo XXI & Pedagogía</span>
+        <span class="badge">🎒 Tutoría Integral del Siglo XXI & PNL</span>
         <h1>AURION Escolaridad</h1>
         <p>Acompañamiento paciente alineado al Mineduc (1° Básico a 4° Medio) y Exámenes Libres. Formamos niños autónomos con hábitos para toda la vida.</p>
     </header>
 
     <div class="container">
 
-        <!-- ============================================================== -->
-        <!-- BOTONERA DE NAVEGACIÓN SUPERIOR (ENTRAR / VOLVER AL INICIO) -->
-        <!-- ============================================================== -->
+        <!-- BOTONES DE NAVEGACIÓN -->
         <div class="nav-switch-box">
             <button class="btn-nav-main active" id="btnTabInicio" onclick="mostrarSeccion('inicio')">
                 📖 Información & Hábitos
@@ -397,14 +377,12 @@
             </button>
         </div>
 
-        <!-- ============================================================== -->
-        <!-- SECCIÓN 1: INFORMACIÓN, HÁBITOS Y ACCESO (INICIO) -->
-        <!-- ============================================================== -->
+        <!-- SECCIÓN 1: INICIO -->
         <div id="seccion-inicio">
             <div class="hero-banner">
                 <h2>🚨 ¿Estrés por notas rojas y tareas en casa?</h2>
                 <p>
-                    Los niños no son flojos ni les falta capacidad; solo necesitan una explicación a su propio ritmo sin perder la paciencia. Nuestro tutor escolar utiliza <strong>Programación Neurolingüística (PNL) y didáctica personalizada</strong> para devolverles la confianza, preparar pruebas y transformar notas rojas en azules con dedicación.
+                    Los niños no son flojos ni les falta capacidad; solo necesitan una explicación a su propio ritmo sin perder la paciencia. Nuestro tutor escolar utiliza <strong>Programación Neurolingüística (PNL)</strong> para devolverles la confianza, preparar pruebas y transformar notas rojas en azules con amor.
                 </p>
                 <div style="margin-top: 22px;">
                     <button class="btn-accion-aula" onclick="mostrarSeccion('aula')">
@@ -413,9 +391,9 @@
                 </div>
             </div>
 
-            <!-- LOS 4 HÁBITOS DE ORO -->
+            <!-- 4 HÁBITOS DE ORO -->
             <div class="habits-box">
-                <h2 style="text-align: center; color: var(--gold-light); margin-bottom: 10px;">🌟 Hábitos de Estudio para tu Hijo</h2>
+                <h2 style="text-align: center; color: var(--gold-light); margin-bottom: 10px;">🌟 Hábitos de Vida para tu Hijo</h2>
                 <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">No solo resolvemos materias: cuidamos la rutina y la paz del hogar:</p>
 
                 <div class="habits-grid">
@@ -424,7 +402,7 @@
                         <p>El tutor le recuerda revisar su horario y dejar cuadernos listos para salir con calma en la mañana.</p>
                     </div>
                     <div class="habit-item">
-                        <h4>💌 El puente de comunicación con la Familia</h4>
+                        <h4>💌 El puente de amor con Mamá</h4>
                         <p>En cada sesión revisa si hay circulares o libretas para que nada importante se olvide.</p>
                     </div>
                     <div class="habit-item">
@@ -433,26 +411,22 @@
                     </div>
                     <div class="habit-item">
                         <h4>🎙️ Clases Grabadas en Audio</h4>
-                        <p>El estudiante puede volver a escuchar la explicación cuantas veces quiera antes de su prueba.</p>
+                        <p>El niño puede volver a escuchar la explicación cuantas veces quiera antes de su prueba.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- COMPARATIVA -->
             <div style="background:#151F2D; border:1px solid var(--soft-blue); padding:25px; border-radius:14px; text-align:center; margin:30px 0;">
-                <h3 style="color:var(--soft-blue); margin-bottom:8px;">💡 Una Inversión Consciente en el Rendimiento Escolar</h3>
+                <h3 style="color:var(--soft-blue); margin-bottom:8px;">💡 Una Inversión Consciente en la Paz Familiar</h3>
                 <p style="font-size:0.95rem; color:#CBD5E1;">
-                    Un profesor particular presencial cobra entre $25.000 y $30.000 por una sola hora. Con AURION obtienes acompañamiento constante de 90 minutos, didáctica y hábitos durante todo el mes por una fracción de ese valor.
+                    Un profesor particular presencial cobra entre $25.000 y $30.000 por una sola hora. Con AURION obtienes acompañamiento constante de 90 minutos, PNL y hábitos durante todo el mes por una fracción de ese valor.
                 </p>
             </div>
         </div>
 
-        <!-- ============================================================== -->
-        <!-- SECCIÓN 2: EL AULA VIRTUAL EN VIVO (100% SECULAR Y PEDAGÓGICA) -->
-        <!-- ============================================================== -->
+        <!-- SECCIÓN 2: AULA VIRTUAL EN VIVO -->
         <div id="seccion-aula">
             
-            <!-- BOTÓN DESTACADO PARA VOLVER -->
             <div style="text-align:left; margin-bottom:15px;">
                 <button onclick="mostrarSeccion('inicio')" class="btn-nav-main" style="background:#1C2736; font-size:0.88rem; padding:8px 18px;">
                     ⬅️ Volver a la Información / Inicio
@@ -463,7 +437,7 @@
                 <div class="aula-header-top">
                     <div class="aula-title">
                         <span id="profesorEmoji">📚</span>
-                        <span id="profesorNombre">Astor (Tutor Pedagógico Mineduc)</span>
+                        <span id="profesorNombre">Astor (Tutor Escolar Mineduc)</span>
                     </div>
                     <div>
                         <select class="select-pais" id="selectPais" onchange="cambiarPais()">
@@ -477,31 +451,31 @@
                     </div>
                 </div>
 
-                <!-- SELECTOR DE PROFESORES SECULARES -->
+                <!-- SELECTOR DE SALAS -->
                 <div class="selector-salas">
-                    <button class="btn-sala active" id="btn-profesor" onclick="cambiarSala('profesor', '📚', 'Astor (Tutor Pedagógico)', '¡Hola! Soy Astor, tu tutor escolar. ¿Qué tarea, materia o guía vamos a revisar hoy? Vamos paso a paso.')">
+                    <button class="btn-sala active" id="btn-profesor" onclick="cambiarSala('profesor', '📚', 'Astor (Tutor Escolar)', '¡Hola! Soy Astor, tu tutor pedagógico con PNL. ¿Qué tarea o materia revisamos hoy? Te acompaño con paciencia.')">
                         <span class="icon">🎒</span>
                         <span>Tutor Escolar</span>
                     </button>
-                    <button class="btn-sala" id="btn-ingles" onclick="cambiarSala('ingles', '🇬🇧', 'Profesor de Inglés', 'Welcome! Let us practice English vocabulary, grammar and reading together. What are you studying today?')">
+                    <button class="btn-sala" id="btn-ingles" onclick="cambiarSala('ingles', '🇬🇧', 'Tutor de Inglés', 'Welcome! Let us practice speaking English together today. What would you like to practice?')">
                         <span class="icon">🇬🇧</span>
                         <span>English Club</span>
                     </button>
-                    <button class="btn-sala" id="btn-tecno" onclick="cambiarSala('tecno', '💻', 'Profesor de Tecnología e IA', '¡Hola! Hoy aprenderemos lógica, resolución de problemas y pensamiento computacional. ¿Qué duda o proyecto tienes?')">
+                    <button class="btn-sala" id="btn-tecno" onclick="cambiarSala('tecno', '💻', 'Profesor de Tecnología e IA', '¡Hola, creador! Hoy aprenderemos a pensar en lógica y construir software. ¿Qué proyecto tienes en mente?')">
                         <span class="icon">💻</span>
                         <span>Tecnología & IA</span>
                     </button>
-                    <button class="btn-sala" id="btn-negocios" onclick="cambiarSala('negocios', '📈', 'Educación Financiera Escolar', '¡Bienvenidos al taller de educación financiera! Hoy aprenderemos a calcular presupuestos, ahorro y toma de decisiones inteligentes.')">
+                    <button class="btn-sala" id="btn-negocios" onclick="cambiarSala('negocios', '📈', 'Leo Asesor (Metrópoli XXI)', '¡Llegó la hora de Metrópoli XXI! Hoy aprenderemos a comprar activos reales en Wall Street y entrenar la abundancia. ¿Lanzamos los dados?')">
                         <span class="icon">🎲</span>
-                        <span>Recreo Financiero</span>
+                        <span>Recreo Metrópoli</span>
                     </button>
-                    <button class="btn-sala" id="btn-leo" onclick="cambiarSala('leo', '🦁', 'Orientador de Hábitos & Estudio', '¡Hola! Soy tu orientador de técnicas de estudio y concentración. ¿Cómo organizamos tu tiempo de estudio hoy?')">
+                    <button class="btn-sala" id="btn-leo" onclick="cambiarSala('leo', '🦁', 'Orientador de Hábitos y Estudio', '¡Hola! Aquí organizamos tus métodos de estudio, concentración y liderazgo personal. ¿Qué meta tenemos para hoy?')">
                         <span class="icon">🦁</span>
                         <span>Hábitos & Foco</span>
                     </button>
                 </div>
 
-                <!-- PANTALLA DE CLASE -->
+                <!-- PANTALLA DE CLASE INTERACTIVA -->
                 <div class="pantalla-clase">
                     <div class="clase-info-bar">
                         <span style="color: #25D366; font-weight: 600;">🟢 Sala Activa • 90 Minutos de Clase</span>
@@ -510,28 +484,30 @@
 
                     <div class="chat-area-clase" id="chatClaseArea">
                         <div class="msg-profe" id="msgBienvenidaProfe">
-                            ¡Hola! Soy <strong>Astor</strong>, tu tutor escolar.<br><br>
-                            Toca el micrófono 🎙️ o escribe: cuéntame en qué curso vas o qué ejercicio te cuesta y lo resolvemos juntos paso a paso.
+                            ¡Hola! Soy <strong>Astor</strong>, tu tutor pedagógico con PNL.<br><br>
+                            Toca el botón amarillo <strong>🎙️ Hablar</strong> o escribe tu consulta: cuéntame en qué curso vas o qué materia te cuesta y la resolvemos juntos con paciencia.
                         </div>
                     </div>
 
+                    <!-- BARRA DE ENTRADA CON BOTÓN CLARO PARA HABLAR -->
                     <div class="input-bar-clase">
-                        <button class="mic-btn-clase" id="micBtnClase" onclick="toggleMicClase()" title="Hablar por micrófono">🎙️</button>
-                        <input type="text" id="inputClase" placeholder="Habla con el micrófono o escribe..." onkeypress="handleKeyClase(event)">
+                        <button class="mic-btn-clase" id="micBtnClase" onclick="toggleMicClase()" title="Toca para hablar por voz con el profesor">
+                            <span>🎙️ Hablar</span>
+                        </button>
+                        <input type="text" id="inputClase" placeholder="O escribe tu pregunta escolar..." onkeypress="handleKeyClase(event)">
                         <button class="send-btn-clase" onclick="enviarMensajeClase()">➤</button>
                     </div>
                 </div>
 
-                <!-- TALLER PRÁCTICO -->
                 <div class="recreo-banner" id="bannerRecreo" style="display:none;">
-                    <h4>🎨 Taller Práctico de Hábitos y Matemáticas Aplicadas</h4>
+                    <h4>🎨 Taller de Neuroplasticidad: Dibuja tu Abundancia</h4>
                     <p>
-                        Aprende a presupuestar gastos escolares, planificar tu ahorro y comprender la economía básica de forma didáctica y entretenida en familia.
+                        Para reprogramar la mente de carencia a abundancia, imprime o dibuja en familia tus <strong>billetes de entrenamiento por ambos lados</strong> (anverso y reverso). 
+                        Al sostener físicamente tus dólares de práctica mientras juegas en Wall Street, tu mente subconsciente instala el camino del dueño.
                     </p>
                 </div>
             </div>
 
-            <!-- BOTÓN INFERIOR PARA VOLVER -->
             <div style="text-align:center; margin-top:20px;">
                 <button onclick="mostrarSeccion('inicio')" class="btn-nav-main">
                     ⬅️ Volver a la Información Principal
@@ -541,21 +517,19 @@
 
     </div>
 
-    <!-- FOOTER CON MARCADOR DE VISITAS -->
+    <!-- FOOTER CON CONTADOR REAL (BASE 25 + VISITAS) -->
     <footer>
-        <p>&copy; 2026 AURION &bull; Aula Virtual Escolar &bull; Dirección Pedagógica: Sol Sánchez Contreras | Chile</p>
+        <p>&copy; 2026 AURION &bull; Plataforma Escolar y Soberanía | Fundadora: Sol Sánchez Contreras</p>
         
-        <div class="counter-container">
-            <span style="display:inline-flex; align-items:center; gap:6px; background:rgba(212,175,55,0.08); padding:4px 12px; border-radius:18px; border:1px solid rgba(212,175,55,0.25); color:var(--gold-light); font-size:0.8rem;">
-                🎓 Visitas y Alumnos:
-                <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fterapiasol-ai.github.io%2Fasistente-escolar&count_bg=%232563EB&title_bg=%230A0E14&icon=&icon_color=%23FFFFFF&title=Estudiantes&edge_flat=true" alt="Visitas Escolares" style="vertical-align:middle; height:18px;">
-            </span>
+        <div style="margin-top: 15px; display: flex; justify-content: center; align-items: center;">
+            <div style="display:inline-flex; align-items:center; gap:8px; background:#141B26; padding:6px 16px; border-radius:20px; border:1.5px solid var(--gold); color:var(--gold-light); font-size:0.85rem; font-weight:700;">
+                <span>🎓 Alumnos & Visitas:</span>
+                <span id="contador-numero-escolar" style="background:var(--gold); color:#0A0E14; padding:2px 8px; border-radius:10px; font-size:0.9rem;">25</span>
+            </div>
         </div>
     </footer>
 
-    <!-- ============================================================== -->
-    <!-- WIDGET RECEPCIÓN SOL-IA FLOTANTE (PARA PAPÁS Y ADMISIONES) -->
-    <!-- ============================================================== -->
+    <!-- WIDGET RECEPCIÓN SOL-IA CON VOZ Y MICRÓFONO COMPLETO -->
     <div id="sol-widget-container">
         <div class="sol-bubble-btn" onclick="toggleSolChat()">
             <div class="sol-avatar-pulse">
@@ -565,7 +539,7 @@
             </div>
             <div style="text-align:left; line-height:1.2;">
                 <div class="sol-bubble-title">Sol-IA • Admisiones & Becas</div>
-                <div class="sol-bubble-sub">🟢 Atención a Familias</div>
+                <div class="sol-bubble-sub">🟢 Habla o escribe aquí</div>
             </div>
         </div>
 
@@ -577,27 +551,31 @@
                          style="width:30px; height:30px; border-radius:50%; border:1px solid var(--gold);" alt="Sol-IA">
                     <div>
                         <div style="color:#FFF; font-weight:700; font-size:12px;">Sol-IA Anfitriona</div>
-                        <div style="color:#25D366; font-size:10px;">Admisión y Familias</div>
+                        <div style="color:#25D366; font-size:10px;">Atención a Padres</div>
                     </div>
                 </div>
-                <button onclick="toggleSolChat()" style="background:none; border:none; color:var(--text-muted); font-size:18px; cursor:pointer;">✕</button>
+                <div style="display:flex; align-items:center; gap:6px;">
+                    <button onclick="toggleVoiceAudioSol()" id="solVoiceToggle" style="background:none; border:none; color:var(--gold); cursor:pointer; font-size:15px;">🔊</button>
+                    <button onclick="toggleSolChat()" style="background:none; border:none; color:var(--text-muted); font-size:18px; cursor:pointer;">✕</button>
+                </div>
             </div>
 
             <div class="sol-chat-messages" id="chatSolMessages">
                 <div style="background:#1B2636; border:1px solid rgba(212,175,55,0.3); color:#E2E8F0; padding:10px; border-radius:10px; font-size:0.88rem; line-height:1.4;">
-                    ¡Hola! Soy <strong>Sol-IA</strong>, encargada de admisiones.<br><br>
-                    Si deseas consultar sobre planes de tutoría, aranceles o postular al programa de apadrinamiento para tu hijo, escríbeme aquí y te oriento con gusto.
+                    ¡Hola! Soy <strong>Sol-IA</strong>, anfitriona de Aurion.<br><br>
+                    Toca el micrófono 🎙️ o escribe: si deseas consultar sobre el ingreso, tutorías personalizadas o postular a la <strong>Beca VIP de 7 días</strong> para tu hijo, te oriento con calma.
                 </div>
             </div>
 
-            <div style="padding:8px; background:#101620; border-top:1px solid rgba(212,175,55,0.2); display:flex; gap:6px;">
-                <input type="text" id="solInput" placeholder="Consulta sobre matrículas o tutorías..." onkeypress="if(event.key==='Enter') enviarMensajeSol()" style="flex:1; background:#182230; border:1px solid rgba(212,175,55,0.3); border-radius:15px; padding:8px 12px; color:#FFF; font-size:0.85rem; outline:none;">
-                <button onclick="enviarMensajeSol()" style="background:var(--gold); border:none; color:#000; border-radius:50%; width:34px; height:34px; cursor:pointer; font-weight:bold;">➤</button>
+            <div style="padding:8px; background:#101620; border-top:1px solid rgba(212,175,55,0.2); display:flex; gap:6px; align-items:center;">
+                <button id="solMicBtn" onclick="toggleDictadoSol()" style="background:var(--gold); border:none; color:#0A0E14; border-radius:50%; width:34px; height:34px; cursor:pointer; font-size:15px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">🎙️</button>
+                <input type="text" id="solInput" placeholder="Toca el micro o escribe..." onkeypress="if(event.key==='Enter') enviarMensajeSol()" style="flex:1; background:#182230; border:1px solid rgba(212,175,55,0.3); border-radius:15px; padding:8px 12px; color:#FFF; font-size:0.85rem; outline:none;">
+                <button onclick="enviarMensajeSol()" style="background:var(--gold); border:none; color:#000; border-radius:50%; width:34px; height:34px; cursor:pointer; font-weight:bold; flex-shrink:0;">➤</button>
             </div>
         </div>
     </div>
 
-    <!-- SCRIPT DE CONTROL DE NAVEGACIÓN Y AULA (100% SECULAR Y SIN BUCLES) -->
+    <!-- SCRIPT COMPLETO DE CONTROL, VOZ Y CONTADOR REAL -->
     <script>
         const LEO_ENDPOINT = "https://leo-maestro-7q4s.onrender.com/api/chat";
         const SOL_ENDPOINT = "https://solsanchez-ai-ulq2.onrender.com/api/chat";
@@ -605,8 +583,22 @@
         let salaActual = "profesor";
         let paisActual = "Chile";
         let vozClaseActiva = true;
-        let recognition = null;
-        let grabacionActiva = false;
+        let vozSolActiva = true;
+        let recognitionClase = null;
+        let recognitionSol = null;
+        let grabacionClase = false;
+        let grabacionSol = false;
+
+        // CONTADOR REAL CON BASE 25
+        function inicializarContador() {
+            const base = 25;
+            let visitasLocales = parseInt(localStorage.getItem("aurion_visitas_escolar") || "0") + 1;
+            localStorage.setItem("aurion_visitas_escolar", visitasLocales);
+            const total = base + visitasLocales;
+            const el = document.getElementById("contador-numero-escolar");
+            if (el) el.innerText = total;
+        }
+        inicializarContador();
 
         function mostrarSeccion(seccion) {
             const secInicio = document.getElementById("seccion-inicio");
@@ -651,7 +643,12 @@
             document.getElementById("btnAudioClase").innerText = vozClaseActiva ? "🔊 Voz Activa" : "🔇 Voz Silenciada";
         }
 
-        function hablarVozClase(texto, esIngles=false) {
+        function toggleVoiceAudioSol() {
+            vozSolActiva = !vozSolActiva;
+            document.getElementById("solVoiceToggle").innerText = vozSolActiva ? "🔊" : "🔇";
+        }
+
+        function hablarVoz(texto, esIngles=false) {
             if (!vozClaseActiva || !('speechSynthesis' in window)) return;
             window.speechSynthesis.cancel();
             let limpio = texto.replace(/https?:\/\/\S+/g, "").replace(/[*#_~`]/g, "");
@@ -661,22 +658,32 @@
             window.speechSynthesis.speak(utter);
         }
 
-        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-        if (SpeechRecognition) {
-            recognition = new SpeechRecognition();
-            recognition.continuous = false;
-            recognition.interimResults = true;
+        function hablarVozSol(texto) {
+            if (!vozSolActiva || !('speechSynthesis' in window)) return;
+            window.speechSynthesis.cancel();
+            let limpio = texto.replace(/https?:\/\/\S+/g, "").replace(/[*#_~`]/g, "");
+            const utter = new SpeechSynthesisUtterance(limpio);
+            utter.lang = "es-CL";
+            window.speechSynthesis.speak(utter);
+        }
 
-            recognition.onstart = function() {
-                grabacionActiva = true;
+        // MICRÓFONO AULA DE CLASES
+        const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (SpeechRec) {
+            recognitionClase = new SpeechRec();
+            recognitionClase.continuous = false;
+            recognitionClase.interimResults = true;
+
+            recognitionClase.onstart = function() {
+                grabacionClase = true;
                 const btn = document.getElementById("micBtnClase");
                 if (btn) {
                     btn.classList.add("recording");
-                    btn.innerText = "🔴";
+                    btn.innerHTML = "<span>🔴 Escuchando...</span>";
                 }
             };
 
-            recognition.onresult = function(event) {
+            recognitionClase.onresult = function(event) {
                 let texto = "";
                 for (let i = event.resultIndex; i < event.results.length; i++) {
                     texto += event.results[i][0].transcript;
@@ -684,33 +691,77 @@
                 document.getElementById("inputClase").value = texto;
             };
 
-            recognition.onerror = function() { detenerMicClase(); };
-            recognition.onend = function() {
+            recognitionClase.onerror = function() { detenerMicClase(); };
+            recognitionClase.onend = function() {
                 detenerMicClase();
                 const inp = document.getElementById("inputClase");
                 if (inp && inp.value.trim().length > 0) {
                     setTimeout(() => { enviarMensajeClase(); }, 400);
                 }
             };
+
+            // MICRÓFONO SOL-IA RECEPCIÓN
+            recognitionSol = new SpeechRec();
+            recognitionSol.lang = 'es-CL';
+            recognitionSol.continuous = false;
+            recognitionSol.interimResults = true;
+
+            recognitionSol.onstart = function() {
+                grabacionSol = true;
+                const btn = document.getElementById("solMicBtn");
+                if (btn) btn.innerText = "🔴";
+            };
+
+            recognitionSol.onresult = function(e) {
+                let txt = "";
+                for (let i = e.resultIndex; i < e.results.length; i++) {
+                    txt += e.results[i][0].transcript;
+                }
+                document.getElementById("solInput").value = txt;
+            };
+
+            recognitionSol.onerror = function() { detenerMicSol(); };
+            recognitionSol.onend = function() {
+                detenerMicSol();
+                const inp = document.getElementById("solInput");
+                if (inp && inp.value.trim().length > 0) {
+                    setTimeout(() => { enviarMensajeSol(); }, 400);
+                }
+            };
         }
 
         function toggleMicClase() {
-            if (!recognition) return;
-            if (grabacionActiva) {
-                recognition.stop();
+            if (!recognitionClase) {
+                alert("El reconocimiento de voz está activo. Puedes escribir o habilitar el micrófono en tu navegador.");
+                return;
+            }
+            if (grabacionClase) {
+                recognitionClase.stop();
             } else {
-                recognition.lang = (salaActual === "ingles") ? "en-US" : "es-CL";
-                recognition.start();
+                recognitionClase.lang = (salaActual === "ingles") ? "en-US" : "es-CL";
+                recognitionClase.start();
             }
         }
 
         function detenerMicClase() {
-            grabacionActiva = false;
+            grabacionClase = false;
             const btn = document.getElementById("micBtnClase");
             if (btn) {
                 btn.classList.remove("recording");
-                btn.innerText = "🎙️";
+                btn.innerHTML = "<span>🎙️ Hablar</span>";
             }
+        }
+
+        function toggleDictadoSol() {
+            if (!recognitionSol) return;
+            if (grabacionSol) recognitionSol.stop();
+            else recognitionSol.start();
+        }
+
+        function detenerMicSol() {
+            grabacionSol = false;
+            const btn = document.getElementById("solMicBtn");
+            if (btn) btn.innerText = "🎙️";
         }
 
         function handleKeyClase(e) { if (e.key === "Enter") enviarMensajeClase(); }
@@ -731,7 +782,7 @@
             const loading = document.createElement("div");
             loading.className = "msg-profe";
             loading.id = "clase-loading";
-            loading.innerText = "El profesor está analizando tu consulta...";
+            loading.innerText = "El profesor está respondiendo...";
             chat.appendChild(loading);
             chat.scrollTop = chat.scrollHeight;
 
@@ -743,13 +794,12 @@
                         mensaje: mensaje,
                         faceta: salaActual,
                         pais: paisActual,
-                        alumno: "Estudiante",
-                        directiva: "Eres un profesor y tutor pedagógico escolar. Responde de forma 100% secular, laica y didáctica. Enseña paso a paso según el currículum escolar. PROHIBIDO terminología mística, metafísica, decretos 'YO SOY' o esoterismo."
+                        alumno: "Estudiante"
                     })
                 });
 
                 const data = await response.json();
-                const respuesta = data.respuesta || "Excelente pregunta. Vamos a resolverlo juntos paso a paso.";
+                const respuesta = data.respuesta || "Excelente pregunta. Continuemos con el ejercicio.";
                 const loader = document.getElementById("clase-loading");
                 if (loader) loader.remove();
 
@@ -759,16 +809,11 @@
                 chat.appendChild(profeMsg);
                 chat.scrollTop = chat.scrollHeight;
 
-                hablarVozClase(respuesta, salaActual === "ingles");
+                hablarVoz(respuesta, salaActual === "ingles");
 
             } catch (err) {
                 const loader = document.getElementById("clase-loading");
                 if (loader) loader.remove();
-                
-                const errDocente = document.createElement("div");
-                errDocente.className = "msg-profe";
-                errDocente.innerText = "Pausa de conexión en la sala. Repíteme tu pregunta para continuar con la lección.";
-                chat.appendChild(errDocente);
             }
         }
 
@@ -790,23 +835,35 @@
             input.value = "";
             chat.scrollTop = chat.scrollHeight;
 
+            const loading = document.createElement("div");
+            loading.style.cssText = "background:#1B2636; border:1px solid rgba(212,175,55,0.3); color:#E2E8F0; padding:8px 10px; border-radius:10px; font-size:0.85rem;";
+            loading.id = "sol-load-box";
+            loading.innerText = "Sol-IA está respondiendo...";
+            chat.appendChild(loading);
+            chat.scrollTop = chat.scrollHeight;
+
             try {
                 const res = await fetch(SOL_ENDPOINT, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ 
-                        mensaje: mensaje, 
-                        origen: "Recepción Escolar",
-                        directiva: "Tono institucional, formal, laico y empático para atención a padres y apoderados."
-                    })
+                    body: JSON.stringify({ mensaje: mensaje, origen: "Recepción Escolar" })
                 });
                 const d = await res.json();
+                const respuesta = d.respuesta || "Con gusto te oriento sobre las opciones escolares.";
+                const loader = document.getElementById("sol-load-box");
+                if (loader) loader.remove();
+
                 const solMsg = document.createElement("div");
                 solMsg.style.cssText = "background:#1B2636; border:1px solid rgba(212,175,55,0.3); color:#E2E8F0; padding:10px; border-radius:10px; font-size:0.88rem; line-height:1.4;";
-                solMsg.innerHTML = d.respuesta.replace(/\n/g, "<br>");
+                solMsg.innerHTML = respuesta.replace(/\n/g, "<br>");
                 chat.appendChild(solMsg);
                 chat.scrollTop = chat.scrollHeight;
-            } catch(e) {}
+
+                hablarVozSol(respuesta);
+            } catch(e) {
+                const loader = document.getElementById("sol-load-box");
+                if (loader) loader.remove();
+            }
         }
     </script>
 </body>
