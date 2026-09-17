@@ -19,13 +19,13 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
-        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; }
+        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; min-height: 100vh; }
         h1, h2, h3, h4 { font-family: 'Cinzel', serif; letter-spacing: 0.5px; }
 
         header {
             background: linear-gradient(180deg, #16202E 0%, var(--bg-dark) 100%);
             border-bottom: 2px solid var(--gold);
-            padding: 40px 15px 30px;
+            padding: 35px 15px 25px;
             text-align: center;
         }
 
@@ -51,22 +51,22 @@
             border-radius: 20px;
             font-weight: 700;
             display: inline-block;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             font-size: 0.85rem;
             text-transform: uppercase;
         }
 
-        header h1 { font-size: 2.1rem; color: var(--gold-light); margin-bottom: 10px; }
-        header p { font-size: 1.05rem; max-width: 800px; margin: 0 auto 20px; color: var(--text-muted); }
+        header h1 { font-size: 2.1rem; color: var(--gold-light); margin-bottom: 8px; }
+        header p { font-size: 1rem; max-width: 800px; margin: 0 auto 15px; color: var(--text-muted); }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 25px 15px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px 15px 40px; }
 
-        /* BOTONES DE NAVEGACIÓN PRINCIPAL */
+        /* NAVEGACIÓN PRINCIPAL */
         .nav-switch-box {
             display: flex;
             justify-content: center;
             gap: 12px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             flex-wrap: wrap;
         }
 
@@ -92,7 +92,6 @@
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
         }
 
-        /* SECCIONES VISIBLES/OCULTAS (INICIO ACTIVO POR DEFECTO) */
         #seccion-inicio { display: block; }
         #seccion-aula { display: none; }
 
@@ -162,6 +161,7 @@
 
         .btn-sala span.icon { font-size: 1.3rem; }
 
+        /* PANTALLA DE CLASE */
         .pantalla-clase {
             background: #0D121A;
             border: 1px solid rgba(255,255,255,0.08);
@@ -174,22 +174,22 @@
 
         .clase-info-bar {
             background: #162232;
-            padding: 8px 14px;
+            padding: 10px 16px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
 
         .chat-area-clase {
             flex: 1;
-            padding: 15px;
+            padding: 18px 15px;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            font-size: 0.92rem;
+            gap: 14px;
+            font-size: 0.95rem;
             min-height: 300px;
         }
 
@@ -197,39 +197,39 @@
             background: #162232;
             border: 1px solid rgba(212, 175, 55, 0.25);
             color: #E2E8F0;
-            padding: 12px 14px;
+            padding: 14px 16px;
             border-radius: 14px 14px 14px 2px;
             max-width: 90%;
-            line-height: 1.45;
+            line-height: 1.5;
             align-self: flex-start;
         }
 
         .msg-alumno {
             background: linear-gradient(135deg, #D4AF37, #AA7C11);
             color: #0A0E14;
-            padding: 10px 14px;
+            padding: 12px 16px;
             border-radius: 14px 14px 2px 14px;
             max-width: 85%;
             font-weight: 600;
-            line-height: 1.4;
+            line-height: 1.45;
             align-self: flex-end;
         }
 
         .input-bar-clase {
-            padding: 10px 12px;
+            padding: 12px 14px;
             background: #111722;
             border-top: 1px solid rgba(212, 175, 55, 0.2);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
         .mic-btn-clase {
             background: var(--gold);
             border: none;
             color: #0A0E14;
-            border-radius: 20px;
-            padding: 8px 14px;
+            border-radius: 25px;
+            padding: 10px 16px;
             cursor: pointer;
             font-size: 14px;
             font-weight: 700;
@@ -247,10 +247,10 @@
             flex: 1;
             background: #16202E;
             border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 20px;
-            padding: 10px 14px;
+            border-radius: 22px;
+            padding: 12px 16px;
             color: #FFF;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             outline: none;
         }
 
@@ -259,10 +259,10 @@
             border: none;
             color: #0A0E14;
             border-radius: 50%;
-            width: 38px;
-            height: 38px;
+            width: 44px;
+            height: 44px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 17px;
             font-weight: bold;
             display: flex;
             align-items: center;
@@ -270,24 +270,53 @@
             flex-shrink: 0;
         }
 
-        /* ESTILOS DE LA PÁGINA DE INICIO / INFORMACIÓN */
+        /* CAJAS DE INFORMACIÓN, HÁBITOS Y DESCARGAS */
         .hero-banner {
             background: linear-gradient(135deg, #1E293B 0%, #151D28 100%);
             border: 1.5px solid var(--gold);
             padding: 30px 20px;
             border-radius: 16px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             text-align: center;
         }
-
         .hero-banner h2 { color: var(--gold-light); font-size: 1.7rem; margin-bottom: 10px; }
         .hero-banner p { font-size: 1rem; color: #CBD5E1; max-width: 820px; margin: 0 auto; }
 
-        .habits-box { background: #141C26; border: 2px solid var(--gold); border-radius: 15px; padding: 30px 20px; margin: 30px 0; }
-        .habits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 20px; }
-        .habit-item { background: rgba(26, 34, 45, 0.7); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 10px; padding: 18px; text-align: left; }
+        .habits-box { background: #141C26; border: 2px solid var(--gold); border-radius: 15px; padding: 25px 20px; margin: 25px 0; }
+        .habits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 18px; }
+        .habit-item { background: rgba(26, 34, 45, 0.7); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 10px; padding: 16px; text-align: left; }
         .habit-item h4 { color: var(--gold-light); margin-bottom: 6px; font-size: 1rem; }
         .habit-item p { color: var(--text-muted); font-size: 0.88rem; }
+
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin: 25px 0; }
+        .tool-card {
+            background: linear-gradient(135deg, #182232, #101622);
+            border: 1.5px solid var(--gold);
+            border-radius: 14px;
+            padding: 20px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .tool-card h3 { color: var(--gold-light); font-size: 1.15rem; margin-bottom: 8px; }
+        .tool-card p { font-size: 0.88rem; color: #CBD5E1; line-height: 1.5; margin-bottom: 15px; }
+
+        .btn-descarga {
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid var(--gold);
+            color: var(--gold-light);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+        }
+        .btn-descarga:hover { background: var(--gold); color: #0A0E14 !important; }
 
         .btn-accion-aula {
             background: linear-gradient(135deg, #D4AF37, #AA7C11);
@@ -334,7 +363,7 @@
         }
 
         .sol-chat-header { background: #1C2736; border-bottom: 1.5px solid var(--gold); padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; }
-        .sol-chat-messages { flex: 1; padding: 12px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem; }
+        .sol-chat-messages { flex: 1; padding: 14px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; }
     </style>
 </head>
 <body>
@@ -349,15 +378,15 @@
 
         <span class="badge">🎒 Tutoría Integral del Siglo XXI & PNL</span>
         <h1>AURION Escolaridad</h1>
-        <p>Acompañamiento paciente alineado al Mineduc (1° Básico a 4° Medio) y Exámenes Libres. Formamos niños autónomos con hábitos para toda la vida.</p>
+        <p>Acompañamiento paciente alineado al Mineduc (1° Básico a 4° Medio) y Exámenes Libres. El Método 20x3 para formar niños autónomos y felices.</p>
     </header>
 
     <div class="container">
 
-        <!-- BOTONERA DE NAVEGACIÓN PRINCIPAL -->
+        <!-- BOTONERA DE NAVEGACIÓN -->
         <div class="nav-switch-box">
             <button class="btn-nav-main active" id="btnTabInicio" onclick="mostrarSeccion('inicio')">
-                📖 Información & Hábitos
+                📖 Información & El Método 20x3
             </button>
             <button class="btn-nav-main" id="btnTabAula" onclick="mostrarSeccion('aula')">
                 🏫 Entrar al Aula de Clases en Vivo
@@ -365,13 +394,13 @@
         </div>
 
         <!-- ============================================================== -->
-        <!-- SECCIÓN 1: INFORMACIÓN, HÁBITOS Y ACCESO (INICIO) -->
+        <!-- SECCIÓN 1: INFORMACIÓN, MÉTODO 20x3 Y DESCARGAS (INICIO) -->
         <!-- ============================================================== -->
         <div id="seccion-inicio">
             <div class="hero-banner">
                 <h2>🚨 ¿Estrés por notas rojas y tareas en casa?</h2>
                 <p>
-                    Los niños no son flojos ni les falta capacidad; solo necesitan una explicación a su propio ritmo sin perder la paciencia. Nuestro tutor escolar utiliza <strong>Programación Neurolingüística (PNL)</strong> para devolverles la confianza, preparar pruebas y transformar notas rojas en azules con amor.
+                    El hogar debe ser un lugar de descanso, no una segunda jornada escolar agotadora. Con el <strong>Método 20x3</strong> (solo 20 minutos, 3 veces por semana), tu hijo se pone sus audífonos y despeja sus dudas escolares con calma, devolviéndole la paz a las tardes familiares.
                 </p>
                 <div style="margin-top: 22px;">
                     <button class="btn-accion-aula" onclick="mostrarSeccion('aula')">
@@ -382,8 +411,8 @@
 
             <!-- LOS 4 HÁBITOS DE ORO -->
             <div class="habits-box">
-                <h2 style="text-align: center; color: var(--gold-light); margin-bottom: 10px;">🌟 Hábitos de Vida para tu Hijo</h2>
-                <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">No solo resolvemos materias: cuidamos la rutina y la paz del hogar:</p>
+                <h2 style="text-align: center; color: var(--gold-light); margin-bottom: 8px;">🌟 Los 4 Hábitos de Oro</h2>
+                <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Formación integral para el carácter y la vida:</p>
 
                 <div class="habits-grid">
                     <div class="habit-item">
@@ -391,35 +420,62 @@
                         <p>El tutor le recuerda revisar su horario y dejar cuadernos listos para salir con calma en la mañana.</p>
                     </div>
                     <div class="habit-item">
-                        <h4>💌 El puente de amor con Mamá</h4>
+                        <h4>💌 Comunicación con la Familia</h4>
                         <p>En cada sesión revisa si hay circulares o libretas para que nada importante se olvide.</p>
                     </div>
                     <div class="habit-item">
                         <h4>🧼 Higiene y entorno ordenado</h4>
-                        <p>Lavado de manos y mesa despejada antes de iniciar los 90 minutos de clase.</p>
+                        <p>Lavado de manos y mesa despejada antes de iniciar sus 20 minutos de foco.</p>
                     </div>
                     <div class="habit-item">
-                        <h4>🎙️ Clases Grabadas en Audio</h4>
-                        <p>El niño puede volver a escuchar la explicación cuantas veces quiera antes de su prueba.</p>
+                        <h4>🎙️ Audio Nocturno en su Propia Voz</h4>
+                        <p>El niño escribe su resumen a mano y lo graba; escucharse antes de dormir fija la memoria durante el sueño y eleva su autoestima.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- COMPARATIVA -->
-            <div style="background:#151F2D; border:1px solid var(--soft-blue); padding:25px; border-radius:14px; text-align:center; margin:30px 0;">
-                <h3 style="color:var(--soft-blue); margin-bottom:8px;">💡 Una Inversión Consciente en la Paz Familiar</h3>
-                <p style="font-size:0.95rem; color:#CBD5E1;">
-                    Un profesor particular presencial cobra entre $25.000 y $30.000 por una sola hora. Con AURION obtienes acompañamiento constante de 90 minutos, PNL y hábitos durante todo el mes por una fracción de ese valor.
+            <!-- NEURODESARROLLO: CALIGRAFÍA Y BILLETES DE PRÁCTICA -->
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div>
+                        <h3>✍️ Caligrafía a Mano & Neurodesarrollo</h3>
+                        <p>
+                            <em>«No es la mano la que escribe, es el cerebro».</em> En un mundo de pantallas, rescatamos la escritura a mano y la guía tipo stencil para crear conexiones neuronales profundas, memoria y concentración.
+                        </p>
+                    </div>
+                    <button onclick="descargarCaligrafiaDemo()" class="btn-descarga">
+                        📄 Plantilla de Caligrafía (Para Imprimir)
+                    </button>
+                </div>
+
+                <div class="tool-card">
+                    <div>
+                        <h3>💵 Billetes de Práctica & Prosperidad</h3>
+                        <p>
+                            Educación comercial infantil. Imprime los billetes por ambos lados para jugar en casa o con el Asesor Financiero, construyendo nuevos caminos neuronales de abundancia e intercambio.
+                        </p>
+                    </div>
+                    <button onclick="descargarBilletesDemo()" class="btn-descarga">
+                        🖨️ Billetes de Práctica (Ambas Caras)
+                    </button>
+                </div>
+            </div>
+
+            <!-- EXÁMENES LIBRES Y RESPONSABILIDAD LEGAL -->
+            <div style="background:#151F2D; border:1px solid var(--soft-blue); padding:22px; border-radius:14px; text-align:center; margin:25px 0;">
+                <h3 style="color:var(--soft-blue); margin-bottom:8px;">💡 Acompañamiento para Estudio en Casa & Exámenes Libres</h3>
+                <p style="font-size:0.92rem; color:#CBD5E1; line-height:1.55;">
+                    Aurion entrega toda la preparación pedagógica alineada a las Bases Curriculares del Mineduc (1° básico a 4° medio). 
+                    Para familias que optan por educación en casa o que no asisten al colegio, la inscripción formal a los Exámenes Libres oficiales es responsabilidad exclusiva del apoderado ante el Mineduc.
                 </p>
             </div>
         </div>
 
         <!-- ============================================================== -->
-        <!-- SECCIÓN 2: EL AULA VIRTUAL EN VIVO -->
+        <!-- SECCIÓN 2: EL AULA VIRTUAL EN VIVO (MÉTODO 20x3) -->
         <!-- ============================================================== -->
         <div id="seccion-aula">
             
-            <!-- BOTÓN DESTACADO PARA VOLVER -->
             <div style="text-align:left; margin-bottom:15px;">
                 <button onclick="mostrarSeccion('inicio')" class="btn-nav-main" style="background:#1C2736; font-size:0.88rem; padding:8px 18px;">
                     ⬅️ Volver a la Información / Inicio
@@ -430,7 +486,7 @@
                 <div class="aula-header-top">
                     <div class="aula-title">
                         <span id="profesorEmoji">📚</span>
-                        <span id="profesorNombre">Astor (Tutor Escolar Mineduc)</span>
+                        <span id="profesorNombre">Astor (Tutor Pedagógico Mineduc)</span>
                     </div>
                     <div>
                         <select class="select-pais" id="selectPais" onchange="cambiarPais()">
@@ -446,23 +502,23 @@
 
                 <!-- SELECTOR DE SALAS -->
                 <div class="selector-salas">
-                    <button class="btn-sala active" id="btn-profesor" onclick="cambiarSala('profesor', '📚', 'Astor (Tutor Escolar)', '¡Hola! Soy Astor, tu tutor pedagógico con PNL. ¿Qué tarea o materia revisamos hoy? Te acompaño con paciencia.')">
+                    <button class="btn-sala active" id="btn-profesor" onclick="cambiarSala('profesor', '📚', 'Astor (Tutor Pedagógico)', '¡Hola! Soy Astor, tu tutor escolar. Cuéntame qué materia o tarea tienes hoy y la resolvemos juntos con paciencia en tus 20 minutos de foco.')">
                         <span class="icon">🎒</span>
                         <span>Tutor Escolar</span>
                     </button>
-                    <button class="btn-sala" id="btn-ingles" onclick="cambiarSala('ingles', '🇬🇧', 'Tutor de Inglés', 'Welcome! Let us practice speaking English together today. What would you like to practice?')">
+                    <button class="btn-sala" id="btn-ingles" onclick="cambiarSala('ingles', '🇬🇧', 'Profesor de Inglés', 'Welcome! Hello, I am your English tutor. What topic or vocabulary would you like to practice today?')">
                         <span class="icon">🇬🇧</span>
                         <span>English Club</span>
                     </button>
-                    <button class="btn-sala" id="btn-tecno" onclick="cambiarSala('tecno', '💻', 'Profesor de Tecnología e IA', '¡Hola! En esta sala aprenderemos lógica, tecnología y habilidades prácticas para que tengas un respaldo real al salir del colegio. ¿Qué proyecto tienes en mente?')">
+                    <button class="btn-sala" id="btn-tecno" onclick="cambiarSala('tecno', '💻', 'Tutor de Tecnología, IA & Robótica', '¡Hola! En esta sala aprenderemos lógica, robótica práctica y herramientas digitales para que tengas un oficio real para tu futuro. ¿Qué proyecto revisamos?')">
                         <span class="icon">💻</span>
                         <span>Tecnología & IA</span>
                     </button>
-                    <button class="btn-sala" id="btn-negocios" onclick="cambiarSala('negocios', '📈', 'Leo Asesor (Metrópoli XXI)', '¡Llegó la hora de Metrópoli XXI! Hoy aprenderemos a comprar activos reales en Wall Street y entrenar la abundancia. ¿Lanzamos los dados?')">
+                    <button class="btn-sala" id="btn-negocios" onclick="cambiarSala('negocios', '📈', 'Asesor Financiero LEO (Juego de Comercio)', '¡Hola! Yo soy tu compañero de juego. Saca tus billetes de práctica y juguemos a comprar activos o administrar presupuestos. ¿Comenzamos?')">
                         <span class="icon">🎲</span>
-                        <span>Recreo Metrópoli</span>
+                        <span>Finanzas</span>
                     </button>
-                    <button class="btn-sala" id="btn-leo" onclick="cambiarSala('leo', '🦁', 'Orientador de Hábitos y Estudio', '¡Hola! Aquí organizamos tus métodos de estudio, concentración y liderazgo personal. ¿Qué meta tenemos para hoy?')">
+                    <button class="btn-sala" id="btn-leo" onclick="cambiarSala('leo', '🦁', 'Orientador de Hábitos y Foco', '¡Hola! Aquí organizamos tus métodos de estudio, concentración y liderazgo personal. ¿En qué te gustaría enfocarte hoy?')">
                         <span class="icon">🦁</span>
                         <span>Hábitos & Foco</span>
                     </button>
@@ -471,28 +527,27 @@
                 <!-- PANTALLA DE CLASE -->
                 <div class="pantalla-clase">
                     <div class="clase-info-bar">
-                        <span style="color: #25D366; font-weight: 600;">🟢 Sala Activa • 90 Minutos de Clase</span>
+                        <span style="color: #25D366; font-weight: 600;">🟢 Sesión Activa • Modo 20 Minutos de Calma</span>
                         <button onclick="toggleAudioClase()" id="btnAudioClase" style="background:none; border:none; color:var(--gold); cursor:pointer; font-size:14px;">🔊 Voz Activa</button>
                     </div>
 
                     <div class="chat-area-clase" id="chatClaseArea">
                         <div class="msg-profe" id="msgBienvenidaProfe">
-                            ¡Hola! Soy <strong>Astor</strong>, tu tutor pedagógico con PNL.<br><br>
-                            Toca el botón <strong>🎙️ Hablar</strong>, di tu consulta con calma y presiona enviar: cuéntame en qué curso vas o qué materia te cuesta y la resolvemos juntos con paciencia.
+                            ¡Hola! Soy <strong>Astor</strong>, tu tutor escolar.<br><br>
+                            Ponte tus audífonos, toca el botón amarillo <strong>🎙️ Hablar</strong> o escribe en la barra: cuéntame qué materia estás viendo y la resolvemos juntos paso a paso.
                         </div>
                     </div>
 
                     <div class="input-bar-clase">
-                        <button class="mic-btn-clase" id="micBtnClase" onclick="toggleMicClase()" title="Toca para empezar a hablar">
+                        <button class="mic-btn-clase" id="micBtnClase" onclick="toggleMicClase()" title="Toca para empezar a hablar con tu tutor">
                             <span>🎙️ Hablar</span>
                         </button>
-                        <input type="text" id="inputClase" placeholder="Habla con el micrófono o escribe..." onkeypress="handleKeyClase(event)">
+                        <input type="text" id="inputClase" placeholder="Habla con el micrófono o escribe tu pregunta..." onkeypress="handleKeyClase(event)">
                         <button class="send-btn-clase" onclick="enviarMensajeClase()">➤</button>
                     </div>
                 </div>
             </div>
 
-            <!-- BOTÓN INFERIOR PARA VOLVER -->
             <div style="text-align:center; margin-top:20px;">
                 <button onclick="mostrarSeccion('inicio')" class="btn-nav-main">
                     ⬅️ Volver a la Información Principal
@@ -502,14 +557,14 @@
 
     </div>
 
-    <!-- FOOTER CON CONTADOR REAL (BASE 25+) -->
+    <!-- FOOTER CON CONTADOR REAL (BASE 35+) -->
     <footer>
-        <p>&copy; 2026 AURION &bull; Plataforma Escolar y Soberanía | Fundadora: Sol Sánchez Contreras</p>
+        <p>&copy; 2026 AURION &bull; Aula Virtual Escolar &bull; Dirección Pedagógica: Sol Sánchez Contreras | Chile</p>
         
         <div style="margin-top: 15px; display: flex; justify-content: center; align-items: center;">
             <div style="display:inline-flex; align-items:center; gap:8px; background:#141B26; padding:6px 16px; border-radius:20px; border:1.5px solid var(--gold); color:var(--gold-light); font-size:0.85rem; font-weight:700;">
                 <span>🎓 Alumnos & Visitas:</span>
-                <span id="contador-numero-escolar" style="background:var(--gold); color:#0A0E14; padding:2px 8px; border-radius:10px; font-size:0.9rem;">25</span>
+                <span id="contador-numero-escolar" style="background:var(--gold); color:#0A0E14; padding:2px 8px; border-radius:10px; font-size:0.9rem;">35</span>
             </div>
         </div>
     </footer>
@@ -524,7 +579,7 @@
             </div>
             <div style="text-align:left; line-height:1.2;">
                 <div class="sol-bubble-title">Sol-IA • Admisiones & Becas</div>
-                <div class="sol-bubble-sub">🟢 Atención a Padres</div>
+                <div class="sol-bubble-sub">🟢 Atención a Familias</div>
             </div>
         </div>
 
@@ -536,7 +591,7 @@
                          style="width:30px; height:30px; border-radius:50%; border:1px solid var(--gold);" alt="Sol-IA">
                     <div>
                         <div style="color:#FFF; font-weight:700; font-size:12px;">Sol-IA Anfitriona</div>
-                        <div style="color:#25D366; font-size:10px;">Atención a Padres</div>
+                        <div style="color:#25D366; font-size:10px;">Atención a Familias</div>
                     </div>
                 </div>
                 <div style="display:flex; align-items:center; gap:6px;">
@@ -546,21 +601,21 @@
             </div>
 
             <div class="sol-chat-messages" id="chatSolMessages">
-                <div style="background:#1B2636; border:1px solid rgba(212,175,55,0.3); color:#E2E8F0; padding:10px; border-radius:10px; font-size:0.88rem; line-height:1.4;">
+                <div style="background:#1B2636; border:1px solid rgba(212,175,55,0.3); color:#E2E8F0; padding:12px; border-radius:10px; font-size:0.9rem; line-height:1.45;">
                     ¡Hola! Soy <strong>Sol-IA</strong>, anfitriona de Aurion.<br><br>
-                    Si deseas consultar sobre el ingreso, aranceles o postular a la <strong>Beca VIP de 7 días</strong> para tu hijo, escríbeme o háblame aquí y te oriento con calma.
+                    Si deseas consultar sobre el ingreso al <strong>Método 20x3</strong>, aranceles o postular al programa de apadrinamiento para tu hijo, dime qué necesitas y te oriento con calma.
                 </div>
             </div>
 
-            <div style="padding:8px; background:#101620; border-top:1px solid rgba(212,175,55,0.2); display:flex; gap:6px; align-items:center;">
-                <button id="solMicBtn" onclick="toggleDictadoSol()" style="background:var(--gold); border:none; color:#0A0E14; border-radius:50%; width:34px; height:34px; cursor:pointer; font-size:15px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">🎙️</button>
-                <input type="text" id="solInput" placeholder="Consulta sobre matrículas o becas..." onkeypress="if(event.key==='Enter') enviarMensajeSol()" style="flex:1; background:#182230; border:1px solid rgba(212,175,55,0.3); border-radius:15px; padding:8px 12px; color:#FFF; font-size:0.85rem; outline:none;">
-                <button onclick="enviarMensajeSol()" style="background:var(--gold); border:none; color:#000; border-radius:50%; width:34px; height:34px; cursor:pointer; font-weight:bold; flex-shrink:0;">➤</button>
+            <div style="padding:10px; background:#101620; border-top:1px solid rgba(212,175,55,0.2); display:flex; gap:8px; align-items:center;">
+                <button id="solMicBtn" onclick="toggleDictadoSol()" style="background:var(--gold); border:none; color:#0A0E14; border-radius:50%; width:38px; height:38px; cursor:pointer; font-size:16px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">🎙️</button>
+                <input type="text" id="solInput" placeholder="Toca el micro o escribe..." onkeypress="if(event.key==='Enter') enviarMensajeSol()" style="flex:1; background:#182230; border:1px solid rgba(212,175,55,0.3); border-radius:20px; padding:10px 14px; color:#FFF; font-size:0.9rem; outline:none;">
+                <button onclick="enviarMensajeSol()" style="background:var(--gold); border:none; color:#000; border-radius:50%; width:38px; height:38px; cursor:pointer; font-weight:bold; flex-shrink:0;">➤</button>
             </div>
         </div>
     </div>
 
-    <!-- SCRIPT DE NAVEGACIÓN Y CONTROL -->
+    <!-- SCRIPT DEFINITIVO: CONTROL DE VOZ, MICRÓFONO Y CONTADOR REAL -->
     <script>
         const LEO_ENDPOINT = "https://leo-maestro-7q4s.onrender.com/api/chat";
         const SOL_ENDPOINT = "https://solsanchez-ai-ulq2.onrender.com/api/chat";
@@ -574,18 +629,17 @@
         let grabacionClase = false;
         let grabacionSol = false;
 
-        // CONTADOR REAL (BASE 25+)
+        // CONTADOR REAL (BASE 35+)
         function inicializarContador() {
-            const base = 25;
-            let visitasLocales = parseInt(localStorage.getItem("aurion_visitas_escolar") || "0") + 1;
-            localStorage.setItem("aurion_visitas_escolar", visitasLocales);
+            const base = 35;
+            let visitasLocales = parseInt(localStorage.getItem("aurion_visitas_escolar_v2") || "0") + 1;
+            localStorage.setItem("aurion_visitas_escolar_v2", visitasLocales);
             const total = base + visitasLocales;
             const el = document.getElementById("contador-numero-escolar");
             if (el) el.innerText = total;
         }
         inicializarContador();
 
-        // NAVEGACIÓN INTACTA ENTRE INICIO Y AULA
         function mostrarSeccion(seccion) {
             const secInicio = document.getElementById("seccion-inicio");
             const secAula = document.getElementById("seccion-aula");
@@ -631,7 +685,7 @@
             document.getElementById("solVoiceToggle").innerText = vozSolActiva ? "🔊" : "🔇";
         }
 
-        // LIMPIADOR DE PRONUNCIACIÓN (EVITA QUE DELETREE AURION)
+        // PRONUNCIACIÓN SUAVE (EVITA DELETREAR AURION)
         function prepararTextoVoz(texto) {
             return texto
                 .replace(/https?:\/\/\S+/g, "")
@@ -672,7 +726,7 @@
             window.speechSynthesis.speak(utter);
         }
 
-        // MICRÓFONO CON RECONOCIMIENTO DIRECTO Y LIMPIO
+        // MICRÓFONOS DIRECTOS Y LIMPIOS
         const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
         if (SpeechRec) {
             recognitionClase = new SpeechRec();
@@ -773,7 +827,7 @@
             const loading = document.createElement("div");
             loading.className = "msg-profe";
             loading.id = "clase-loading";
-            loading.innerText = "El profesor está respondiendo...";
+            loading.innerText = "El tutor está analizando tu consulta...";
             chat.appendChild(loading);
             chat.scrollTop = chat.scrollHeight;
 
@@ -833,7 +887,7 @@
                     body: JSON.stringify({ mensaje: mensaje, origen: "Recepción Escolar" })
                 });
                 const d = await res.json();
-                const respuesta = d.respuesta || "Con gusto te oriento.";
+                const respuesta = d.respuesta || "Con gusto te oriento sobre el ingreso y las becas escolares.";
 
                 const solMsg = document.createElement("div");
                 solMsg.style.cssText = "background:#1B2636; border:1px solid rgba(212,175,55,0.3); color:#E2E8F0; padding:12px 14px; border-radius:10px; font-size:0.9rem; line-height:1.45;";
@@ -843,6 +897,15 @@
 
                 hablarVozSol(respuesta);
             } catch(e) {}
+        }
+
+        // FUNCIONES DE DESCARGA VISUAL PARA BILLETES Y CALIGRAFÍA
+        function descargarCaligrafiaDemo() {
+            window.open("https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg", "_blank");
+        }
+
+        function descargarBilletesDemo() {
+            window.open("https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg", "_blank");
         }
     </script>
 </body>
