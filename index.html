@@ -25,8 +25,25 @@
         header {
             background: linear-gradient(180deg, #16202E 0%, var(--bg-dark) 100%);
             border-bottom: 2px solid var(--gold);
-            padding: 50px 15px 35px;
+            padding: 40px 15px 30px;
             text-align: center;
+        }
+
+        .header-logo-container {
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header-logo {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            border: 2.5px solid var(--gold);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
+            object-fit: cover;
+            background: #141B26;
         }
 
         .badge {
@@ -302,7 +319,23 @@
         }
         .btn-accion-aula:hover { transform: scale(1.03); }
 
-        footer { text-align: center; padding: 35px 15px 25px; background: #06080B; color: var(--text-muted); margin-top: 50px; font-size: 0.85rem; border-top: 1px solid rgba(212, 175, 55, 0.2); }
+        footer { 
+            text-align: center; 
+            padding: 35px 15px 25px; 
+            background: #06080B; 
+            color: var(--text-muted); 
+            margin-top: 50px; 
+            font-size: 0.85rem; 
+            border-top: 1px solid rgba(212, 175, 55, 0.2); 
+        }
+
+        .counter-container {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
 
         /* WIDGET RECEPCIÓN SOL-IA FLOTANTE (ADMISIONES) */
         #sol-widget-container { position: fixed; bottom: 20px; right: 15px; z-index: 9999999; }
@@ -337,7 +370,15 @@
 <body>
 
     <header>
-        <span class="badge">🎒 Tutoría Integral del Siglo XXI & PNL</span>
+        <!-- LOGO OFICIAL EN HEADER -->
+        <div class="header-logo-container">
+            <img src="https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg" 
+                 onerror="this.onerror=null; this.src='https://files.manuscdn.com/user_upload_by_module/session_file/310519663295304532/SXAbPHcoYQWtVFRu.jpg';" 
+                 alt="Logo Aula Escolar" 
+                 class="header-logo">
+        </div>
+
+        <span class="badge">🎒 Tutoría Integral del Siglo XXI & Pedagogía</span>
         <h1>AURION Escolaridad</h1>
         <p>Acompañamiento paciente alineado al Mineduc (1° Básico a 4° Medio) y Exámenes Libres. Formamos niños autónomos con hábitos para toda la vida.</p>
     </header>
@@ -363,7 +404,7 @@
             <div class="hero-banner">
                 <h2>🚨 ¿Estrés por notas rojas y tareas en casa?</h2>
                 <p>
-                    Los niños no son flojos ni les falta capacidad; solo necesitan una explicación a su propio ritmo sin perder la paciencia. Nuestro tutor escolar utiliza <strong>Programación Neurolingüística (PNL)</strong> para devolverles la confianza, preparar pruebas y transformar notas rojas en azules con amor.
+                    Los niños no son flojos ni les falta capacidad; solo necesitan una explicación a su propio ritmo sin perder la paciencia. Nuestro tutor escolar utiliza <strong>Programación Neurolingüística (PNL) y didáctica personalizada</strong> para devolverles la confianza, preparar pruebas y transformar notas rojas en azules con dedicación.
                 </p>
                 <div style="margin-top: 22px;">
                     <button class="btn-accion-aula" onclick="mostrarSeccion('aula')">
@@ -374,7 +415,7 @@
 
             <!-- LOS 4 HÁBITOS DE ORO -->
             <div class="habits-box">
-                <h2 style="text-align: center; color: var(--gold-light); margin-bottom: 10px;">🌟 Hábitos de Vida para tu Hijo</h2>
+                <h2 style="text-align: center; color: var(--gold-light); margin-bottom: 10px;">🌟 Hábitos de Estudio para tu Hijo</h2>
                 <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">No solo resolvemos materias: cuidamos la rutina y la paz del hogar:</p>
 
                 <div class="habits-grid">
@@ -383,7 +424,7 @@
                         <p>El tutor le recuerda revisar su horario y dejar cuadernos listos para salir con calma en la mañana.</p>
                     </div>
                     <div class="habit-item">
-                        <h4>💌 El puente de amor con Mamá</h4>
+                        <h4>💌 El puente de comunicación con la Familia</h4>
                         <p>En cada sesión revisa si hay circulares o libretas para que nada importante se olvide.</p>
                     </div>
                     <div class="habit-item">
@@ -392,22 +433,22 @@
                     </div>
                     <div class="habit-item">
                         <h4>🎙️ Clases Grabadas en Audio</h4>
-                        <p>El niño puede volver a escuchar la explicación cuantas veces quiera antes de su prueba.</p>
+                        <p>El estudiante puede volver a escuchar la explicación cuantas veces quiera antes de su prueba.</p>
                     </div>
                 </div>
             </div>
 
             <!-- COMPARATIVA -->
             <div style="background:#151F2D; border:1px solid var(--soft-blue); padding:25px; border-radius:14px; text-align:center; margin:30px 0;">
-                <h3 style="color:var(--soft-blue); margin-bottom:8px;">💡 Una Inversión Consciente en la Paz Familiar</h3>
+                <h3 style="color:var(--soft-blue); margin-bottom:8px;">💡 Una Inversión Consciente en el Rendimiento Escolar</h3>
                 <p style="font-size:0.95rem; color:#CBD5E1;">
-                    Un profesor particular presencial cobra entre $25.000 y $30.000 por una sola hora. Con AURION obtienes acompañamiento constante de 90 minutos, PNL y hábitos durante todo el mes por una fracción de ese valor.
+                    Un profesor particular presencial cobra entre $25.000 y $30.000 por una sola hora. Con AURION obtienes acompañamiento constante de 90 minutos, didáctica y hábitos durante todo el mes por una fracción de ese valor.
                 </p>
             </div>
         </div>
 
         <!-- ============================================================== -->
-        <!-- SECCIÓN 2: EL AULA VIRTUAL EN VIVO (CONECTADA A LEO) -->
+        <!-- SECCIÓN 2: EL AULA VIRTUAL EN VIVO (100% SECULAR Y PEDAGÓGICA) -->
         <!-- ============================================================== -->
         <div id="seccion-aula">
             
@@ -422,7 +463,7 @@
                 <div class="aula-header-top">
                     <div class="aula-title">
                         <span id="profesorEmoji">📚</span>
-                        <span id="profesorNombre">Astor (Tutor Escolar Mineduc)</span>
+                        <span id="profesorNombre">Astor (Tutor Pedagógico Mineduc)</span>
                     </div>
                     <div>
                         <select class="select-pais" id="selectPais" onchange="cambiarPais()">
@@ -436,27 +477,27 @@
                     </div>
                 </div>
 
-                <!-- SELECTOR DE PROFESORES -->
+                <!-- SELECTOR DE PROFESORES SECULARES -->
                 <div class="selector-salas">
-                    <button class="btn-sala active" id="btn-profesor" onclick="cambiarSala('profesor', '📚', 'Astor (Tutor Escolar)', '¡Hola! Soy Astor, tu tutor pedagógico con PNL. ¿Qué tarea o materia revisamos hoy? Te acompaño con paciencia.')">
+                    <button class="btn-sala active" id="btn-profesor" onclick="cambiarSala('profesor', '📚', 'Astor (Tutor Pedagógico)', '¡Hola! Soy Astor, tu tutor escolar. ¿Qué tarea, materia o guía vamos a revisar hoy? Vamos paso a paso.')">
                         <span class="icon">🎒</span>
                         <span>Tutor Escolar</span>
                     </button>
-                    <button class="btn-sala" id="btn-ingles" onclick="cambiarSala('ingles', '🇬🇧', 'Tutor de Inglés', 'Welcome! Let us practice speaking English together today. What would you like to practice?')">
+                    <button class="btn-sala" id="btn-ingles" onclick="cambiarSala('ingles', '🇬🇧', 'Profesor de Inglés', 'Welcome! Let us practice English vocabulary, grammar and reading together. What are you studying today?')">
                         <span class="icon">🇬🇧</span>
                         <span>English Club</span>
                     </button>
-                    <button class="btn-sala" id="btn-tecno" onclick="cambiarSala('tecno', '💻', 'Profesor de Tecnología e IA', '¡Hola, creador! Hoy aprenderemos a pensar en lógica y construir software. ¿Qué proyecto tienes en mente?')">
+                    <button class="btn-sala" id="btn-tecno" onclick="cambiarSala('tecno', '💻', 'Profesor de Tecnología e IA', '¡Hola! Hoy aprenderemos lógica, resolución de problemas y pensamiento computacional. ¿Qué duda o proyecto tienes?')">
                         <span class="icon">💻</span>
                         <span>Tecnología & IA</span>
                     </button>
-                    <button class="btn-sala" id="btn-negocios" onclick="cambiarSala('negocios', '📈', 'Leo Asesor (Metrópoli XXI)', '¡Llegó la hora de Metrópoli XXI! Hoy aprenderemos a comprar activos reales en Wall Street y entrenar la abundancia. ¿Lanzamos los dados?')">
+                    <button class="btn-sala" id="btn-negocios" onclick="cambiarSala('negocios', '📈', 'Educación Financiera Escolar', '¡Bienvenidos al taller de educación financiera! Hoy aprenderemos a calcular presupuestos, ahorro y toma de decisiones inteligentes.')">
                         <span class="icon">🎲</span>
-                        <span>Recreo Metrópoli</span>
+                        <span>Recreo Financiero</span>
                     </button>
-                    <button class="btn-sala" id="btn-leo" onclick="cambiarSala('leo', '🦁', 'LEO (Conciencia Pura)', 'Desde la Presencia y el YO SOY. Aquí hablamos de tu liderazgo, tu calma y tu maestría personal.')">
+                    <button class="btn-sala" id="btn-leo" onclick="cambiarSala('leo', '🦁', 'Orientador de Hábitos & Estudio', '¡Hola! Soy tu orientador de técnicas de estudio y concentración. ¿Cómo organizamos tu tiempo de estudio hoy?')">
                         <span class="icon">🦁</span>
-                        <span>LEO Conciencia</span>
+                        <span>Hábitos & Foco</span>
                     </button>
                 </div>
 
@@ -469,8 +510,8 @@
 
                     <div class="chat-area-clase" id="chatClaseArea">
                         <div class="msg-profe" id="msgBienvenidaProfe">
-                            ¡Hola! Soy <strong>Astor</strong>, tu tutor pedagógico con PNL.<br><br>
-                            Toca el micrófono 🎙️ o escribe: cuéntame en qué curso vas o qué materia te cuesta y la resolvemos juntos con paciencia.
+                            ¡Hola! Soy <strong>Astor</strong>, tu tutor escolar.<br><br>
+                            Toca el micrófono 🎙️ o escribe: cuéntame en qué curso vas o qué ejercicio te cuesta y lo resolvemos juntos paso a paso.
                         </div>
                     </div>
 
@@ -481,12 +522,11 @@
                     </div>
                 </div>
 
-                <!-- TALLER DE NEUROPLASTICIDAD METRÓPOLI XXI -->
+                <!-- TALLER PRÁCTICO -->
                 <div class="recreo-banner" id="bannerRecreo" style="display:none;">
-                    <h4>🎨 Taller de Neuroplasticidad: Dibuja tu Abundancia</h4>
+                    <h4>🎨 Taller Práctico de Hábitos y Matemáticas Aplicadas</h4>
                     <p>
-                        Para reprogramar la mente de carencia a abundancia, imprime o dibuja en familia tus <strong>billetes de entrenamiento por ambos lados</strong> (anverso y reverso). 
-                        Al sostener físicamente tus dólares de práctica mientras juegas en Wall Street, tu mente subconsciente instala el camino del dueño.
+                        Aprende a presupuestar gastos escolares, planificar tu ahorro y comprender la economía básica de forma didáctica y entretenida en familia.
                     </p>
                 </div>
             </div>
@@ -501,8 +541,16 @@
 
     </div>
 
+    <!-- FOOTER CON MARCADOR DE VISITAS -->
     <footer>
-        <p>&copy; 2026 AURION &bull; Plataforma de Despertar y Soberanía | Fundadora: Sol Sánchez Contreras</p>
+        <p>&copy; 2026 AURION &bull; Aula Virtual Escolar &bull; Dirección Pedagógica: Sol Sánchez Contreras | Chile</p>
+        
+        <div class="counter-container">
+            <span style="display:inline-flex; align-items:center; gap:6px; background:rgba(212,175,55,0.08); padding:4px 12px; border-radius:18px; border:1px solid rgba(212,175,55,0.25); color:var(--gold-light); font-size:0.8rem;">
+                🎓 Visitas y Alumnos:
+                <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fterapiasol-ai.github.io%2Fasistente-escolar&count_bg=%232563EB&title_bg=%230A0E14&icon=&icon_color=%23FFFFFF&title=Estudiantes&edge_flat=true" alt="Visitas Escolares" style="vertical-align:middle; height:18px;">
+            </span>
+        </div>
     </footer>
 
     <!-- ============================================================== -->
@@ -517,7 +565,7 @@
             </div>
             <div style="text-align:left; line-height:1.2;">
                 <div class="sol-bubble-title">Sol-IA • Admisiones & Becas</div>
-                <div class="sol-bubble-sub">🟢 Habla con la Anfitriona</div>
+                <div class="sol-bubble-sub">🟢 Atención a Familias</div>
             </div>
         </div>
 
@@ -529,7 +577,7 @@
                          style="width:30px; height:30px; border-radius:50%; border:1px solid var(--gold);" alt="Sol-IA">
                     <div>
                         <div style="color:#FFF; font-weight:700; font-size:12px;">Sol-IA Anfitriona</div>
-                        <div style="color:#25D366; font-size:10px;">Atención a Padres</div>
+                        <div style="color:#25D366; font-size:10px;">Admisión y Familias</div>
                     </div>
                 </div>
                 <button onclick="toggleSolChat()" style="background:none; border:none; color:var(--text-muted); font-size:18px; cursor:pointer;">✕</button>
@@ -537,19 +585,19 @@
 
             <div class="sol-chat-messages" id="chatSolMessages">
                 <div style="background:#1B2636; border:1px solid rgba(212,175,55,0.3); color:#E2E8F0; padding:10px; border-radius:10px; font-size:0.88rem; line-height:1.4;">
-                    ¡Hola! Soy <strong>Sol-IA</strong>, anfitriona de Aurion.<br><br>
-                    Si deseas consultar sobre el ingreso, aranceles o postular a la <strong>Beca VIP de 7 días</strong> para tu hijo, escríbeme aquí y te oriento con calma.
+                    ¡Hola! Soy <strong>Sol-IA</strong>, encargada de admisiones.<br><br>
+                    Si deseas consultar sobre planes de tutoría, aranceles o postular al programa de apadrinamiento para tu hijo, escríbeme aquí y te oriento con gusto.
                 </div>
             </div>
 
             <div style="padding:8px; background:#101620; border-top:1px solid rgba(212,175,55,0.2); display:flex; gap:6px;">
-                <input type="text" id="solInput" placeholder="Consulta sobre matrículas o becas..." onkeypress="if(event.key==='Enter') enviarMensajeSol()" style="flex:1; background:#182230; border:1px solid rgba(212,175,55,0.3); border-radius:15px; padding:8px 12px; color:#FFF; font-size:0.85rem; outline:none;">
+                <input type="text" id="solInput" placeholder="Consulta sobre matrículas o tutorías..." onkeypress="if(event.key==='Enter') enviarMensajeSol()" style="flex:1; background:#182230; border:1px solid rgba(212,175,55,0.3); border-radius:15px; padding:8px 12px; color:#FFF; font-size:0.85rem; outline:none;">
                 <button onclick="enviarMensajeSol()" style="background:var(--gold); border:none; color:#000; border-radius:50%; width:34px; height:34px; cursor:pointer; font-weight:bold;">➤</button>
             </div>
         </div>
     </div>
 
-    <!-- SCRIPT DE CONTROL DE NAVEGACIÓN Y AULA -->
+    <!-- SCRIPT DE CONTROL DE NAVEGACIÓN Y AULA (100% SECULAR Y SIN BUCLES) -->
     <script>
         const LEO_ENDPOINT = "https://leo-maestro-7q4s.onrender.com/api/chat";
         const SOL_ENDPOINT = "https://solsanchez-ai-ulq2.onrender.com/api/chat";
@@ -560,7 +608,6 @@
         let recognition = null;
         let grabacionActiva = false;
 
-        // FUNCIÓN CLAVE: NAVEGAR ENTRE INICIO Y AULA
         function mostrarSeccion(seccion) {
             const secInicio = document.getElementById("seccion-inicio");
             const secAula = document.getElementById("seccion-aula");
@@ -623,8 +670,10 @@
             recognition.onstart = function() {
                 grabacionActiva = true;
                 const btn = document.getElementById("micBtnClase");
-                btn.classList.add("recording");
-                btn.innerText = "🔴";
+                if (btn) {
+                    btn.classList.add("recording");
+                    btn.innerText = "🔴";
+                }
             };
 
             recognition.onresult = function(event) {
@@ -639,7 +688,7 @@
             recognition.onend = function() {
                 detenerMicClase();
                 const inp = document.getElementById("inputClase");
-                if (inp.value.trim().length > 0) {
+                if (inp && inp.value.trim().length > 0) {
                     setTimeout(() => { enviarMensajeClase(); }, 400);
                 }
             };
@@ -682,7 +731,7 @@
             const loading = document.createElement("div");
             loading.className = "msg-profe";
             loading.id = "clase-loading";
-            loading.innerText = "El profesor está respondiendo...";
+            loading.innerText = "El profesor está analizando tu consulta...";
             chat.appendChild(loading);
             chat.scrollTop = chat.scrollHeight;
 
@@ -694,12 +743,13 @@
                         mensaje: mensaje,
                         faceta: salaActual,
                         pais: paisActual,
-                        alumno: "Estudiante"
+                        alumno: "Estudiante",
+                        directiva: "Eres un profesor y tutor pedagógico escolar. Responde de forma 100% secular, laica y didáctica. Enseña paso a paso según el currículum escolar. PROHIBIDO terminología mística, metafísica, decretos 'YO SOY' o esoterismo."
                     })
                 });
 
                 const data = await response.json();
-                const respuesta = data.respuesta || "Excelente pregunta. Continuemos.";
+                const respuesta = data.respuesta || "Excelente pregunta. Vamos a resolverlo juntos paso a paso.";
                 const loader = document.getElementById("clase-loading");
                 if (loader) loader.remove();
 
@@ -714,6 +764,11 @@
             } catch (err) {
                 const loader = document.getElementById("clase-loading");
                 if (loader) loader.remove();
+                
+                const errDocente = document.createElement("div");
+                errDocente.className = "msg-profe";
+                errDocente.innerText = "Pausa de conexión en la sala. Repíteme tu pregunta para continuar con la lección.";
+                chat.appendChild(errDocente);
             }
         }
 
@@ -739,7 +794,11 @@
                 const res = await fetch(SOL_ENDPOINT, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ mensaje: mensaje, origen: "Recepción Escolar" })
+                    body: JSON.stringify({ 
+                        mensaje: mensaje, 
+                        origen: "Recepción Escolar",
+                        directiva: "Tono institucional, formal, laico y empático para atención a padres y apoderados."
+                    })
                 });
                 const d = await res.json();
                 const solMsg = document.createElement("div");
@@ -750,6 +809,5 @@
             } catch(e) {}
         }
     </script>
-
 </body>
 </html>
