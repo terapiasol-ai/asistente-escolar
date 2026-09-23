@@ -306,14 +306,16 @@
             background: rgba(212, 175, 55, 0.15);
             border: 1px solid var(--gold);
             color: var(--gold-light);
-            padding: 8px 16px;
+            padding: 9px 16px;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 700;
             cursor: pointer;
             text-align: center;
-            text-decoration: none;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
             transition: all 0.2s;
         }
         .btn-descarga:hover { background: var(--gold); color: #0A0E14 !important; }
@@ -363,12 +365,13 @@
         }
 
         .sol-chat-header { background: #1C2736; border-bottom: 1.5px solid var(--gold); padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; }
-        .sol-chat-messages { flex: 1; padding: 14px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; }
+        .sol-chat-messages { flex: 1; padding: 12px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
     <header>
+        <!-- LOGO DE LA ESCUELA (FOTO DE LA TUTORA/SECRETARIA) -->
         <div class="header-logo-container">
             <img src="https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg" 
                  onerror="this.onerror=null; this.src='https://files.manuscdn.com/user_upload_by_module/session_file/310519663295304532/SXAbPHcoYQWtVFRu.jpg';" 
@@ -393,9 +396,7 @@
             </button>
         </div>
 
-        <!-- ============================================================== -->
-        <!-- SECCIÓN 1: INFORMACIÓN, MÉTODO 20x3 Y DESCARGAS (INICIO) -->
-        <!-- ============================================================== -->
+        <!-- SECCIÓN 1: INICIO Y DESCARGAS -->
         <div id="seccion-inicio">
             <div class="hero-banner">
                 <h2>🚨 ¿Estrés por notas rojas y tareas en casa?</h2>
@@ -434,34 +435,34 @@
                 </div>
             </div>
 
-            <!-- NEURODESARROLLO: CALIGRAFÍA Y BILLETES DE PRÁCTICA -->
+            <!-- BOTONES REALES CONECTADOS A TUS ARCHIVOS SUBIDOS -->
             <div class="tools-grid">
                 <div class="tool-card">
                     <div>
-                        <h3>✍️ Caligrafía a Mano & Neurodesarrollo</h3>
+                        <h3>✍️ Stencils de Caligrafía en Cursiva (2 Modelos)</h3>
                         <p>
-                            <em>«No es la mano la que escribe, es el cerebro».</em> En un mundo de pantallas, rescatamos la escritura a mano y la guía tipo stencil para crear conexiones neuronales profundas, memoria y concentración.
+                            <em>«No es la mano la que escribe, es el cerebro».</em> Plantillas oficiales del abecedario en letra cursiva minúscula y pautas de trazo para imprimir y guiar la memoria muscular.
                         </p>
                     </div>
-                    <button onclick="descargarCaligrafiaDemo()" class="btn-descarga">
-                        📄 Plantilla de Caligrafía (Para Imprimir)
+                    <button onclick="abrirPlantillasCaligrafia()" class="btn-descarga">
+                        📄 Abrir Stencils de Caligrafía (Para Imprimir)
                     </button>
                 </div>
 
                 <div class="tool-card">
                     <div>
-                        <h3>💵 Billetes de Práctica & Prosperidad</h3>
+                        <h3>💵 Billetes de Práctica (Todas las Denominaciones)</h3>
                         <p>
-                            Educación comercial infantil. Imprime los billetes por ambos lados para jugar en casa o con el Asesor Financiero, construyendo nuevos caminos neuronales de abundancia e intercambio.
+                            Educación comercial infantil. Hoja oficial con billetes de todas las denominaciones para recortar, jugar a la prosperidad y entrenar la mente de dueño por ambas caras.
                         </p>
                     </div>
-                    <button onclick="descargarBilletesDemo()" class="btn-descarga">
-                        🖨️ Billetes de Práctica (Ambas Caras)
+                    <button onclick="abrirBilletesConGuia()" class="btn-descarga">
+                        🖨️ Abrir Billetes de Práctica (Para Imprimir)
                     </button>
                 </div>
             </div>
 
-            <!-- EXÁMENES LIBRES Y RESPONSABILIDAD LEGAL -->
+            <!-- EXÁMENES LIBRES -->
             <div style="background:#151F2D; border:1px solid var(--soft-blue); padding:22px; border-radius:14px; text-align:center; margin:25px 0;">
                 <h3 style="color:var(--soft-blue); margin-bottom:8px;">💡 Acompañamiento para Estudio en Casa & Exámenes Libres</h3>
                 <p style="font-size:0.92rem; color:#CBD5E1; line-height:1.55;">
@@ -471,11 +472,8 @@
             </div>
         </div>
 
-        <!-- ============================================================== -->
-        <!-- SECCIÓN 2: EL AULA VIRTUAL EN VIVO (MÉTODO 20x3) -->
-        <!-- ============================================================== -->
+        <!-- SECCIÓN 2: AULA VIRTUAL EN VIVO -->
         <div id="seccion-aula">
-            
             <div style="text-align:left; margin-bottom:15px;">
                 <button onclick="mostrarSeccion('inicio')" class="btn-nav-main" style="background:#1C2736; font-size:0.88rem; padding:8px 18px;">
                     ⬅️ Volver a la Información / Inicio
@@ -539,7 +537,7 @@
                     </div>
 
                     <div class="input-bar-clase">
-                        <button class="mic-btn-clase" id="micBtnClase" onclick="toggleMicClase()" title="Toca para empezar a hablar con tu tutor">
+                        <button class="mic-btn-clase" id="micBtnClase" onclick="toggleMicClase()" title="Toca para empezar a hablar">
                             <span>🎙️ Hablar</span>
                         </button>
                         <input type="text" id="inputClase" placeholder="Habla con el micrófono o escribe tu pregunta..." onkeypress="handleKeyClase(event)">
@@ -573,9 +571,7 @@
     <div id="sol-widget-container">
         <div class="sol-bubble-btn" onclick="toggleSolChat()">
             <div class="sol-avatar-pulse">
-                <img src="https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg" 
-                     onerror="this.onerror=null; this.src='https://files.manuscdn.com/user_upload_by_module/session_file/310519663295304532/SXAbPHcoYQWtVFRu.jpg';" 
-                     alt="Sol-IA">
+                <img src="https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg" alt="Sol-IA">
             </div>
             <div style="text-align:left; line-height:1.2;">
                 <div class="sol-bubble-title">Sol-IA • Admisiones & Becas</div>
@@ -586,9 +582,7 @@
         <div id="sol-chat-window">
             <div class="sol-chat-header">
                 <div style="display:flex; align-items:center; gap:8px;">
-                    <img src="https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg" 
-                         onerror="this.onerror=null; this.src='https://files.manuscdn.com/user_upload_by_module/session_file/310519663295304532/SXAbPHcoYQWtVFRu.jpg';" 
-                         style="width:30px; height:30px; border-radius:50%; border:1px solid var(--gold);" alt="Sol-IA">
+                    <img src="https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg" style="width:30px; height:30px; border-radius:50%; border:1.5px solid var(--gold);" alt="Sol-IA">
                     <div>
                         <div style="color:#FFF; font-weight:700; font-size:12px;">Sol-IA Anfitriona</div>
                         <div style="color:#25D366; font-size:10px;">Atención a Familias</div>
@@ -601,21 +595,21 @@
             </div>
 
             <div class="sol-chat-messages" id="chatSolMessages">
-                <div style="background:#1B2636; border:1px solid rgba(212,175,55,0.3); color:#E2E8F0; padding:12px; border-radius:10px; font-size:0.9rem; line-height:1.45;">
+                <div style="background:#1B2636; border:1px solid rgba(212,175,55,0.3); color:#E2E8F0; padding:10px; border-radius:10px; font-size:0.88rem; line-height:1.4;">
                     ¡Hola! Soy <strong>Sol-IA</strong>, anfitriona de Aurion.<br><br>
                     Si deseas consultar sobre el ingreso al <strong>Método 20x3</strong>, aranceles o postular al programa de apadrinamiento para tu hijo, dime qué necesitas y te oriento con calma.
                 </div>
             </div>
 
-            <div style="padding:10px; background:#101620; border-top:1px solid rgba(212,175,55,0.2); display:flex; gap:8px; align-items:center;">
-                <button id="solMicBtn" onclick="toggleDictadoSol()" style="background:var(--gold); border:none; color:#0A0E14; border-radius:50%; width:38px; height:38px; cursor:pointer; font-size:16px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">🎙️</button>
-                <input type="text" id="solInput" placeholder="Toca el micro o escribe..." onkeypress="if(event.key==='Enter') enviarMensajeSol()" style="flex:1; background:#182230; border:1px solid rgba(212,175,55,0.3); border-radius:20px; padding:10px 14px; color:#FFF; font-size:0.9rem; outline:none;">
-                <button onclick="enviarMensajeSol()" style="background:var(--gold); border:none; color:#000; border-radius:50%; width:38px; height:38px; cursor:pointer; font-weight:bold; flex-shrink:0;">➤</button>
+            <div style="padding:8px; background:#101620; border-top:1px solid rgba(212,175,55,0.2); display:flex; gap:6px; align-items:center;">
+                <button id="solMicBtn" onclick="toggleDictadoSol()" style="background:var(--gold); border:none; color:#0A0E14; border-radius:50%; width:34px; height:34px; cursor:pointer; font-size:15px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">🎙️</button>
+                <input type="text" id="solInput" placeholder="Consulta sobre matrículas o becas..." onkeypress="if(event.key==='Enter') enviarMensajeSol()" style="flex:1; background:#182230; border:1px solid rgba(212,175,55,0.3); border-radius:15px; padding:8px 12px; color:#FFF; font-size:0.85rem; outline:none;">
+                <button onclick="enviarMensajeSol()" style="background:var(--gold); border:none; color:#000; border-radius:50%; width:34px; height:34px; cursor:pointer; font-weight:bold; flex-shrink:0;">➤</button>
             </div>
         </div>
     </div>
 
-    <!-- SCRIPT DEFINITIVO: CONTROL DE VOZ, MICRÓFONO Y CONTADOR REAL -->
+    <!-- SCRIPT DEFINITIVO -->
     <script>
         const LEO_ENDPOINT = "https://leo-maestro-7q4s.onrender.com/api/chat";
         const SOL_ENDPOINT = "https://solsanchez-ai-ulq2.onrender.com/api/chat";
@@ -629,11 +623,10 @@
         let grabacionClase = false;
         let grabacionSol = false;
 
-        // CONTADOR REAL (BASE 35+)
         function inicializarContador() {
             const base = 35;
-            let visitasLocales = parseInt(localStorage.getItem("aurion_visitas_escolar_v2") || "0") + 1;
-            localStorage.setItem("aurion_visitas_escolar_v2", visitasLocales);
+            let visitasLocales = parseInt(localStorage.getItem("aurion_visitas_escolar_final_v3") || "0") + 1;
+            localStorage.setItem("aurion_visitas_escolar_final_v3", visitasLocales);
             const total = base + visitasLocales;
             const el = document.getElementById("contador-numero-escolar");
             if (el) el.innerText = total;
@@ -685,15 +678,15 @@
             document.getElementById("solVoiceToggle").innerText = vozSolActiva ? "🔊" : "🔇";
         }
 
-        // PRONUNCIACIÓN SUAVE (EVITA DELETREAR AURION)
         function prepararTextoVoz(texto) {
             return texto
                 .replace(/https?:\/\/\S+/g, "")
                 .replace(/[*#_~`]/g, "")
+                .replace(/\$\s*(\d+[\d\.]*)\s*(CLP|pesos chilenos|pesos)?/gi, "$1 pesos chilenos")
+                .replace(/\$/g, "")
                 .replace(/\bAURION\b/gi, "Áurion")
                 .replace(/\bMINEDUC\b/gi, "Mineduc")
-                .replace(/\bPNL\b/gi, "Pe Ene Ele")
-                .replace(/\bIA\b/gi, "I A");
+                .replace(/\bPNL\b/gi, "Pe Ene Ele");
         }
 
         function hablarVoz(texto, esIngles=false) {
@@ -726,7 +719,7 @@
             window.speechSynthesis.speak(utter);
         }
 
-        // MICRÓFONOS DIRECTOS Y LIMPIOS
+        // MICRÓFONOS DIRECTOS
         const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
         if (SpeechRec) {
             recognitionClase = new SpeechRec();
@@ -736,10 +729,7 @@
             recognitionClase.onstart = function() {
                 grabacionClase = true;
                 const btn = document.getElementById("micBtnClase");
-                if (btn) {
-                    btn.classList.add("recording");
-                    btn.innerHTML = "<span>🔴 Grabando...</span>";
-                }
+                if (btn) btn.classList.add("recording");
             };
 
             recognitionClase.onresult = function(event) {
@@ -899,13 +889,70 @@
             } catch(e) {}
         }
 
-        // FUNCIONES DE DESCARGA VISUAL PARA BILLETES Y CALIGRAFÍA
-        function descargarCaligrafiaDemo() {
-            window.open("https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg", "_blank");
+        // ==============================================================
+        // 📄 HOJAS DE IMPRESIÓN REALES (CALIGRAFÍA Y BILLETES)
+        // ==============================================================
+        function abrirPlantillasCaligrafia() {
+            const w = window.open('', '_blank');
+            w.document.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Stencils de Caligrafía Cursiva - AURION Escolar</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; padding: 20px; text-align: center; background: #fff; }
+                        .btn-print { background: #D4AF37; border: none; padding: 12px 26px; font-weight: bold; border-radius: 25px; cursor: pointer; margin-bottom: 20px; font-size: 15px; color: #000; }
+                        .stencil-img { max-width: 100%; height: auto; border: 1px solid #ccc; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 30px; display: block; margin-left: auto; margin-right: auto; }
+                        @media print { .btn-print { display: none; } body { padding: 0; } .stencil-img { border: none; box-shadow: none; } }
+                    </style>
+                </head>
+                <body>
+                    <button class="btn-print" onclick="window.print()">🖨️ Imprimir Stencils de Caligrafía (2 Modelos)</button>
+                    <h3 style="color:#997A15; margin-bottom:10px;">✍️ AURION Escolaridad • Modelo 1: Abecedario Cursiva Minúscula</h3>
+                    <img class="stencil-img" src="https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/STENCIL_ABECEDARIO_CURSIVAS_MINUSCULA_SD_1000x.jpg" alt="Stencil Cursiva 1">
+                    
+                    <h3 style="color:#997A15; margin-bottom:10px;">✍️ AURION Escolaridad • Modelo 2: Pauta de Trazo Neuro-Motor</h3>
+                    <img class="stencil-img" src="https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/71ssROVpZkL.jpg" alt="Stencil Cursiva 2">
+                </body>
+                </html>
+            `);
+            w.document.close();
         }
 
-        function descargarBilletesDemo() {
-            window.open("https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg", "_blank");
+        function abrirBilletesConGuia() {
+            const w = window.open('', '_blank');
+            w.document.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Billetes de Práctica - AURION Metrópoli XXI</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; padding: 20px; text-align: center; background: #fff; color: #222; }
+                        .btn-print { background: #25D366; color: #fff; border: none; padding: 12px 26px; font-weight: bold; border-radius: 25px; cursor: pointer; margin-bottom: 20px; font-size: 15px; }
+                        .guia-box { background: #f0fdf4; border: 2px dashed #15803d; border-radius: 12px; padding: 15px; max-width: 750px; margin: 0 auto 25px; text-align: left; font-size: 13px; line-height: 1.5; }
+                        .guia-box h4 { color: #15803d; margin-bottom: 6px; font-size: 15px; }
+                        .img-billetes { max-width: 100%; height: auto; border: 1px solid #ccc; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: block; margin: 0 auto; }
+                        @media print { .btn-print, .guia-box { display: none; } body { padding: 0; } .img-billetes { border: none; box-shadow: none; } }
+                    </style>
+                </head>
+                <body>
+                    <button class="btn-print" onclick="window.print()">🖨️ Imprimir Billetes de Práctica</button>
+                    
+                    <div class="guia-box">
+                        <h4>📋 GUÍA OFICIAL PARA IMPRIMIR BILLETES POR AMBOS LADOS:</h4>
+                        <p>1. Presiona el botón verde <strong>«Imprimir Billetes»</strong> arriba.<br>
+                        2. Imprime la primera cara (Anverso).<br>
+                        3. Vuelve a colocar la misma hoja en la bandeja de la impresora (dada vuelta).<br>
+                        4. Imprime la segunda cara (Reverso) para que coincidan ambos lados.<br>
+                        5. ¡Recorta los billetes por la línea punteada y listos para entrenar la prosperidad!</p>
+                    </div>
+
+                    <h3 style="color:#15803d; margin-bottom:12px;">💵 AURION Metrópoli XXI • Billetes de Todas las Denominaciones</h3>
+                    <img class="img-billetes" src="https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/La%20secci%C3%B3n%20biling%C3%BCe.jpeg" alt="Billetes de Práctica">
+                </body>
+                </html>
+            `);
+            w.document.close();
         }
     </script>
 </body>
