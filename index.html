@@ -19,7 +19,7 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
-        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; min-height: 100vh; }
+        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; min-height: 100vh; overflow-x: hidden; }
         h1, h2, h3, h4 { font-family: 'Cinzel', serif; letter-spacing: 0.5px; }
 
         header {
@@ -59,7 +59,7 @@
         header h1 { font-size: 2.1rem; color: var(--gold-light); margin-bottom: 8px; }
         header p { font-size: 1rem; max-width: 800px; margin: 0 auto 15px; color: var(--text-muted); }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px 15px 40px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px 15px 40px; width: 100%; box-sizing: border-box; }
 
         /* NAVEGACIÓN PRINCIPAL */
         .nav-switch-box {
@@ -103,6 +103,9 @@
             padding: 20px 15px;
             box-shadow: 0 10px 35px rgba(0,0,0,0.7);
             margin-bottom: 30px;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         .aula-header-top {
@@ -161,7 +164,7 @@
 
         .btn-sala span.icon { font-size: 1.3rem; }
 
-        /* PANTALLA DE CLASE */
+        /* PANTALLA DE CLASE CORREGIDA PARA EVITAR CORRIMIENTOS */
         .pantalla-clase {
             background: #0D121A;
             border: 1px solid rgba(255,255,255,0.08);
@@ -170,6 +173,9 @@
             display: flex;
             flex-direction: column;
             overflow: hidden;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         .clase-info-bar {
@@ -191,6 +197,8 @@
             gap: 14px;
             font-size: 0.95rem;
             min-height: 300px;
+            max-height: 450px;
+            box-sizing: border-box;
         }
 
         .msg-profe {
@@ -222,6 +230,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            box-sizing: border-box;
         }
 
         .mic-btn-clase {
@@ -371,7 +380,6 @@
 <body>
 
     <header>
-        <!-- LOGO DE LA ESCUELA (FOTO DE LA TUTORA/SECRETARIA) -->
         <div class="header-logo-container">
             <img src="https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg" 
                  onerror="this.onerror=null; this.src='https://files.manuscdn.com/user_upload_by_module/session_file/310519663295304532/SXAbPHcoYQWtVFRu.jpg';" 
@@ -555,7 +563,7 @@
 
     </div>
 
-    <!-- FOOTER CON CONTADOR REAL (BASE 35+) -->
+    <!-- FOOTER CON CONTADOR ORIGINAL (BASE 35+) -->
     <footer>
         <p>&copy; 2026 AURION &bull; Aula Virtual Escolar &bull; Dirección Pedagógica: Sol Sánchez Contreras | Chile</p>
         
@@ -597,7 +605,7 @@
             <div class="sol-chat-messages" id="chatSolMessages">
                 <div style="background:#1B2636; border:1px solid rgba(212,175,55,0.3); color:#E2E8F0; padding:10px; border-radius:10px; font-size:0.88rem; line-height:1.4;">
                     ¡Hola! Soy <strong>Sol-IA</strong>, anfitriona de Aurion.<br><br>
-                    Si deseas consultar sobre el ingreso al <strong>Método 20x3</strong>, aranceles o postular al programa de apadrinamiento para tu hijo, dime qué necesitas y te oriento con calma.
+                    Si deseas consultar sobre el ingreso al <strong>Método 20x3</strong>, aranceles o postular al programa usando la clave familiar <strong>unigen</strong>, dime qué necesitas y te oriento con calma.
                 </div>
             </div>
 
@@ -817,16 +825,19 @@
             const loading = document.createElement("div");
             loading.className = "msg-profe";
             loading.id = "clase-loading";
-            loading.innerText = "El tutor está analizando tu consulta...";
+            loading.innerText = "Analizando tu consulta escolar...";
             chat.appendChild(loading);
             chat.scrollTop = chat.scrollHeight;
 
             try {
+                // Directiva estricta para ir directo al grano y mantener perfil académico/secular
+                const promptDirecto = `[INSTRUCCIÓN ESTRICTA: Responde de forma directa, clara y estrictamente académica y secular a la pregunta del estudiante. Ve directo al contenido que necesita aprender sin rodeos, sin ejercicios de respiración ni lenguaje místico]. Pregunta del estudiante: ${mensaje}`;
+
                 const response = await fetch(LEO_ENDPOINT, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
-                        mensaje: mensaje,
+                        mensaje: promptDirecto,
                         faceta: salaActual,
                         pais: paisActual,
                         alumno: "Estudiante"
@@ -834,7 +845,7 @@
                 });
 
                 const data = await response.json();
-                const respuesta = data.respuesta || "Excelente consulta. Vamos a revisarlo juntos con calma.";
+                const respuesta = data.respuesta || "Excelente consulta. Vamos a revisarlo paso a paso.";
                 const loader = document.getElementById("clase-loading");
                 if (loader) loader.remove();
 
@@ -874,7 +885,7 @@
                 const res = await fetch(SOL_ENDPOINT, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ mensaje: mensaje, origen: "Recepción Escolar" })
+                    body: JSON.stringify({ mensaje: mensaje, origen: "Recepción Escolar", clave: "unigen" })
                 });
                 const d = await res.json();
                 const respuesta = d.respuesta || "Con gusto te oriento sobre el ingreso y las becas escolares.";
@@ -889,9 +900,7 @@
             } catch(e) {}
         }
 
-        // ==============================================================
-        // 📄 HOJAS DE IMPRESIÓN REALES (CALIGRAFÍA Y BILLETES)
-        // ==============================================================
+        // HOJAS DE IMPRESIÓN (CALIGRAFÍA Y BILLETES)
         function abrirPlantillasCaligrafia() {
             const w = window.open('', '_blank');
             w.document.write(`
