@@ -61,7 +61,6 @@
 
         .container { max-width: 1000px; margin: 0 auto; padding: 20px 15px 40px; width: 100%; box-sizing: border-box; }
 
-        /* NAVEGACIÓN PRINCIPAL */
         .nav-switch-box {
             display: flex;
             justify-content: center;
@@ -95,7 +94,6 @@
         #seccion-inicio { display: block; }
         #seccion-aula { display: none; }
 
-        /* ESTILOS DEL AULA VIRTUAL */
         .aula-box {
             background: #111722;
             border: 2px solid var(--gold);
@@ -164,7 +162,6 @@
 
         .btn-sala span.icon { font-size: 1.3rem; }
 
-        /* PANTALLA DE CLASE CORREGIDA PARA EVITAR CORRIMIENTOS */
         .pantalla-clase {
             background: #0D121A;
             border: 1px solid rgba(255,255,255,0.08);
@@ -279,7 +276,6 @@
             flex-shrink: 0;
         }
 
-        /* CAJAS DE INFORMACIÓN, HÁBITOS Y DESCARGAS */
         .hero-banner {
             background: linear-gradient(135deg, #1E293B 0%, #151D28 100%);
             border: 1.5px solid var(--gold);
@@ -347,7 +343,6 @@
 
         footer { text-align: center; padding: 35px 15px 25px; background: #06080B; color: var(--text-muted); margin-top: 50px; font-size: 0.85rem; border-top: 1px solid rgba(212, 175, 55, 0.2); }
 
-        /* WIDGET FLOTANTE SOL-IA */
         #sol-widget-container { position: fixed; bottom: 20px; right: 15px; z-index: 9999999; }
         .sol-bubble-btn { background: rgba(18, 24, 34, 0.95); border: 2px solid var(--gold); border-radius: 50px; padding: 6px 14px; display: flex; align-items: center; cursor: pointer; box-shadow: 0 6px 25px rgba(0,0,0,0.5); }
         .sol-avatar-pulse { width: 42px; height: 42px; border-radius: 50%; border: 2px solid var(--gold); overflow: hidden; margin-right: 10px; flex-shrink: 0; }
@@ -394,7 +389,6 @@
 
     <div class="container">
 
-        <!-- BOTONERA DE NAVEGACIÓN -->
         <div class="nav-switch-box">
             <button class="btn-nav-main active" id="btnTabInicio" onclick="mostrarSeccion('inicio')">
                 📖 Información & El Método 20x3
@@ -404,7 +398,6 @@
             </button>
         </div>
 
-        <!-- SECCIÓN 1: INICIO Y DESCARGAS -->
         <div id="seccion-inicio">
             <div class="hero-banner">
                 <h2>🚨 ¿Estrés por notas rojas y tareas en casa?</h2>
@@ -418,7 +411,6 @@
                 </div>
             </div>
 
-            <!-- LOS 4 HÁBITOS DE ORO -->
             <div class="habits-box">
                 <h2 style="text-align: center; color: var(--gold-light); margin-bottom: 8px;">🌟 Los 4 Hábitos de Oro</h2>
                 <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Formación integral para el carácter y la vida:</p>
@@ -443,7 +435,6 @@
                 </div>
             </div>
 
-            <!-- BOTONES REALES CONECTADOS A TUS ARCHIVOS SUBIDOS -->
             <div class="tools-grid">
                 <div class="tool-card">
                     <div>
@@ -470,7 +461,6 @@
                 </div>
             </div>
 
-            <!-- EXÁMENES LIBRES -->
             <div style="background:#151F2D; border:1px solid var(--soft-blue); padding:22px; border-radius:14px; text-align:center; margin:25px 0;">
                 <h3 style="color:var(--soft-blue); margin-bottom:8px;">💡 Acompañamiento para Estudio en Casa & Exámenes Libres</h3>
                 <p style="font-size:0.92rem; color:#CBD5E1; line-height:1.55;">
@@ -480,7 +470,6 @@
             </div>
         </div>
 
-        <!-- SECCIÓN 2: AULA VIRTUAL EN VIVO -->
         <div id="seccion-aula">
             <div style="text-align:left; margin-bottom:15px;">
                 <button onclick="mostrarSeccion('inicio')" class="btn-nav-main" style="background:#1C2736; font-size:0.88rem; padding:8px 18px;">
@@ -506,7 +495,6 @@
                     </div>
                 </div>
 
-                <!-- SELECTOR DE SALAS -->
                 <div class="selector-salas">
                     <button class="btn-sala active" id="btn-profesor" onclick="cambiarSala('profesor', '📚', 'Astor (Tutor Pedagógico)', '¡Hola! Soy Astor, tu tutor escolar. Cuéntame qué materia o tarea tienes hoy y la resolvemos juntos con paciencia en tus 20 minutos de foco.')">
                         <span class="icon">🎒</span>
@@ -530,7 +518,6 @@
                     </button>
                 </div>
 
-                <!-- PANTALLA DE CLASE -->
                 <div class="pantalla-clase">
                     <div class="clase-info-bar">
                         <span style="color: #25D366; font-weight: 600;">🟢 Sesión Activa • Modo 20 Minutos de Calma</span>
@@ -563,7 +550,6 @@
 
     </div>
 
-    <!-- FOOTER CON CONTADOR ORIGINAL (BASE 35+) -->
     <footer>
         <p>&copy; 2026 AURION &bull; Aula Virtual Escolar &bull; Dirección Pedagógica: Sol Sánchez Contreras | Chile</p>
         
@@ -575,7 +561,6 @@
         </div>
     </footer>
 
-    <!-- WIDGET FLOTANTE SOL-IA -->
     <div id="sol-widget-container">
         <div class="sol-bubble-btn" onclick="toggleSolChat()">
             <div class="sol-avatar-pulse">
@@ -617,7 +602,6 @@
         </div>
     </div>
 
-    <!-- SCRIPT DEFINITIVO -->
     <script>
         const LEO_ENDPOINT = "https://leo-maestro-7q4s.onrender.com/api/chat";
         const SOL_ENDPOINT = "https://solsanchez-ai-ulq2.onrender.com/api/chat";
@@ -727,7 +711,6 @@
             window.speechSynthesis.speak(utter);
         }
 
-        // MICRÓFONOS DIRECTOS
         const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
         if (SpeechRec) {
             recognitionClase = new SpeechRec();
@@ -749,7 +732,6 @@
             recognitionClase.onerror = function() { detenerMicClase(); };
             recognitionClase.onend = function() { detenerMicClase(); };
 
-            // Sol-IA
             recognitionSol = new SpeechRec();
             recognitionSol.lang = 'es-CL';
             recognitionSol.continuous = false;
@@ -830,14 +812,18 @@
             chat.scrollTop = chat.scrollHeight;
 
             try {
-                // Directiva estricta para ir directo al grano y mantener perfil académico/secular
-                const promptDirecto = `[INSTRUCCIÓN ESTRICTA: Responde de forma directa, clara y estrictamente académica y secular a la pregunta del estudiante. Ve directo al contenido que necesita aprender sin rodeos, sin ejercicios de respiración ni lenguaje místico]. Pregunta del estudiante: ${mensaje}`;
+                // AQUÍ ESTÁ EL AJUSTE CLAVE: Solo aplicamos el filtro estricto a Astor (profesor).
+                // Las demás salas (como hábitos, Leo, etc.) mantienen su personalidad profunda intacta.
+                let mensajeFinalParaEnviar = mensaje;
+                if (salaActual === "profesor") {
+                    mensajeFinalParaEnviar = `[INSTRUCCIÓN ESTRICTA PARA ASTOR: Responde de forma directa, clara, estrictamente académica y secular. Ve directo al contenido que necesita aprender sin rodeos, sin ejercicios de respiración ni lenguaje místico]. Pregunta: ${mensaje}`;
+                }
 
                 const response = await fetch(LEO_ENDPOINT, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
-                        mensaje: promptDirecto,
+                        mensaje: mensajeFinalParaEnviar,
                         faceta: salaActual,
                         pais: paisActual,
                         alumno: "Estudiante"
@@ -900,7 +886,6 @@
             } catch(e) {}
         }
 
-        // HOJAS DE IMPRESIÓN (CALIGRAFÍA Y BILLETES)
         function abrirPlantillasCaligrafia() {
             const w = window.open('', '_blank');
             w.document.write(`
