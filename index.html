@@ -681,16 +681,41 @@
                 .replace(/\bPNL\b/gi, "Pe Ene Ele");
         }
 
+        let listaVocesDisponibles = [];
+        function cargarVocesSistema() {
+            if ('speechSynthesis' in window) {
+                listaVocesDisponibles = window.speechSynthesis.getVoices();
+            }
+        }
+        cargarVocesSistema();
+        if ('speechSynthesis' in window && window.speechSynthesis.onvoiceschanged !== undefined) {
+            window.speechSynthesis.onvoiceschanged = cargarVocesSistema;
+        }
+
         function hablarVoz(texto, esIngles=false) {
             if (!vozClaseActiva || !('speechSynthesis' in window)) return;
             window.speechSynthesis.cancel();
             
             const utter = new SpeechSynthesisUtterance(prepararTextoVoz(texto));
-            const voces = window.speechSynthesis.getVoices();
-            const vozEspanol = voces.find(v => (v.lang.startsWith("es") || v.lang.includes("ES") || v.lang.includes("CL")) && (v.name.includes("Google") || v.name.includes("Natural") || v.name.includes("Sabina") || v.name.includes("Paulina"))) || voces.find(v => v.lang.startsWith("es"));
             
-            if (vozEspanol && !esIngles) utter.voice = vozEspanol;
-            utter.lang = esIngles ? "en-US" : "es-CL";
+            if (listaVocesDisponibles.length === 0) {
+                listaVocesDisponibles = window.speechSynthesis.getVoices();
+            }
+
+            if (esIngles) {
+                utter.lang = "en-US";
+                const vozIngles = listaVocesDisponibles.find(v => v.lang.startsWith("en"));
+                if (vozIngles) utter.voice = vozIngles;
+            } else {
+                utter.lang = "es-CL";
+                const vozEspanol = listaVocesDisponibles.find(v => 
+                    (v.lang.startsWith("es") || v.lang.includes("CL") || v.lang.includes("ES")) && 
+                    (v.name.includes("Google") || v.name.includes("Natural") || v.name.includes("Sabina") || v.name.includes("Paulina") || v.name.includes("Alvaro"))
+                ) || listaVocesDisponibles.find(v => v.lang.startsWith("es"));
+                
+                if (vozEspanol) utter.voice = vozEspanol;
+            }
+            
             utter.rate = 0.95;
             utter.pitch = 1.0;
             window.speechSynthesis.speak(utter);
@@ -701,8 +726,15 @@
             window.speechSynthesis.cancel();
             
             const utter = new SpeechSynthesisUtterance(prepararTextoVoz(texto));
-            const voces = window.speechSynthesis.getVoices();
-            const vozEspanol = voces.find(v => (v.lang.startsWith("es") || v.lang.includes("ES") || v.lang.includes("CL")) && (v.name.includes("Google") || v.name.includes("Natural") || v.name.includes("Sabina") || v.name.includes("Paulina"))) || voces.find(v => v.lang.startsWith("es"));
+            
+            if (listaVocesDisponibles.length === 0) {
+                listaVocesDisponibles = window.speechSynthesis.getVoices();
+            }
+
+            const vozEspanol = listaVocesDisponibles.find(v => 
+                (v.lang.startsWith("es") || v.lang.includes("CL") || v.lang.includes("ES")) && 
+                (v.name.includes("Google") || v.name.includes("Natural") || v.name.includes("Sabina") || v.name.includes("Paulina"))
+            ) || listaVocesDisponibles.find(v => v.lang.startsWith("es"));
             
             if (vozEspanol) utter.voice = vozEspanol;
             utter.lang = "es-CL";
@@ -711,6 +743,9 @@
             window.speechSynthesis.speak(utter);
         }
 
+        // ==============================================================
+        // MICRÓFONO MANOS LIBRES CON AUTO-ENVÍO AL DETECTAR TU VOZ
+        // ==============================================================
         const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
         if (SpeechRec) {
             recognitionClase = new SpeechRec();
@@ -720,12 +755,20 @@
             recognitionClase.onstart = function() {
                 grabacionClase = true;
                 const btn = document.getElementById("micBtnClase");
-                if (btn) btn.classList.add("recording");
+                if (btn) {
+                    btn.classList.add("recording");
+                    btn.innerHTML = "<span>🔴 Habla a tu celular...</span>";
+                }
             };
 
             recognitionClase.onresult = function(event) {
                 if (event.results && event.results[0]) {
-                    document.getElementById("inputClase").value = event.results[0][0].transcript;
+                    const textoTranscrito = event.results[0][0].transcript;
+                    document.getElementById("inputClase").value = textoTranscrito;
+                    
+                    // Al detectar que terminaste de hablar, se envía solo de inmediato
+                    detenerMicClase();
+                    enviarMensajeClase();
                 }
             };
 
@@ -746,6 +789,8 @@
             recognitionSol.onresult = function(e) {
                 if (e.results && e.results[0]) {
                     document.getElementById("solInput").value = e.results[0][0].transcript;
+                    detenerMicSol();
+                    enviarMensajeSol();
                 }
             };
 
@@ -754,13 +799,20 @@
         }
 
         function toggleMicClase() {
-            if (!recognitionClase) return;
+            if (!recognitionClase) {
+                alert("Para usar el micrófono, abre la página desde Chrome, Safari o Edge y acepta el permiso.");
+                return;
+            }
             if (grabacionClase) {
                 recognitionClase.stop();
             } else {
                 document.getElementById("inputClase").value = "";
                 recognitionClase.lang = (salaActual === "ingles") ? "en-US" : "es-CL";
-                recognitionClase.start();
+                try {
+                    recognitionClase.start();
+                } catch(e) {
+                    detenerMicClase();
+                }
             }
         }
 
@@ -812,8 +864,6 @@
             chat.scrollTop = chat.scrollHeight;
 
             try {
-                // AQUÍ ESTÁ EL AJUSTE CLAVE: Solo aplicamos el filtro estricto a Astor (profesor).
-                // Las demás salas (como hábitos, Leo, etc.) mantienen su personalidad profunda intacta.
                 let mensajeFinalParaEnviar = mensaje;
                 if (salaActual === "profesor") {
                     mensajeFinalParaEnviar = `[INSTRUCCIÓN ESTRICTA PARA ASTOR: Responde de forma directa, clara, estrictamente académica y secular. Ve directo al contenido que necesita aprender sin rodeos, sin ejercicios de respiración ni lenguaje místico]. Pregunta: ${mensaje}`;
