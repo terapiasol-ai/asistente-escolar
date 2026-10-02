@@ -1,1 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Cuidador | Acompañante de Vida & Memoria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0B0F17;
+            --card-bg: #141C28;
+            --gold: #D4AF37;
+            --gold-light: #F6E7B0;
+            --text-light: #F8FAFC;
+            --accent-green: #25D366;
+        }
 
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+        body { 
+            background-color: var(--bg-dark); 
+            color: var(--text-light); 
+            min-height: 100vh; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        header {
+            background: linear-gradient(180deg, #182232 0%, var(--bg-dark) 100%);
+            border-bottom: 2px solid var(--gold);
+            padding: 30px 15px 20px;
+            text-align: center;
+        }
+
+        .header-logo {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+            object-fit: cover;
+            margin-bottom: 10px;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.35);
+        }
+
+        .badge-senior {
+            background: linear-gradient(135deg, #D4AF37, #AA7C11);
+            color: #0A0E14;
+            padding: 6px 20px;
+            border-radius: 25px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        header h1 { 
+            font-family: 'Cinzel', serif; 
+            font-size: 2.2rem; 
+            color: var(--gold-light); 
+            margin-bottom: 8px; 
+        }
+
+        header p { 
+            font-size: 1.15rem; 
+            max-width: 650px; 
+            margin: 0 auto; 
+            color: #CBD5E1; 
+        }
+
+        .main-container {
+            max-width: 800px;
+            width: 100%;
+            margin: 20px auto 40px;
+            padding: 0 15px;
+            flex: 1;
+        }
+
+        .cuidador-box {
+            background: var(--card-bg);
+            border: 2px solid var(--gold);
+            border-radius: 22px;
+            padding: 25px 20px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.7);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .top-bar-cuidador {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+            padding-bottom: 12px;
+        }
+
+        .estado-conexion {
+            color: var(--accent-green);
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .btn-audio-toggle {
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid var(--gold);
+            color: var(--gold-light);
+            border-radius: 20px;
+            padding: 6px 14px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .chat-display {
+            background: #0D131F;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 18px;
+            padding: 20px;
+            min-height: 360px;
+            max-height: 480px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .msg-cuidador {
+            background: #182333;
+            border: 1.5px solid rgba(212, 175, 55, 0.35);
+            color: #FFFDF7;
+            padding: 16px 20px;
+            border-radius: 18px 18px 18px 4px;
+            max-width: 90%;
+            font-size: 1.15rem;
+            line-height: 1.6;
+            align-self: flex-start;
+        }
+
+        .msg-usuario {
+            background: linear-gradient(135deg, #D4AF37, #AA7C11);
+            color: #0A0E14;
+            padding: 14px 20px;
+            border-radius: 18px 18px 4px 18px;
+            max-width: 85%;
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.5;
+            align-self: flex-end;
+        }
+
+        .controls-panel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .big-mic-btn {
+            background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
+            color: #0A0E14;
+            border: none;
+            border-radius: 50px;
+            padding: 18px 40px;
+            font-size: 1.35rem;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.45);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            max-width: 420px;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .big-mic-btn.recording {
+            background: #E53E3E;
+            color: #FFF;
+            animation: pulseRecord 1.2s infinite;
+        }
+
+        @keyframes pulseRecord {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.04); }
+            100% { transform: scale(1); }
+        }
+
+        .sub-input-row {
+            display: flex;
+            width: 100%;
+            gap: 8px;
+        }
+
+        .text-input-senior {
+            flex: 1;
+            background: #0E1420;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 25px;
+            padding: 12px 18px;
+            color: #FFF;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .btn-enviar-senior {
+            background: var(--gold);
+            border: none;
+            color: #0A0E14;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .sugerencias-box {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .btn-sugerencia {
+            background: #182232;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--gold-light);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px 15px;
+            background: #06090E;
+            color: #94A3B8;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        /* SECRETARIA FLOTANTE (LUCERO) */
+        #secretaria-widget { position: fixed; bottom: 20px; right: 15px; z-index: 999999; }
+        .sec-bubble {
+            background: #151D28;
+            border: 2px solid var(--gold);
+            border-radius: 40px;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.6);
+        }
+        .sec-avatar { width: 38px; height: 38px; border-radius: 50%; border: 1.5px solid var(--gold); object-fit: cover; }
+        .sec-name { color: var(--gold-light); font-size: 12.5px; font-weight: 700; text-align: left; }
+        .sec-desc { color: #25D366; font-size: 10px; font-weight: 600; text-align: left; }
+
+        #sec-chat-modal {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 15px;
+            width: 340px;
+            max-width: 90vw;
+            height: 420px;
+            background: #141C26;
+            border: 2px solid var(--gold);
+            border-radius: 18px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.85);
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 999999;
+        }
+        .sec-header { background: #1C2736; border-bottom: 1.5px solid var(--gold); padding: 12px 14px; display: flex; align-items: center; justify-content: space-between; }
+        .sec-messages { flex: 1; padding: 12px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg" 
+             onerror="this.onerror=null; this.src='https://files.manuscdn.com/user_upload_by_module/session_file/310519663295304532/SXAbPHcoYQWtVFRu.jpg';" 
+             alt="Logo Cuidador" 
+             class="header-logo">
+        <br>
+        <span class="badge-senior">🤲 Acompañamiento Humano con Respeto y Calma</span>
+        <h1>EL CUIDADOR</h1>
+        <p>Tu compañía de cada día para conversar con calma, recordar momentos alegres y compartir en paz.</p>
+    </header>
+
+    <div class="main-container">
+        <div class="cuidador-box">
+            <div class="top-bar-cuidador">
+                <span class="estado-conexion">🟢 En línea • Listo para escucharte</span>
+                <button class="btn-audio-toggle" id="btnAudioToggle" onclick="toggleAudio()">🔊 Voz Activa</button>
+            </div>
+
+            <div class="chat-display" id="chatDisplay">
+                <div class="msg-cuidador" id="msgBienvenida">
+                    ¡Hola! Qué alegría saludarte hoy.<br><br>
+                    Estoy aquí contigo para hacerte compañía. Toca el botón amarillo de abajo que dice <strong>«Tocar para Hablar»</strong> y cuéntame cómo estás hoy.
+                </div>
+            </div>
+
+            <div class="sugerencias-box">
+                <button class="btn-sugerencia" onclick="enviarSugerencia('Cuéntame una linda historia del recuerdo')">📻 Una historia del recuerdo</button>
+                <button class="btn-sugerencia" onclick="enviarSugerencia('¿Qué consejo me das para tener un día en paz?')">☕ Un consejo de calma</button>
+                <button class="btn-sugerencia" onclick="enviarSugerencia('Hoy tengo ganas de conversar un ratito')">💬 Solo conversar</button>
+            </div>
+
+            <div class="controls-panel">
+                <button class="big-mic-btn" id="btnMicSenior" onclick="toggleMicrofonoSenior()">
+                    <span>🎙️ Tocar para Hablar</span>
+                </button>
+
+                <div class="sub-input-row">
+                    <input type="text" class="text-input-senior" id="inputSenior" placeholder="O escribe tu mensaje aquí..." onkeypress="if(event.key==='Enter') enviarMensajeSenior()">
+                    <button class="btn-enviar-senior" onclick="enviarMensajeSenior()">➤</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 AURION &bull; Dirección y Creación: Sol Sánchez Contreras | Chile</p>
+    </footer>
+
+    <!-- CASETA DE LA SECRETARIA LUCERO (PARA FAMILIAS Y PAGOS) -->
+    <div id="secretaria-widget">
+        <div class="sec-bubble" onclick="toggleModalSecretaria()">
+            <img src="https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/image%20(4).jpg" alt="Lucero" class="sec-avatar">
+            <div class="sec-info">
+                <div class="sec-name">Lucero • Secretaria Familiar</div>
+                <div class="sec-desc">Atención & Pagos</div>
+            </div>
+        </div>
+
+        <div id="sec-chat-modal">
+            <div class="sec-header">
+                <div style="color:var(--gold-light); font-weight:700; font-size:13px;">Lucero • Soporte Familiar</div>
+                <button onclick="toggleModalSecretaria()" style="background:none; border:none; color:#CBD5E1; font-size:18px; cursor:pointer;">✕</button>
+            </div>
+            <div class="sec-messages" id="secMessages">
+                <div style="background:#1B2636; border:1px solid rgba(212,175,55,0.3); padding:10px; border-radius:10px; font-size:0.88rem;">
+                    ¡Hola! Soy <strong>Lucero</strong>.<br><br>
+                    Si necesitas consultar sobre membresías, coordinar pagos o asistencia por WhatsApp para la familia, escríbeme aquí.
+                </div>
+            </div>
+            <div style="padding:8px; background:#101620; border-top:1px solid rgba(212,175,55,0.2); display:flex; gap:6px;">
+                <input type="text" id="secInput" placeholder="Consulta sobre pagos o membresía..." onkeypress="if(event.key==='Enter') enviarMensajeLucero()" style="flex:1; background:#182230; border:1px solid rgba(212,175,55,0.3); border-radius:15px; padding:8px 12px; color:#FFF; font-size:0.85rem; outline:none;">
