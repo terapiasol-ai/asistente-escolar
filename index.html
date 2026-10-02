@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURION | Aula Escolar & Acompañamiento Humano</title>
+    <title>AURION | Aula Escolar con PNL & Tutoría Mineduc</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -382,38 +382,38 @@
                  class="header-logo">
         </div>
 
-        <span class="badge">Tecnología con Alma • Sol Sánchez Contreras</span>
-        <h1>AURION & LEO</h1>
-        <p>Acompañamiento escolar con PNL y presencia humana para el adulto mayor. Voces cálidas, claras y sin fatiga tecnológica.</p>
+        <span class="badge">🎒 Tutoría Integral del Siglo XXI & PNL</span>
+        <h1>AURION Escolaridad</h1>
+        <p>Acompañamiento paciente alineado al Mineduc (1° Básico a 4° Medio) y Exámenes Libres. El Método 20x3 para formar niños autónomos y felices.</p>
     </header>
 
     <div class="container">
 
         <div class="nav-switch-box">
             <button class="btn-nav-main active" id="btnTabInicio" onclick="mostrarSeccion('inicio')">
-                📖 Información & El Método
+                📖 Información & El Método 20x3
             </button>
             <button class="btn-nav-main" id="btnTabAula" onclick="mostrarSeccion('aula')">
-                🏫 Entrar al Espacio de Conversación en Vivo
+                🏫 Entrar al Aula de Clases en Vivo
             </button>
         </div>
 
         <div id="seccion-inicio">
             <div class="hero-banner">
-                <h2>🚨 Sin frustraciones ni cansancio</h2>
+                <h2>🚨 ¿Estrés por notas rojas y tareas en casa?</h2>
                 <p>
-                    Respuestas directas, humanas y al grano. Si preguntas algo sencillo, la respuesta es clara y breve. Sin discursos robóticos ni adulaciones innecesarias.
+                    El hogar debe ser un lugar de descanso, no una segunda jornada escolar agotadora. Con el <strong>Método 20x3</strong> (solo 20 minutos, 3 veces por semana), tu hijo se pone sus audífonos y despeja sus dudas escolares con calma, devolviéndole la paz a las tardes familiares.
                 </p>
                 <div style="margin-top: 22px;">
                     <button class="btn-accion-aula" onclick="mostrarSeccion('aula')">
-                        🚀 ¡Entrar a Conversar Ahora!
+                        🚀 ¡Entrar al Aula de Clases Ahora!
                     </button>
                 </div>
             </div>
 
             <div class="habits-box">
                 <h2 style="text-align: center; color: var(--gold-light); margin-bottom: 8px;">🌟 Los 4 Hábitos de Oro</h2>
-                <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Formación integral para el carácter y la vida familiar:</p>
+                <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Formación integral para el carácter y la vida:</p>
 
                 <div class="habits-grid">
                     <div class="habit-item">
@@ -430,7 +430,7 @@
                     </div>
                     <div class="habit-item">
                         <h4>🎙️ Audio Nocturno en su Propia Voz</h4>
-                        <p>El resumen se graba y se escucha antes de dormir para fijar la memoria durante el sueño y elevar la autoestima.</p>
+                        <p>El niño escribe su resumen a mano y lo graba; escucharse antes de dormir fija la memoria durante el sueño y eleva su autoestima.</p>
                     </div>
                 </div>
             </div>
@@ -452,13 +452,21 @@
                     <div>
                         <h3>💵 Billetes de Práctica (Todas las Denominaciones)</h3>
                         <p>
-                            Educación comercial y abundancia. Hoja oficial con billetes para recortar, jugar a la prosperidad y entrenar la mente de dueño por ambas caras.
+                            Educación comercial infantil. Hoja oficial con billetes de todas las denominaciones para recortar, jugar a la prosperidad y entrenar la mente de dueño por ambas caras.
                         </p>
                     </div>
                     <button onclick="abrirBilletesConGuia()" class="btn-descarga">
                         🖨️ Abrir Billetes de Práctica (Para Imprimir)
                     </button>
                 </div>
+            </div>
+
+            <div style="background:#151F2D; border:1px solid var(--soft-blue); padding:22px; border-radius:14px; text-align:center; margin:25px 0;">
+                <h3 style="color:var(--soft-blue); margin-bottom:8px;">💡 Acompañamiento para Estudio en Casa & Exámenes Libres</h3>
+                <p style="font-size:0.92rem; color:#CBD5E1; line-height:1.55;">
+                    Aurion entrega toda la preparación pedagógica alineada a las Bases Curriculares del Mineduc (1° básico a 4° medio). 
+                    Para familias que optan por educación en casa o que no asisten al colegio, la inscripción formal a los Exámenes Libres oficiales es responsabilidad exclusiva del apoderado ante el Mineduc.
+                </p>
             </div>
         </div>
 
@@ -487,29 +495,24 @@
                     </div>
                 </div>
 
-                <!-- SELECTOR DE SALAS CON EL CUIDADOR INCLUIDO -->
                 <div class="selector-salas">
-                    <button class="btn-sala active" id="btn-profesor" onclick="cambiarSala('profesor', '📚', 'Astor (Tutor Pedagógico)', '¡Hola! Soy Astor. ¿Qué tarea o tema vemos hoy?')">
+                    <button class="btn-sala active" id="btn-profesor" onclick="cambiarSala('profesor', '📚', 'Astor (Tutor Pedagógico)', '¡Hola! Soy Astor, tu tutor escolar. Cuéntame qué materia o tarea tienes hoy y la resolvemos juntos con paciencia en tus 20 minutos de foco.')">
                         <span class="icon">🎒</span>
                         <span>Tutor Escolar</span>
                     </button>
-                    <button class="btn-sala" id="btn-cuidador" onclick="cambiarSala('cuidador', '🤲', 'El Cuidador (Acompañante Cálido)', 'Hola, qué gusto saludarte. Estoy aquí contigo. ¿Cómo estás hoy?')">
-                        <span class="icon">🤲</span>
-                        <span>Acompañante Senior</span>
-                    </button>
-                    <button class="btn-sala" id="btn-ingles" onclick="cambiarSala('ingles', '🇬🇧', 'Profesor de Inglés', 'Hello! What would you like to practice today?')">
+                    <button class="btn-sala" id="btn-ingles" onclick="cambiarSala('ingles', '🇬🇧', 'Profesor de Inglés', 'Welcome! Hello, I am your English tutor. What topic or vocabulary would you like to practice today?')">
                         <span class="icon">🇬🇧</span>
                         <span>English Club</span>
                     </button>
-                    <button class="btn-sala" id="btn-tecno" onclick="cambiarSala('tecno', '💻', 'Tutor de Tecnología & IA', '¡Hola! ¿Qué proyecto digital revisamos?')">
+                    <button class="btn-sala" id="btn-tecno" onclick="cambiarSala('tecno', '💻', 'Tutor de Tecnología, IA & Robótica', '¡Hola! En esta sala aprenderemos lógica, robótica práctica y herramientas digitales para que tengas un oficio real para tu futuro. ¿Qué proyecto revisamos?')">
                         <span class="icon">💻</span>
                         <span>Tecnología & IA</span>
                     </button>
-                    <button class="btn-sala" id="btn-negocios" onclick="cambiarSala('negocios', '📈', 'Asesor Financiero (Metrópoli XXI)', '¡Hola! ¿Revisamos el portafolio o hacemos una compra?')">
+                    <button class="btn-sala" id="btn-negocios" onclick="cambiarSala('negocios', '📈', 'Asesor Financiero LEO (Juego de Comercio)', '¡Hola! Yo soy tu compañero de juego. Saca tus billetes de práctica y juguemos a comprar activos o administrar presupuestos. ¿Comenzamos?')">
                         <span class="icon">🎲</span>
                         <span>Finanzas</span>
                     </button>
-                    <button class="btn-sala" id="btn-leo" onclick="cambiarSala('leo', '🦁', 'Orientador de Hábitos y Foco', '¡Hola! Estoy presente. ¿En qué nos enfocamos?')">
+                    <button class="btn-sala" id="btn-leo" onclick="cambiarSala('leo', '🦁', 'Orientador de Hábitos y Foco', '¡Hola! Aquí organizamos tus métodos de estudio, concentración y liderazgo personal. ¿En qué te gustaría enfocarte hoy?')">
                         <span class="icon">🦁</span>
                         <span>Hábitos & Foco</span>
                     </button>
@@ -517,22 +520,22 @@
 
                 <div class="pantalla-clase">
                     <div class="clase-info-bar">
-                        <span style="color: #25D366; font-weight: 600;">🟢 Conexión Activa • Modo Manos Libres</span>
+                        <span style="color: #25D366; font-weight: 600;">🟢 Sesión Activa • Modo 20 Minutos de Calma</span>
                         <button onclick="toggleAudioClase()" id="btnAudioClase" style="background:none; border:none; color:var(--gold); cursor:pointer; font-size:14px;">🔊 Voz Activa</button>
                     </div>
 
                     <div class="chat-area-clase" id="chatClaseArea">
                         <div class="msg-profe" id="msgBienvenidaProfe">
                             ¡Hola! Soy <strong>Astor</strong>, tu tutor escolar.<br><br>
-                            Toca el botón amarillo <strong>🎙️ Hablar</strong> y dime qué tema vemos hoy. Al terminar de hablar, se enviará solo.
+                            Ponte tus audífonos, toca el botón amarillo <strong>🎙️ Hablar</strong> o escribe en la barra: cuéntame qué materia estás viendo y la resolvemos juntos paso a paso.
                         </div>
                     </div>
 
                     <div class="input-bar-clase">
-                        <button class="mic-btn-clase" id="micBtnClase" onclick="toggleMicClase()" title="Toca para hablar">
+                        <button class="mic-btn-clase" id="micBtnClase" onclick="toggleMicClase()" title="Toca para empezar a hablar">
                             <span>🎙️ Hablar</span>
                         </button>
-                        <input type="text" id="inputClase" placeholder="Habla con el micrófono o escribe aquí..." onkeypress="handleKeyClase(event)">
+                        <input type="text" id="inputClase" placeholder="Habla con el micrófono o escribe tu pregunta..." onkeypress="handleKeyClase(event)">
                         <button class="send-btn-clase" onclick="enviarMensajeClase()">➤</button>
                     </div>
                 </div>
@@ -548,17 +551,16 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 AURION &bull; Dirección General: Sol Sánchez Contreras | Chile</p>
+        <p>&copy; 2026 AURION &bull; Aula Virtual Escolar &bull; Dirección Pedagógica: Sol Sánchez Contreras | Chile</p>
         
         <div style="margin-top: 15px; display: flex; justify-content: center; align-items: center;">
             <div style="display:inline-flex; align-items:center; gap:8px; background:#141B26; padding:6px 16px; border-radius:20px; border:1.5px solid var(--gold); color:var(--gold-light); font-size:0.85rem; font-weight:700;">
-                <span>🎓 Sesiones Activas:</span>
+                <span>🎓 Alumnos & Visitas:</span>
                 <span id="contador-numero-escolar" style="background:var(--gold); color:#0A0E14; padding:2px 8px; border-radius:10px; font-size:0.9rem;">35</span>
             </div>
         </div>
     </footer>
 
-    <!-- WIDGET LATERAL SOL-IA -->
     <div id="sol-widget-container">
         <div class="sol-bubble-btn" onclick="toggleSolChat()">
             <div class="sol-avatar-pulse">
@@ -566,7 +568,7 @@
             </div>
             <div style="text-align:left; line-height:1.2;">
                 <div class="sol-bubble-title">Sol-IA • Admisiones & Becas</div>
-                <div class="sol-bubble-sub">🟢 Atención Familiar</div>
+                <div class="sol-bubble-sub">🟢 Atención a Familias</div>
             </div>
         </div>
 
@@ -587,20 +589,19 @@
 
             <div class="sol-chat-messages" id="chatSolMessages">
                 <div style="background:#1B2636; border:1px solid rgba(212,175,55,0.3); color:#E2E8F0; padding:10px; border-radius:10px; font-size:0.88rem; line-height:1.4;">
-                    ¡Hola! Soy <strong>Sol-IA</strong>.<br><br>
-                    Si deseas consultar sobre el ingreso, aranceles o usar la clave familiar <strong>unigen</strong>, dime qué necesitas y te oriento con gusto.
+                    ¡Hola! Soy <strong>Sol-IA</strong>, anfitriona de Aurion.<br><br>
+                    Si deseas consultar sobre el ingreso al <strong>Método 20x3</strong>, aranceles o postular al programa usando la clave familiar <strong>unigen</strong>, dime qué necesitas y te oriento con calma.
                 </div>
             </div>
 
             <div style="padding:8px; background:#101620; border-top:1px solid rgba(212,175,55,0.2); display:flex; gap:6px; align-items:center;">
                 <button id="solMicBtn" onclick="toggleDictadoSol()" style="background:var(--gold); border:none; color:#0A0E14; border-radius:50%; width:34px; height:34px; cursor:pointer; font-size:15px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">🎙️</button>
-                <input type="text" id="solInput" placeholder="Consulta sobre becas o aranceles..." onkeypress="if(event.key==='Enter') enviarMensajeSol()" style="flex:1; background:#182230; border:1px solid rgba(212,175,55,0.3); border-radius:15px; padding:8px 12px; color:#FFF; font-size:0.85rem; outline:none;">
+                <input type="text" id="solInput" placeholder="Consulta sobre matrículas o becas..." onkeypress="if(event.key==='Enter') enviarMensajeSol()" style="flex:1; background:#182230; border:1px solid rgba(212,175,55,0.3); border-radius:15px; padding:8px 12px; color:#FFF; font-size:0.85rem; outline:none;">
                 <button onclick="enviarMensajeSol()" style="background:var(--gold); border:none; color:#000; border-radius:50%; width:34px; height:34px; cursor:pointer; font-weight:bold; flex-shrink:0;">➤</button>
             </div>
         </div>
     </div>
 
-    <!-- JAVASCRIPT CON MICRÓFONO Y PARLANTE MANOS LIBRES + PASADIZO -->
     <script>
         const LEO_ENDPOINT = "https://leo-maestro-7q4s.onrender.com/api/chat";
         const SOL_ENDPOINT = "https://solsanchez-ai-ulq2.onrender.com/api/chat";
@@ -613,28 +614,16 @@
         let recognitionSol = null;
         let grabacionClase = false;
         let grabacionSol = false;
-        let listaVoces = [];
-
-        // Leer pasadizo desde la URL (Ej: mi-pagina.html?acceso=cuidador o ?clave=unigen)
-        const urlParams = new URLSearchParams(window.location.search);
-        const pasadizoURL = urlParams.get('acceso') || urlParams.get('clave') || urlParams.get('pasadizo') || "";
 
         function inicializarContador() {
             const base = 35;
             let visitasLocales = parseInt(localStorage.getItem("aurion_visitas_escolar_final_v3") || "0") + 1;
             localStorage.setItem("aurion_visitas_escolar_final_v3", visitasLocales);
+            const total = base + visitasLocales;
             const el = document.getElementById("contador-numero-escolar");
-            if (el) el.innerText = base + visitasLocales;
+            if (el) el.innerText = total;
         }
         inicializarContador();
-
-        // Si el usuario entra por el pasadizo del cuidador, abrir directamente esa sala
-        window.addEventListener("DOMContentLoaded", () => {
-            if (pasadizoURL.toLowerCase() === "cuidador" || pasadizoURL.toLowerCase() === "cuidador777") {
-                mostrarSeccion('aula');
-                cambiarSala('cuidador', '🤲', 'El Cuidador (Acompañante Cálido)', 'Hola, qué alegría saludarte. Estoy aquí contigo. ¿Cómo estás hoy?');
-            }
-        });
 
         function mostrarSeccion(seccion) {
             const secInicio = document.getElementById("seccion-inicio");
@@ -685,22 +674,22 @@
             return texto
                 .replace(/https?:\/\/\S+/g, "")
                 .replace(/[*#_~`]/g, "")
-                .replace(/\$\s*(\d+[\d\.]*)\s*(CLP|pesos chilenos|pesos)?/gi, "$1 pesos")
+                .replace(/\$\s*(\d+[\d\.]*)\s*(CLP|pesos chilenos|pesos)?/gi, "$1 pesos chilenos")
                 .replace(/\$/g, "")
                 .replace(/\bAURION\b/gi, "Áurion")
                 .replace(/\bMINEDUC\b/gi, "Mineduc")
                 .replace(/\bPNL\b/gi, "Pe Ene Ele");
         }
 
-        // CARGA INTELIGENTE DE VOCES NATURALES
-        function cargarVoces() {
+        let listaVocesDisponibles = [];
+        function cargarVocesSistema() {
             if ('speechSynthesis' in window) {
-                listaVoces = window.speechSynthesis.getVoices();
+                listaVocesDisponibles = window.speechSynthesis.getVoices();
             }
         }
-        cargarVoces();
+        cargarVocesSistema();
         if ('speechSynthesis' in window && window.speechSynthesis.onvoiceschanged !== undefined) {
-            window.speechSynthesis.onvoiceschanged = cargarVoces;
+            window.speechSynthesis.onvoiceschanged = cargarVocesSistema;
         }
 
         function hablarVoz(texto, esIngles=false) {
@@ -708,21 +697,25 @@
             window.speechSynthesis.cancel();
             
             const utter = new SpeechSynthesisUtterance(prepararTextoVoz(texto));
-            if (listaVoces.length === 0) listaVoces = window.speechSynthesis.getVoices();
+            
+            if (listaVocesDisponibles.length === 0) {
+                listaVocesDisponibles = window.speechSynthesis.getVoices();
+            }
 
             if (esIngles) {
                 utter.lang = "en-US";
-                const vEn = listaVoces.find(v => v.lang.startsWith("en"));
-                if (vEn) utter.voice = vEn;
+                const vozIngles = listaVocesDisponibles.find(v => v.lang.startsWith("en"));
+                if (vozIngles) utter.voice = vozIngles;
             } else {
                 utter.lang = "es-CL";
-                const vEs = listaVoces.find(v => 
+                const vozEspanol = listaVocesDisponibles.find(v => 
                     (v.lang.startsWith("es") || v.lang.includes("CL") || v.lang.includes("ES")) && 
-                    (v.name.includes("Natural") || v.name.includes("Google") || v.name.includes("Paulina") || v.name.includes("Sabina"))
-                ) || listaVoces.find(v => v.lang.startsWith("es"));
-                if (vEs) utter.voice = vEs;
+                    (v.name.includes("Google") || v.name.includes("Natural") || v.name.includes("Sabina") || v.name.includes("Paulina") || v.name.includes("Alvaro"))
+                ) || listaVocesDisponibles.find(v => v.lang.startsWith("es"));
+                
+                if (vozEspanol) utter.voice = vozEspanol;
             }
-
+            
             utter.rate = 0.95;
             utter.pitch = 1.0;
             window.speechSynthesis.speak(utter);
@@ -733,16 +726,26 @@
             window.speechSynthesis.cancel();
             
             const utter = new SpeechSynthesisUtterance(prepararTextoVoz(texto));
-            if (listaVoces.length === 0) listaVoces = window.speechSynthesis.getVoices();
-            const vEs = listaVoces.find(v => v.lang.startsWith("es"));
-            if (vEs) utter.voice = vEs;
+            
+            if (listaVocesDisponibles.length === 0) {
+                listaVocesDisponibles = window.speechSynthesis.getVoices();
+            }
 
+            const vozEspanol = listaVocesDisponibles.find(v => 
+                (v.lang.startsWith("es") || v.lang.includes("CL") || v.lang.includes("ES")) && 
+                (v.name.includes("Google") || v.name.includes("Natural") || v.name.includes("Sabina") || v.name.includes("Paulina"))
+            ) || listaVocesDisponibles.find(v => v.lang.startsWith("es"));
+            
+            if (vozEspanol) utter.voice = vozEspanol;
             utter.lang = "es-CL";
             utter.rate = 0.95;
+            utter.pitch = 1.0;
             window.speechSynthesis.speak(utter);
         }
 
-        // RECONOCIMIENTO DE VOZ CON AUTO-ENVÍO (MANOS LIBRES)
+        // ==============================================================
+        // MICRÓFONO MANOS LIBRES CON AUTO-ENVÍO AL DETECTAR TU VOZ
+        // ==============================================================
         const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
         if (SpeechRec) {
             recognitionClase = new SpeechRec();
@@ -754,15 +757,18 @@
                 const btn = document.getElementById("micBtnClase");
                 if (btn) {
                     btn.classList.add("recording");
-                    btn.innerHTML = "<span>🔴 Escuchando...</span>";
+                    btn.innerHTML = "<span>🔴 Habla a tu celular...</span>";
                 }
             };
 
             recognitionClase.onresult = function(event) {
                 if (event.results && event.results[0]) {
-                    document.getElementById("inputClase").value = event.results[0][0].transcript;
+                    const textoTranscrito = event.results[0][0].transcript;
+                    document.getElementById("inputClase").value = textoTranscrito;
+                    
+                    // Al detectar que terminaste de hablar, se envía solo de inmediato
                     detenerMicClase();
-                    enviarMensajeClase(); // AUTO-ENVÍO DIRECTO
+                    enviarMensajeClase();
                 }
             };
 
@@ -784,7 +790,7 @@
                 if (e.results && e.results[0]) {
                     document.getElementById("solInput").value = e.results[0][0].transcript;
                     detenerMicSol();
-                    enviarMensajeSol(); // AUTO-ENVÍO EN SOL-IA
+                    enviarMensajeSol();
                 }
             };
 
@@ -793,13 +799,20 @@
         }
 
         function toggleMicClase() {
-            if (!recognitionClase) return;
+            if (!recognitionClase) {
+                alert("Para usar el micrófono, abre la página desde Chrome, Safari o Edge y acepta el permiso.");
+                return;
+            }
             if (grabacionClase) {
                 recognitionClase.stop();
             } else {
                 document.getElementById("inputClase").value = "";
                 recognitionClase.lang = (salaActual === "ingles") ? "en-US" : "es-CL";
-                recognitionClase.start();
+                try {
+                    recognitionClase.start();
+                } catch(e) {
+                    detenerMicClase();
+                }
             }
         }
 
@@ -830,7 +843,6 @@
 
         function handleKeyClase(e) { if (e.key === "Enter") enviarMensajeClase(); }
 
-        // ENVÍO DE MENSAJE CON LA REGLA HUMANA Y PASADIZO
         async function enviarMensajeClase() {
             const input = document.getElementById("inputClase");
             const mensaje = input.value.trim();
@@ -847,31 +859,29 @@
             const loading = document.createElement("div");
             loading.className = "msg-profe";
             loading.id = "clase-loading";
-            loading.innerText = "Pensando...";
+            loading.innerText = "Analizando tu consulta escolar...";
             chat.appendChild(loading);
             chat.scrollTop = chat.scrollHeight;
 
             try {
-                // REGLA DE ORO DE SOL SÁNCHEZ CONTRERAS:
-                // Cero adulación, respuestas precisas. Si es de Sí o No, responde solo Sí o No a menos que pidan explicar el porqué.
-                const reglaHumana = `[REGLA ESTRICTA DE SOL SÁNCHEZ CONTRERAS: Sé 100% natural y humano. Cero adulación robótica ('¡Qué maravillosa pregunta!'). Si la pregunta se responde con un simple 'Sí' o 'No', responde exactamente 'Sí' o 'No' sin dar explicaciones no pedidas. Solo explica si te preguntan '¿por qué?'. Si explicas, hazlo en máximo 1 o 2 oraciones concisas y amables].`;
-                
-                const mensajeFinal = `${reglaHumana} Interlocutor: ${mensaje}`;
+                let mensajeFinalParaEnviar = mensaje;
+                if (salaActual === "profesor") {
+                    mensajeFinalParaEnviar = `[INSTRUCCIÓN ESTRICTA PARA ASTOR: Responde de forma directa, clara, estrictamente académica y secular. Ve directo al contenido que necesita aprender sin rodeos, sin ejercicios de respiración ni lenguaje místico]. Pregunta: ${mensaje}`;
+                }
 
                 const response = await fetch(LEO_ENDPOINT, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
-                        mensaje: mensajeFinal,
+                        mensaje: mensajeFinalParaEnviar,
                         faceta: salaActual,
                         pais: paisActual,
-                        alumno: (salaActual === "cuidador") ? "Amigo/a" : "Estudiante",
-                        clave: pasadizoURL
+                        alumno: "Estudiante"
                     })
                 });
 
                 const data = await response.json();
-                const respuesta = data.respuesta || "Entendido.";
+                const respuesta = data.respuesta || "Excelente consulta. Vamos a revisarlo paso a paso.";
                 const loader = document.getElementById("clase-loading");
                 if (loader) loader.remove();
 
@@ -914,7 +924,7 @@
                     body: JSON.stringify({ mensaje: mensaje, origen: "Recepción Escolar", clave: "unigen" })
                 });
                 const d = await res.json();
-                const respuesta = d.respuesta || "Con gusto te oriento.";
+                const respuesta = d.respuesta || "Con gusto te oriento sobre el ingreso y las becas escolares.";
 
                 const solMsg = document.createElement("div");
                 solMsg.style.cssText = "background:#1B2636; border:1px solid rgba(212,175,55,0.3); color:#E2E8F0; padding:12px 14px; border-radius:10px; font-size:0.9rem; line-height:1.45;";
@@ -932,7 +942,7 @@
                 <!DOCTYPE html>
                 <html>
                 <head>
-                    <title>Stencils de Caligrafía Cursiva - AURION</title>
+                    <title>Stencils de Caligrafía Cursiva - AURION Escolar</title>
                     <style>
                         body { font-family: Arial, sans-serif; padding: 20px; text-align: center; background: #fff; }
                         .btn-print { background: #D4AF37; border: none; padding: 12px 26px; font-weight: bold; border-radius: 25px; cursor: pointer; margin-bottom: 20px; font-size: 15px; color: #000; }
@@ -941,11 +951,11 @@
                     </style>
                 </head>
                 <body>
-                    <button class="btn-print" onclick="window.print()">🖨️ Imprimir Stencils de Caligrafía</button>
-                    <h3 style="color:#997A15; margin-bottom:10px;">✍️ AURION • Modelo 1: Abecedario Cursiva Minúscula</h3>
+                    <button class="btn-print" onclick="window.print()">🖨️ Imprimir Stencils de Caligrafía (2 Modelos)</button>
+                    <h3 style="color:#997A15; margin-bottom:10px;">✍️ AURION Escolaridad • Modelo 1: Abecedario Cursiva Minúscula</h3>
                     <img class="stencil-img" src="https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/STENCIL_ABECEDARIO_CURSIVAS_MINUSCULA_SD_1000x.jpg" alt="Stencil Cursiva 1">
                     
-                    <h3 style="color:#997A15; margin-bottom:10px;">✍️ AURION • Modelo 2: Pauta de Trazo Neuro-Motor</h3>
+                    <h3 style="color:#997A15; margin-bottom:10px;">✍️ AURION Escolaridad • Modelo 2: Pauta de Trazo Neuro-Motor</h3>
                     <img class="stencil-img" src="https://raw.githubusercontent.com/terapiasol-ai/Aurion/main/71ssROVpZkL.jpg" alt="Stencil Cursiva 2">
                 </body>
                 </html>
@@ -977,8 +987,8 @@
                         <p>1. Presiona el botón verde <strong>«Imprimir Billetes»</strong> arriba.<br>
                         2. Imprime la primera cara (Anverso).<br>
                         3. Vuelve a colocar la misma hoja en la bandeja de la impresora (dada vuelta).<br>
-                        4. Imprime la segunda cara (Reverso).<br>
-                        5. ¡Recorta por la línea punteada y listos para entrenar!</p>
+                        4. Imprime la segunda cara (Reverso) para que coincidan ambos lados.<br>
+                        5. ¡Recorta los billetes por la línea punteada y listos para entrenar la prosperidad!</p>
                     </div>
 
                     <h3 style="color:#15803d; margin-bottom:12px;">💵 AURION Metrópoli XXI • Billetes de Todas las Denominaciones</h3>
@@ -990,4 +1000,4 @@
         }
     </script>
 </body>
-                        </html>
+                            </html>
